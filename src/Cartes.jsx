@@ -24,22 +24,28 @@ import garelli_png from "./assets/garelli.png";
 import NE_vid from "./assets/NE.gif";
 import NE_img from "./assets/NE.png";
 
-// LFM
-import francmanger_Img from "./assets/francmanger.jpg";
-import francmanger_Gif from "./assets/francmanger.gif";
+// flux
+import flux_vid from "./assets/flux.gif";
+import flux_img from "./assets/flux.jpg";
 // Eco
 import ecoImg from "./assets/ecoImg.jpg";
 
 /* # # # # # # ABOUT ME # # # # # # # # # # # # # # # */
 const obj0 = {
   id: 0,
-  title: "A propos de moi",
+  title: "Who is Pierre",
   gif: cv_Gif,
   img: cv_Img,
   description: `
-  CYCLO-VOYAGES ET MUSIQUE
-  >Voyages
-    
+  \n>Qui suis-je ?\n
+
+  Bienvenue. Je m'appelle Pierre, j'ai 38, développeur fullstack. Cela signifie que je sais concevoir un site complet, front-end (app ou web-app), back-end, base de données, animations.
+
+  J'ai une sensibilité pour les interfaces créatives et animées, ainsi que pour l'éco-conception numérique sur laquelle je me forme en continu.
+
+  À l'écoute de vos besoins et pédagogue (je suis aussi formateur de développement web), je saurai vous accompagner tout le long du projet. Et surtout, si c'est hors de mes compétences, je vous le dirai.
+
+  Bonne visite
 `,
   button1: "Envoyer un email",
   link1: "mailto:mallerep@gmail.com",
@@ -55,10 +61,10 @@ const obj1 = {
   img: cycling_Img,
   description: `
   \n>Voyages à vélo\n
-  Lorsque je ne code pas, vous pourriez me croiser à vélo sur une piste déserte du monde. De mes voyage, j'ai rapporté un livre et des films, dont un primé en festival, et à voir sur ma chaîne youtube.
+  Lorsque je ne code pas, vous pourriez me croiser à vélo sur une piste déserte du monde. De ces voyages, j'ai édité un livre et des films, dont un primé en festival, et à découvrir sur ma chaîne youtube.
   
   \n>Musique\n
-    Je suis aussi pianiste, guitariste et compositeur de musiques de films. Mes films de voyages sont accompagnés de mes propres compositions, pour faire le pont entre mes deux passions.
+    Je suis aussi pianiste, guitariste et compositeur de musique de films. Et pour faire le pont entre mes deux passions, mes films de voyages sont accompagnés de mes propres compositions.
     `,
   button1: "Plus de voyages",
   link1: "www.pierrequiroulevoyages.com",
@@ -73,24 +79,30 @@ const obj2 = {
   gif: question_Gif,
   img: question_Gif,
   description: `
-  \n>Et pourquoi pas votre projet ? \n
-  Il reste ici une carte de libre. Pourquoi pas votre projet ?
-  N'hésitez pas à me contacter pour en discuter
+  \n>Parce-que c'est votre projet ! \n
+  Il reste ici une carte de libre. Ce sera peut-être votre projet ?
+  N'hésitez pas à me contacter pour en discuter.
 `,
+  button1: "par email",
+  link1: "mailto:mallerep@gmail.com",
+  button2: "linkedin",
+  link2: "https://www.linkedin.com/in/pierre-m-676bb7182/",
 };
 /* # # # # # # MEILLEUR TAUX # # # # # # # # # # # # # # # */
 const obj3 = {
   id: 3,
-  title: "E-learning conduite auto",
+  title: "E-learning",
+  // title: "E-learning conduite auto",
   gif: tgd_vid,
   img: tgd_img,
   description: `
-  \n>E-Learning de conduite pour les auto-écoles\n
+  \n>E-Learning de conduite auto\n
 
-  \n J'ai réalisé ce E-Learning, vendu aux auto-écoles afin que les élèves s'auto-forment avant les heures de conduite. Via une interface de back-office complète, le concepteur pédagogique peut écrire des exercices comme: QCM, QCM vidéos, jeux interactifs de reconnaissance de situations ou de panneaux. Elle possède une fonctionnalité de lecture automatique par une voix robotisée pour le public qui n'aurait pas l'habitude de lire
-    \n>Stack technique
-    \nFrontend: React, Redux/Saga
-    \nBackend: Node.js, express, mongoDB, Loopback, AWS S3 EC2 et polly
+  Pour l'entreprise Thegooddrive, j'ai réalisé un E-Learning qui permet aux élèves des auto-école de s'entrainer avant de démarrer les heures de conduite.
+  \n>Fonctionnalités\n
+  QCM, lecture vidéos, reconstitution de panneaux routiers, clic sur vidéo pour détecter les dangers. Et surtout, rien n'est figé: via un back-office puissant, le client peut écrire ses propres exercices, uploader ses propres vidéos. C'est un vrai CMS de E-Learning.
+  \n>Stack technique\n
+    React.js, Javascript, Express.js, AWS S3 EC2 Polly, 
     `,
   button1: "the good drive",
   link1: "https://www.thegooddrive.fr/",
@@ -100,61 +112,61 @@ const obj3 = {
 /* # # # # # # TICTACTOE # # # # # # # # # # # # # # # */
 const obj4 = {
   id: 4,
-  title: "Morpion Géant",
+  title: "Jeu multijoueur",
+  // title: "Morpion Géant",
   gif: TTT_Gif,
   img: TTT_Img,
   description: `
-  MORPION GÉANT - PROJET PERSONNEL
-  \n Au collège ou au lycée, lorsque je voulais faire passer le temps, je sortais une feuille de papier vierge et démarrais un morpion sans limite avec mon voisin.
-  Voici la version en ligne de ce concept de jeu :
-    \n Deux personnes doivent ouvrir la même url sur leur navigateur ou leur téléphone et entrer un nom d'utilisateur. Le jeu permet de sélectionner une grille de 5x5 à 12x12, et les points sont comptés. Un programme de back-end centralise les coups et les renvoie à l'IP de l'adversaire.
-    J'ai réalisé ce jeu pour le plaisir.
-    \n>Stack
-    \nFrontend: Node.js, React, CSS, Axios, 
-    \nBackend: Node.js, express, websocket,
+  \n>Morpion géant\n
+  \n Au collège ou au lycée, lorsque je voulais faire passer le temps, je sortais une feuille de papier quadrillée et démarrais un morpion sans limite avec mon voisin.
+  J'ai conçu la version en ligne de ce concept de jeu, pour le plaisir :
+  \n>Mode opératoire\n
+  Deux personnes doivent ouvrir l'url sur ci-dessous sur leur navigateur ou leur téléphone. Entrer un nom d'utilisateur. Attendre que le nom de l'adversaire apparaisse, et cliquer dessus pour démarrer une partie.
+  \n>Stack technique\n
+   node.js, express, React, websockets. Hébergé sur render.com
     `,
-  button1: "Essayez-le",
-  link1: "https://giant-tic-tac-toe.netlify.com/",
+  button1: "Essayez-le !",
+  link1: "https://pierremorpion.netlify.app/",
 };
 /* # # # # # # GARELLI # # # # # # # # # # # # # # # */
 const obj5 = {
   id: 5,
-  title: "Mineurs non accompagnés",
+  title: "Collecte data",
+  // title: "Mineurs non accompagnés",
   gif: garelli_vid,
   img: garelli_png,
-  description: `Pour une association qui recueille des mineurs isolés étrangers, j'ai réalisé un application qui permet de renseigner leur évolution au cours de leur prise en charge.
-  Il s'agit de répondre à un questionnaire par catégories.
-  Je met à disposition de l'association tout le back-office qui lui permet de créer ses propres catégories, ses critères et leur poids.
-  N'hésitez pas à contacter l'association pour leur demander des retours sur notre collaboration.
-\n>fonctionnalités clés:
-login utilisateur, stockage de données dans le cloud, calcul automatique de résultats, paramétrage d'un questionnaire
-\n>Stack:
-Front-end: React, Zustand, 
-Back-end: Node.js, Strapi, Cloudinary, mySql, Heroku`,
+  description: `
+  \n>Suivi de mineurs isolés étrangers\n
+  
+  Garelli95 est une association à qui l'état confie des mineurs isolés étrangers.
+  Leur besoin était d'enregistrer l'évolution des jeunes via un questionnaire réalisé tous les six mois. L'interface se devait d'être chaleureuse et ludique, pour donner envie.
+
+  J'ai conçu en complément une interface Back-office (en fond d'écran) qui permet de modifier les questions, catégories, utilisateurs etc ... N'hésitez pas à les contacter pour leur demander des retours sur notre collaboration
+  
+  React, Zustand, Strapi, Cloudinary, MySql, Heroku`,
   link1: "https://www.donbosco-actionsociale.org/associations/garelli-95/",
-  button1: "l'association",
-  // link2: "https://leboncoinfullstack.netlify.com/",
-  // button2: "Github repo",
+  button1: "Garelli 95",
 };
 /* # # # # # # FRANC MANGER # # # # # # # # # # # # # # # */
 const obj6 = {
   id: 6,
-  title: "Producteurs Bio",
+  title: "Diagrammes interactifs",
+  // title: "Gantt personalisé",
   description: `
-  J'ai développé ce MVP pour le compte d'une start-up parisienne dont le but est de rapprocher les consommateurs des agriculteurs locaux.
-  Lors d'un déplacement de loisir, les utilisateurs peuvent découvrir toutes les fermes bio qu'ils peuvent visiter autour d'eux.
-    \n>Fonctionnalités clé:
-    Géolocalisation, intégration de google maps, base de données, back office, application téléphone 
-    \n>Stack
+  \n>Diagramme interactifs pour Quantic Dream\n
+  Quantic Dream est un grand éditeur de jeu vidéo français.
+  \n>Stack\n
     \nFrontend: ReactNative ,
     \nBackend: Node.js, express, mongoDB, Cloudinary`,
-  gif: francmanger_Img,
-  img: francmanger_Gif,
+  gif: flux_vid,
+  img: flux_img,
+  link1: "https://www.netdevices.fr/portfolio/quantic-dream/",
+  button1: "Détails du projet",
 };
 /* # # # # # # AirBnB # # # # # # # # # # # # # # # */
 const obj7 = {
   id: 7,
-  title: "Livraison de repas",
+  title: "Appli de livraison",
   gif: NE_vid,
   img: NE_img,
   description: `

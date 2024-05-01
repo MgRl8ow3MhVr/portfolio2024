@@ -51,13 +51,11 @@ const sortProjects = (word, listProjects) => {
 
   //ici on n'a pas trouvé de combinaison
   if (currResult.length === 1) {
-    console.log("pas trouve", occurence);
     listProjects.map((proj) => {
       proj.bigletter = -1;
     });
     return listProjects;
   }
-  console.log(currResult, occurence);
 
   return currResult;
 };

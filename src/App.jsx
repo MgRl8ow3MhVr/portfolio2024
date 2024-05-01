@@ -25,19 +25,20 @@ function App() {
   //   "github",
   // ];
   const wordsList = [
-    // "full stac",
-    "malleret",
-    "pierre",
-    "projets",
-    "choisis",
-    "web app",
-    "design",
-    "react",
-    "html",
-    "node.js",
-    "developer",
+    "bienvenue",
+    "sur le",
     "portfolio",
+    "de dev",
+    "de pierre",
+    "malleret",
+    "zzzzzzzzz",
+    "web apps",
+    "design",
     "responsiv",
+    "react",
+    "javascript",
+    "contactez",
+    "moi !",
   ];
   const [carts, setCarts] = useState([
     false,
@@ -50,7 +51,6 @@ function App() {
     false,
     false,
   ]);
-  const [classChange, setClassChange] = useState(true);
   const [wordNum, setWordNum] = useState(-1);
   const [justLanded, setJustLanded] = useState(true);
   const [projetsList, setProjectList] = useState(cartes);
@@ -104,9 +104,9 @@ function App() {
     }
   };
 
-  document.addEventListener("DOMContentLoaded", () => {
-    console.log("LOADED");
-  });
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   console.log("LOADED");
+  // });
 
   // document.addEventListener('scroll', () => {
   //   const pixels = window.pageYOffset
@@ -124,19 +124,14 @@ function App() {
       <div className="header">PIERRE MALLERET</div>
       <div className="subtitle">
         <span>PROJETS CHOISIS</span>
-        <div
-          onClick={() => {
-            pickAWord();
-          }}
-        >
-          {/* <Reload /> */}
-          {/* <img src={click} alt="clic" /> */}
-          {/* <span>tryme</span> */}
-          {/* <img src={dice} alt="dice" /> */}
-          <Dice />
-        </div>
       </div>
-
+      <div
+        onClick={() => {
+          pickAWord();
+        }}
+      >
+        <Dice />
+      </div>
       <div
         className="gridprojects"
         onClick={(event) => {
@@ -152,7 +147,7 @@ function App() {
           {prevProjList.map((projet, index) => {
             //Search position of the current project in the new Array Projectlist and set it to the class.
             const pos = search(projet.id);
-            const currProj = prevProjList[pos];
+            // const currProj = prevProjList[pos];
             return (
               <div
                 key={index}
@@ -183,6 +178,7 @@ function App() {
         </div>
         {/* end of gridProject */}
       </div>
+      <p className="footer"> &#169; Pierre Malleret 2024</p>
       {/* end of App */}
     </div>
   );
