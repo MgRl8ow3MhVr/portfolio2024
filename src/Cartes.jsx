@@ -22,7 +22,7 @@ import garelli_vid from "./assets/garelli.gif";
 import garelli_png from "./assets/garelli.png";
 // NeedEat
 import NE_vid from "./assets/NE.gif";
-import NE_img from "./assets/NE.png";
+import NE_img from "./assets/NE.jpg";
 
 // flux
 import flux_vid from "./assets/flux.gif";
@@ -88,7 +88,7 @@ const obj2 = {
   button2: "linkedin",
   link2: "https://www.linkedin.com/in/pierre-m-676bb7182/",
 };
-/* # # # # # # MEILLEUR TAUX # # # # # # # # # # # # # # # */
+/* # # # # # # ELEARNING # # # # # # # # # # # # # # # */
 const obj3 = {
   id: 3,
   title: "E-learning",
@@ -109,7 +109,7 @@ const obj3 = {
   button2: "e-Learning",
   link2: "https://elearning.tgdcloud.com/",
 };
-/* # # # # # # TICTACTOE # # # # # # # # # # # # # # # */
+/* # # # # # # JEUX # # # # # # # # # # # # # # # */
 const obj4 = {
   id: 4,
   title: "Jeu multijoueur",
@@ -131,7 +131,7 @@ const obj4 = {
 /* # # # # # # GARELLI # # # # # # # # # # # # # # # */
 const obj5 = {
   id: 5,
-  title: "Collecte data",
+  title: "Formulaire ludique",
   // title: "Mineurs non accompagnés",
   gif: garelli_vid,
   img: garelli_png,
@@ -139,51 +139,53 @@ const obj5 = {
   \n>Suivi de mineurs isolés étrangers\n
   
   Garelli95 est une association à qui l'état confie des mineurs isolés étrangers.
-  Leur besoin était d'enregistrer l'évolution des jeunes via un questionnaire réalisé tous les six mois. L'interface se devait d'être chaleureuse et ludique, pour donner envie.
+  Leur besoin était d'enregistrer l'évolution des jeunes via un questionnaire réalisé tous les six mois, et ainsi évaluer leur action. L'interface se devait d'être chaleureuse et animée, pour donner envie.
 
-  J'ai conçu en complément une interface Back-office (en fond d'écran) qui permet de modifier les questions, catégories, utilisateurs etc ... N'hésitez pas à les contacter pour leur demander des retours sur notre collaboration
+  J'ai conçu en complément une interface Back-office (en fond d'écran) qui permet de paramétrer les questions, catégories, utilisateurs etc... N'hésitez pas à les contacter pour leur demander des retours sur notre collaboration
   
-  React, Zustand, Strapi, Cloudinary, MySql, Heroku`,
+  Stack technique : React, Zustand, Strapi, Cloudinary, MySql, Heroku`,
   link1: "https://www.donbosco-actionsociale.org/associations/garelli-95/",
   button1: "Garelli 95",
 };
-/* # # # # # # FRANC MANGER # # # # # # # # # # # # # # # */
+/* # # # # # # DIAGRAMMES # # # # # # # # # # # # # # # */
 const obj6 = {
   id: 6,
   title: "Diagrammes interactifs",
   // title: "Gantt personalisé",
   description: `
-  \n>Diagramme interactifs pour Quantic Dream\n
-  Quantic Dream est un grand éditeur de jeu vidéo français.
-  \n>Stack\n
-    \nFrontend: ReactNative ,
-    \nBackend: Node.js, express, mongoDB, Cloudinary`,
+  \n>Gantt personalisé pour Quantic Dream\n
+  Quantic Dream est un éditeur de jeu vidéo français à succès. J'ai conçu pour eux un diagramme de Gantt (fond d'écran) à l'échelle de cinq ans qui permet de faire ressortir dépendances et blocages entre chantiers.
+  \n>Diagramme de flux pour Alkalee\n
+    Alkalee est une start-up qui développe un moteur de simulation des circuits électriques dans les automobiles.
+    L'interface que j'ai développée permet à un utilisateur de "connecter des boîtes entre elles" afin de construire un shéma électronique. Un appel à leur moteur affichera ensuite les résultats.
+
+  Stack utilisée : React, Bryntum, React-Flow, api Jira 
+  `,
   gif: flux_vid,
   img: flux_img,
   link1: "https://www.netdevices.fr/portfolio/quantic-dream/",
-  button1: "Détails du projet",
+  button1: "Quantic Dream",
+  link2: "https://www.alkalee.fr/our-products-and-services/product-euphilia/",
+  button2: "Alkalee",
 };
-/* # # # # # # AirBnB # # # # # # # # # # # # # # # */
+/* # # # # # # LIVRAISON # # # # # # # # # # # # # # # */
 const obj7 = {
   id: 7,
   title: "Appli de livraison",
   gif: NE_vid,
   img: NE_img,
   description: `
-  NEEDEAT: LE UBER EATS DE NOUVELLE CALEDONIE
-  Needeat est le Deliveroo de la nouvelle calédonie! En équipe de trois développeurs, ils nous ont demandé de créer leurs applications:
-  - Application utilisateur
-  - Application livreur
-  - Back-Office restaurant
-  Le tout, orchestré par un back-end qui dispatche les commandes aux livreurs de manière intelligente et un service de paiement en ligne.
-    \n>Stack
-    \nReact Native, React, React-admin, Node.js, express, Stripe, lemonway`,
+  \n>Application de livraison de repas\n
+  En un mot, Needeat est le Deliveroo de Noumea, leader de la livraison en nouvelle calédonie. Avec une équipe de trois développeurs, nous avons créé les trois applications nécessaires pour faire tourner un tel réseau: l'app utilisateur, l'app livreur, l'app restautant.
+  Le tout est orchestré par un programme back-end qui dispatche intelligemment les commandes aux livreurs qui sont géolocalisés avec leur application
+  \n>Stack technique\n
+   React Native, React, React-admin, Node.js, express, Stripe, lemonway`,
   link1: "https://needeat-nc.com/",
   button1: "le site",
   link2: "https://play.google.com/store/apps/details?id=com.NeedEat.user",
   button2: "sur playstore",
 };
-/* # # # # # # THIS WEBSITE # # # # # # # # # # # # # # # */
+/* # # # # # # Eco # # # # # # # # # # # # # # # */
 const obj8 = {
   id: 8,
   title: "Eco Conception Web",
