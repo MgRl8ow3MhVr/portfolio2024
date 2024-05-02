@@ -28,7 +28,8 @@ import NE_img from "./assets/NE.jpg";
 import flux_vid from "./assets/flux.gif";
 import flux_img from "./assets/flux.jpg";
 // Eco
-import ecoImg from "./assets/ecoImg.jpg";
+import eco_img from "./assets/eco.jpg";
+import eco_vid from "./assets/eco.gif";
 
 /* # # # # # # ABOUT ME # # # # # # # # # # # # # # # */
 const obj0 = {
@@ -171,7 +172,7 @@ const obj6 = {
 /* # # # # # # LIVRAISON # # # # # # # # # # # # # # # */
 const obj7 = {
   id: 7,
-  title: "Appli de livraison",
+  title: "App de livraison",
   gif: NE_vid,
   img: NE_img,
   description: `
@@ -189,20 +190,18 @@ const obj7 = {
 const obj8 = {
   id: 8,
   title: "Eco Conception Web",
-  description: `Ce site, sur lequel j'espère vous passez un moment agréable, respecte les principes de l'éco-conception web.
-    \n Vous avez téléchargé 9ko pour le visualiser en entier, il est donc hyper léger, et par conséquent rapide à charger
-    \n Il est sobre: pas d'images, de vidéos partout
-    \n Il y a 49 appels pour charger tout le site. Ceci est notamment dû aux 9 images et 9 vidéos très compressées que je n'ai pas pu m'empêcher de faire apparaître pour rendre la navigation agréable.
-    \n Et plus important: il a été conçu sur un MacBookPro 2017, qui tourne toujours très bien à l'heure actuelle.
-    \n En 2024: l'impact du numérique sur l'environnement a rattrapé le poids du transport aérien. Dans les années à venir, concevoir des applications web de manière sobre, durable sera de plus en plus important.
-    \n Si nous travaillons ensemble, je serai sensible à ces sujets 
-    `,
+  description: `
+  \n>Eco conception\n
+  Pour visualiser ce site, vous avez téléchargé 4Mo en 15 requêtes. Il y a encore du progrès à faire de mon côté pour passer sous la barre des 3Mo obtenir une meilleure note.
+  En 2024, l'impact du numérique sur l'environnement est équivalent à celui du transport aérien. Dans les années à venir, concevoir des applications web peu consommatrices en énergie sera indispensable.
+  Je me forme en continu sur l'éco-conception web pour faire partie d'un avenir numérique durable.
+  Si nous travaillons ensemble, je serai sensible à ces sujets, et j'espère que nous aurons une note de A sur ecoindex.fr ;)
+  `,
   // gif: thiswebsite_Gif,
-  img: ecoImg,
-  link1: "https://pierredev.netlify.com/",
-  button1: "visit recursively",
-  link2: "https://github.com/MgRl8ow3MhVr/portfolio",
-  button2: "Github repo",
+  img: eco_img,
+  gif: eco_vid,
+  link1: "https://www.ecoindex.fr/",
+  button1: "Testez vos sites préférés !",
 };
 
 export default [obj0, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8];

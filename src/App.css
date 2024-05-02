@@ -11,6 +11,9 @@
 body {
   overflow: scroll;
   background-color: #fbf2ec;
+  -webkit-tap-highlight-color: transparent;
+  --sizeProject: 170px;
+  --transTime: 1s;
 }
 
 /* # # # # # # # # # MAIN PAGE # # # # # # # # #  */
@@ -46,10 +49,6 @@ body {
   color: rgba(89, 87, 87, 0.872);
 }
 
-body {
-  --sizeProject: 170px;
-  --transTime: 1s;
-}
 .projectscontenair {
   width: calc((var(--sizeProject) * 3 - 5px));
   height: calc((var(--sizeProject) * 3 - 5px));
@@ -341,14 +340,9 @@ h2 {
   }
 }
 
-/* # # # # # # # # # RESPONSIVE # # # # # # # # #  */
+/* # # # # # # # # # # # # # # #  RESPONSIVE # # # # # # # # #  */
 
 @media (max-width: 850px) {
-  .cart {
-    /* Style */
-    height: 110px;
-    width: 110px;
-  }
   body {
     --sizeProject: 115px;
   }
@@ -366,9 +360,6 @@ h2 {
 
   .t1 {
     font-size: 50px;
-    /* transition: all 0.3s linear;
-    text-align: center;
-    text-transform: uppercase; */
   }
   .t2 {
     color: white;
@@ -386,12 +377,10 @@ h2 {
 
   /* DESCRIPTION */
   .description p {
-    font-size: 13px;
+    font-size: 10px;
     color: white;
   }
-  .description > div {
-    height: auto;
-  }
+
   .description a {
     background-color: #d8b4a0;
     border-radius: 3px;
@@ -401,6 +390,26 @@ h2 {
     font-weight: bold;
     margin: 10px;
     font-size: 14px;
+  }
+  h2 {
+    font-size: 14px;
+    margin: 5px 0 5px 0;
+  }
+  .description > div {
+    padding: 5px 5px 0px 5px;
+    /* margin-top: 89%; */
+    /* height: calc(100% - 5px); */
+    /* min-height: 40%; */
+  }
+  .description > div {
+    /* height: auto; */
+  }
+  .chevron {
+    height: 20px;
+  }
+
+  .buttons {
+    padding: 5px;
   }
 }
 

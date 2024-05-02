@@ -6,20 +6,19 @@ const Modale = ({ project }) => {
   useEffect(() => {
     const el = document.querySelector(".description");
     if (el) {
-      // console.log("yes");
+      console.log(document.body.clientWidth);
+      const limitpx = document.body.clientWidth < 850 ? 300 : 445;
       // console.log(el.scrollTop)
       el.addEventListener("scroll", () => {
         console.log(el.scrollTop);
-        if (el.scrollTop > 445) {
+        if (el.scrollTop > limitpx) {
           document.querySelector(".chevron").classList.add("chevronDown");
         } else {
           document.querySelector(".chevron").classList.remove("chevronDown");
         }
       });
     }
-    return () => {
-      console.log("bye");
-    };
+    return () => {};
   }, []);
   //Detect when top of Scroll then change chevrons direction
 
