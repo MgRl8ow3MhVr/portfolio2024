@@ -33,6 +33,7 @@ body {
   color: rgba(46, 46, 46, 0.872);
   margin-top: 20px;
   letter-spacing: 10px;
+  animation: appear 0.5s ease-in;
 }
 
 .subtitle {
@@ -41,6 +42,7 @@ body {
   flex-direction: column;
   align-items: center;
   letter-spacing: 10px;
+  animation: appear 1s ease-in;
 }
 /* Selected project */
 .subtitle > span {
@@ -52,6 +54,7 @@ body {
 .projectscontenair {
   width: calc((var(--sizeProject) * 3 - 5px));
   height: calc((var(--sizeProject) * 3 - 5px));
+  animation: appear 0.8s ease-in;
 }
 
 /* # # # # # # # # # CART # # # # # # # # #  */
@@ -397,13 +400,8 @@ h2 {
   }
   .description > div {
     padding: 5px 5px 0px 5px;
-    /* margin-top: 89%; */
-    /* height: calc(100% - 5px); */
-    /* min-height: 40%; */
   }
-  .description > div {
-    /* height: auto; */
-  }
+
   .chevron {
     height: 20px;
   }
@@ -420,4 +418,63 @@ h2 {
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   bottom: 10px;
+}
+
+/*  Dice */
+.dice {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: appear 1.7s ease-in;
+}
+
+.trythis {
+  color: rgba(46, 46, 46, 0.872);
+  width: 70px;
+  display: flex;
+}
+
+.trythis > div:nth-child(1) {
+  animation: trythis1 1s infinite alternate;
+}
+
+.trythis > div:nth-child(2) {
+  animation: trythis2 1s infinite alternate;
+}
+.trythis > div:nth-child(3) {
+  animation: trythis3 1s infinite alternate;
+}
+
+@keyframes trythis1 {
+  from {
+  }
+  to {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes trythis2 {
+  from {
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+@keyframes trythis3 {
+  from {
+  }
+  to {
+    transform: translateX(12px);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

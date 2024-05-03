@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import "./Dice.css";
 
-const Dice = () => {
+const Dice = ({ word }) => {
+  console.log(word);
+  if (!word) return null;
   return (
     <div className="container">
       <div className="cube-container">
@@ -16,12 +18,12 @@ const Dice = () => {
             }, 870);
           }}
         >
-          <div className="box box1 front">Click</div>
-          <div className="box box1 right">Shuffle</div>
-          <div className="box box1 top">Click</div>
-          <div className="box box1 bottom">Random</div>
-          <div className="box box1 left">Me</div>
-          <div className="box box1 back">Click</div>
+          <div className="box box1 front">{word.charAt(0)}</div>
+          <div className="box box1 right">{word.charAt(1)}</div>
+          <div className="box box1 top">{word.charAt(2)}</div>
+          <div className="box box1 bottom">{word.charAt(3)}</div>
+          <div className="box box1 left">{word.charAt(4)}</div>
+          <div className="box box1 back">{word.charAt(5)}</div>
         </div>
       </div>
     </div>

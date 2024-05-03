@@ -58,6 +58,7 @@ function App() {
   const [projetsList, setProjectList] = useState(cartes);
   const [prevProjList, setPrevProjList] = useState(cartes);
   const [modaleNum, setModaleNum] = useState(null);
+  const [showTryThis, setShowTryThis] = useState(true);
 
   //pick the next word from the list and reorganize the projecList with new order and new bigletters
   const pickAWord = () => {
@@ -75,6 +76,9 @@ function App() {
 
     // Change the list according to the new picked word
     setProjectList(sortProjects(wordsList[num], cartes));
+    if (showTryThis) {
+      setShowTryThis(false);
+    }
   };
 
   //and use it with first word of the list at landing
@@ -82,6 +86,7 @@ function App() {
     pickAWord(wordNum);
     setTimeout(() => {
       setJustLanded(false);
+      setShowTryThis(true);
     }, 200);
   }, []);
 
@@ -105,15 +110,6 @@ function App() {
       }
     }
   };
-
-  // document.addEventListener("DOMContentLoaded", () => {
-  //   console.log("LOADED");
-  // });
-
-  // document.addEventListener('scroll', () => {
-  //   const pixels = window.pageYOffset
-  //   console.log(`distance du scroll: ${pixels} px`)
-  // })
   /* # # # # # # APP # # # # # # # # # # # # # # # # # # # # # # # # # # */
 
   return (
@@ -127,12 +123,20 @@ function App() {
       <div className="subtitle">
         <span>PROJETS CHOISIS</span>
       </div>
-      <div
-        onClick={() => {
-          pickAWord();
-        }}
-      >
-        <Dice />
+      <div className="dice">
+        {showTryThis && (
+          <div className="trythis">
+            {`Try this`} <div>{`>`}</div> <div>{`>`}</div> <div>{`>`}</div>
+          </div>
+        )}
+        <div
+          onClick={() => {
+            pickAWord();
+          }}
+        >
+          <Dice word={wordsList[wordNum]} />
+        </div>
+        {showTryThis && <div className="trythis"></div>}
       </div>
       <div
         className="gridprojects"

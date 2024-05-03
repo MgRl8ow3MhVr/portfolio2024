@@ -8,6 +8,7 @@
 }
 
 .container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,15 +43,26 @@
   color: white;
   letter-spacing: 0.08em;
   font-family: "Roboto", sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* animation: clickme 3s infinite; */
+  text-align: center;
 }
+
 .container .cube-container .cube .box.front {
   background: var(--diceCol1);
   transform: translateZ(var(--widthDiceH));
+}
+@keyframes clickme {
+  from {
+    color: rgb(202, 202, 202);
+  }
+  to {
+    color: #5c5c5c;
+  }
 }
 
 .container .cube-container .cube .box.back {
