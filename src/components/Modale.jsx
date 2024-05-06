@@ -6,11 +6,9 @@ const Modale = ({ project }) => {
   useEffect(() => {
     const el = document.querySelector(".description");
     if (el) {
-      console.log(document.body.clientWidth);
-      const limitpx = document.body.clientWidth < 850 ? 300 : 445;
+      const limitpx = document.body.clientWidth < 850 ? 250 : 400;
       // console.log(el.scrollTop)
       el.addEventListener("scroll", () => {
-        console.log(el.scrollTop);
         if (el.scrollTop > limitpx) {
           document.querySelector(".chevron").classList.add("chevronDown");
         } else {

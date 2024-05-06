@@ -31,9 +31,20 @@ function Project({ gif, show, setCarts, title, color, bigletter, openModale }) {
       style={color && { backgroundColor: color }}
     >
       <div className={show ? "titlesin" : "titlesout"}>
-        <div className={show ? "t2h" : "t2"}>{title.substring(0, pos)}</div>
+        {title.substring(0, pos)
+          ? title
+              .substring(0, pos)
+              .split(show ? " " : "$")
+              .map((w) => <div className={show ? "t2h" : "t2"}>{w}</div>)
+          : !show && <div className="hideme">{` eee `}</div>}
+
         <div className={show ? "t1h" : "t1"}>{title.charAt(pos)}</div>
-        <div className={show ? "t2h" : "t2"}>{title.substring(pos + 1)}</div>
+        {title.substring(pos + 1)
+          ? title
+              .substring(pos + 1)
+              .split(show ? " " : "$")
+              .map((w) => <div className={show ? "t2h" : "t2"}>{w}</div>)
+          : !show && <div className="hideme">{` eee `}</div>}
       </div>
 
       <Fade show={show}>

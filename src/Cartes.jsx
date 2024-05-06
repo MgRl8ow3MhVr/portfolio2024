@@ -34,13 +34,13 @@ import eco_vid from "./assets/eco.gif";
 /* # # # # # # ABOUT ME # # # # # # # # # # # # # # # */
 const obj0 = {
   id: 0,
-  title: "Who is Pierre",
+  title: "Qui suis-je",
   gif: cv_Gif,
   img: cv_Img,
   description: `
   \n>Qui suis-je ?\n
 
-  Bienvenue. Je m'appelle Pierre, j'ai 38, développeur fullstack. Cela signifie que je sais concevoir un site complet, front-end (app ou web-app), back-end, base de données, animations.
+  Bienvenue. Je m'appelle Pierre, 38 ans, développeur fullstack. Cela signifie que je sais concevoir un site complet, front-end (app ou web-app), back-end, base de données, animations.
 
   J'ai une sensibilité pour les interfaces créatives et animées, ainsi que pour l'éco-conception numérique sur laquelle je me forme en continu.
 
@@ -113,18 +113,18 @@ const obj3 = {
 /* # # # # # # JEUX # # # # # # # # # # # # # # # */
 const obj4 = {
   id: 4,
-  title: "Jeu multijoueur",
+  title: "Web app multijoueur",
   // title: "Morpion Géant",
   gif: TTT_Gif,
   img: TTT_Img,
   description: `
   \n>Morpion géant\n
   \n Au collège ou au lycée, lorsque je voulais faire passer le temps, je sortais une feuille de papier quadrillée et démarrais un morpion sans limite avec mon voisin.
-  J'ai conçu la version en ligne de ce concept de jeu, pour le plaisir :
+  J'ai conçu la version en ligne de ce concept de jeu :
   \n>Mode opératoire\n
   Deux personnes doivent ouvrir l'url sur ci-dessous sur leur navigateur ou leur téléphone. Entrer un nom d'utilisateur. Attendre que le nom de l'adversaire apparaisse, et cliquer dessus pour démarrer une partie.
   \n>Stack technique\n
-   node.js, express, React, websockets. Hébergé sur render.com
+   node.js, express, React, websockets, render.com
     `,
   button1: "Essayez-le !",
   link1: "https://pierremorpion.netlify.app/",
