@@ -25,7 +25,6 @@ function App() {
   //   "github",
   // ];
   const wordsList = [
-    "zzzzz",
     "bienvenue",
     "sur   le",
     "portfolio",
@@ -128,7 +127,8 @@ function App() {
       <div className="dice">
         {showTryThis && (
           <div className="trythis">
-            {`Try this`} <div>{`>`}</div> <div>{`>`}</div> <div>{`>`}</div>
+            <span>Cliquez!</span> <div>{`>`}</div> <div>{`>`}</div>{" "}
+            <div>{`>`}</div>
           </div>
         )}
         <div
