@@ -52,7 +52,7 @@ const obj0 = {
   link1: "mailto:mallerep@gmail.com",
   button2: "Mon CV",
   link2:
-    "https://drive.google.com/file/d/11Cbd9Y5k_97tm4JdzTDyDP9do5P3dmdn/view?usp=sharing",
+    "https://drive.google.com/file/d/1GrYnn31s-OLOEN3u22N_Ojw58TxcD8dV/view?usp=drive_link",
 };
 /* # # # # # # CYCLING AROUND # # # # # # # # # # # # # # # */
 const obj1 = {
@@ -80,7 +80,7 @@ const obj2 = {
   gif: question_Gif,
   img: question_Gif,
   description: `
-  \n>Parce-que c'est votre projet ! \n
+  \n>Votre projet ! \n
   Il reste ici une carte de libre. Ce sera peut-être votre projet ?
   N'hésitez pas à me contacter pour en discuter.
 `,

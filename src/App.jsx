@@ -28,7 +28,6 @@ function App() {
     "bienvenue",
     "sur   le",
     "portfolio",
-    "de    dev",
     "de pierre",
     "malleret",
     "je sais",
