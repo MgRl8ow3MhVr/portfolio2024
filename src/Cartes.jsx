@@ -68,9 +68,7 @@ const obj1 = {
     Je suis aussi pianiste, guitariste et compositeur de musique de films. Et pour faire le pont entre mes deux passions, mes films de voyages sont accompagnés de mes propres compositions.
     `,
   button1: "Plus de voyages",
-  link1: "www.pierrequiroulevoyages.com",
-  button2: "Plus de musique",
-  link2: "https://www.youtube.com/@pierrequiroulevoyages1231/videos",
+  link1: "https://www.youtube.com/@pierrequiroulevoyages1231/videos",
 };
 
 /* # # # # # # YOUR PROJECT # # # # # # # # # # # # # # # */
