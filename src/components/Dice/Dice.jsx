@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import "./Dice.css";
 
 const Dice = ({ word }) => {
-  console.log(word);
   if (!word) return null;
   return (
     <div className="container">

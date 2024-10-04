@@ -1,32 +1,25 @@
 import React, { useEffect } from "react";
 import Fade from "./Fade.jsx";
 
-function Project({ gif, show, setCarts, title, color, bigletter, openModale }) {
-  useEffect(() => {
-    const img = document.createElement("img");
-    img.src = gif;
-  }, []);
-
+function Project({
+  gif,
+  show,
+  hoverMe,
+  hoverOff,
+  title,
+  color,
+  bigletter,
+  openModale,
+}) {
   const pos = bigletter !== undefined ? bigletter : -1;
-  const emptyBoard = [
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ];
   return (
     <div
       className="cart"
       onMouseEnter={() => {
-        setCarts();
+        hoverMe();
       }}
       onMouseLeave={() => {
-        setCarts(emptyBoard);
+        hoverOff();
       }}
       style={color && { backgroundColor: color }}
     >
@@ -36,7 +29,7 @@ function Project({ gif, show, setCarts, title, color, bigletter, openModale }) {
               .substring(0, pos)
               .split(show ? " " : "$")
               .map((w) => <div className={show ? "t2h" : "t2"}>{w}</div>)
-          : !show && <div className="hideme">{` eee `}</div>}
+          : !show && <div className="hideme">{``}</div>}
 
         <div className={show ? "t1h" : "t1"}>{title.charAt(pos)}</div>
         {title.substring(pos + 1)
@@ -44,18 +37,22 @@ function Project({ gif, show, setCarts, title, color, bigletter, openModale }) {
               .substring(pos + 1)
               .split(show ? " " : "$")
               .map((w) => <div className={show ? "t2h" : "t2"}>{w}</div>)
-          : !show && <div className="hideme">{` eee `}</div>}
+          : !show && <div className="hideme">{``}</div>}
       </div>
 
-      <Fade show={show}>
-        <img
-          src={gif}
-          alt="gif"
-          onClick={() => {
-            openModale();
-          }}
-        />
-      </Fade>
+      {/* <Fade show={show}> */}
+      {show && (
+        <div className="gifcard">
+          <img
+            src={gif}
+            alt="gif"
+            onClick={() => {
+              openModale();
+            }}
+          />
+        </div>
+      )}
+      {/* </Fade> */}
     </div>
   );
 }

@@ -1,0 +1,656 @@
+body {
+  --timeanim: 1.1s;
+  --timeanimout: 0.8s;
+  --opacityOut: 0;
+}
+
+/* SLIDE 0 # # # # # # # # # # # # # # # # # # # # # #  */
+@keyframes slide0In {
+  0% {
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  8% {
+    opacity: 1;
+  }
+  25% {
+    width: var(--sizeProject);
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+  }
+  70% {
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  100% {
+  }
+}
+@keyframes slide0Out {
+  100% {
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  92% {
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  15% {
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+
+  0% {
+  }
+}
+
+.slide0-enter {
+  animation: slide0In var(--timeanim) forwards;
+}
+
+.slide0-enter-active {
+  animation: slide0In var(--timeanim) forwards;
+}
+
+.slide0-exit {
+  animation: slide0Out var(--timeanimout) forwards;
+}
+
+.slide0-exit-active {
+  animation: slide0Out var(--timeanimout) forwards;
+}
+/* SLIDE 1 # # # # # # # # # # # # # # # # # # # # # #  */
+@keyframes slide1In {
+  0% {
+    opacity: 0;
+    left: calc(50% - var(--sizeProject) / 2);
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  15% {
+    transform: rotate3d(0deg);
+    opacity: 1;
+    left: calc(50% - var(--sizeProject) / 2);
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  50% {
+    left: 0%;
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  70% {
+    left: 0%;
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  100% {
+  }
+}
+@keyframes slide1Out {
+  100% {
+    opacity: 0;
+    left: calc(50% - var(--sizeProject) / 2);
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  70% {
+    transform: rotate3d(0deg);
+    opacity: 1;
+    left: calc(50% - var(--sizeProject) / 2);
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  50% {
+    left: 0%;
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  15% {
+    left: 0%;
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  0% {
+  }
+}
+
+.slide1-enter {
+  animation: slide1In var(--timeanim) forwards;
+}
+
+.slide1-enter-active {
+  animation: slide1In var(--timeanim) forwards;
+}
+
+.slide1-exit {
+  animation: slide1Out var(--timeanimout) forwards;
+}
+
+.slide1-exit-active {
+  animation: slide1Out var(--timeanimout) forwards;
+}
+
+/* SLIDE 2 # # # # # # # # # # # # # # # # # # # # # #  */
+@keyframes slide2In {
+  0% {
+    right: 0;
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  8% {
+    right: 0;
+    opacity: 1;
+  }
+  25% {
+    right: 0;
+    width: var(--sizeProject);
+  }
+  50% {
+    right: 0;
+    width: calc(var(--sizeProject) * 3);
+  }
+  70% {
+    right: 0;
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  100% {
+  }
+}
+@keyframes slide2Out {
+  100% {
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+    right: 0;
+  }
+  92% {
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+    opacity: 1;
+    right: 0;
+  }
+  70% {
+    opacity: 1;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+    right: 0;
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  15% {
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+
+  0% {
+  }
+}
+
+.slide2-enter {
+  animation: slide2In var(--timeanim) forwards;
+}
+
+.slide2-enter-active {
+  animation: slide2In var(--timeanim) forwards;
+}
+
+.slide2-exit {
+  animation: slide2Out var(--timeanimout) forwards;
+}
+
+.slide2-exit-active {
+  animation: slide2Out var(--timeanimout) forwards;
+}
+
+/* SLIDE 3 # # # # # # # # # # # # # # # # # # # # # #  */
+
+@keyframes slide3In {
+  0% {
+    top: calc(50% - var(--sizeProject) / 2);
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  8% {
+    opacity: 1;
+  }
+  25% {
+    width: var(--sizeProject);
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+  }
+  70% {
+    top: calc(50% - var(--sizeProject) / 2);
+
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes slide3Out {
+  100% {
+    top: calc(50% - var(--sizeProject) / 2);
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  92% {
+    opacity: 1;
+    top: calc(50% - var(--sizeProject) / 2);
+  }
+  75% {
+    width: var(--sizeProject);
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+  }
+  25% {
+    top: calc(50% - var(--sizeProject) / 2);
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  0% {
+    top: 0;
+  }
+}
+
+.slide3-enter {
+  animation: slide3In var(--timeanim) forwards;
+}
+
+.slide3-enter-active {
+  animation: slide3In var(--timeanim) forwards;
+}
+
+.slide3-exit {
+  animation: slide3Out var(--timeanimout) forwards;
+}
+
+.slide3-exit-active {
+  animation: slide3Out var(--timeanimout) forwards;
+}
+
+/* SLIDE 4 # # # # # # # # # # # # # # # # # # # # # #  */
+@keyframes slide4In {
+  0% {
+    top: calc(50% - var(--sizeProject) / 2);
+    left: calc(50% - var(--sizeProject) / 2);
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  8% {
+    opacity: 1;
+  }
+  25% {
+    width: var(--sizeProject);
+    left: calc(50% - var(--sizeProject) / 2);
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+    left: 0;
+  }
+  70% {
+    top: calc(50% - var(--sizeProject) / 2);
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes slide4Out {
+  100% {
+    top: calc(50% - var(--sizeProject) / 2);
+    left: calc(50% - var(--sizeProject) / 2);
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  92% {
+    opacity: 1;
+  }
+  75% {
+    width: var(--sizeProject);
+    left: calc(50% - var(--sizeProject) / 2);
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+    left: 0;
+  }
+  25% {
+    top: calc(50% - var(--sizeProject) / 2);
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  0% {
+    top: 0;
+  }
+}
+
+.slide4-enter {
+  animation: slide4In var(--timeanim) forwards;
+}
+
+.slide4-enter-active {
+  animation: slide4In var(--timeanim) forwards;
+}
+
+.slide4-exit {
+  animation: slide4Out var(--timeanimout) forwards;
+}
+
+.slide4-exit-active {
+  animation: slide4Out var(--timeanimout) forwards;
+}
+
+/* SLIDE 5 # # # # # # # # # # # # # # # # # # # # # #  */
+@keyframes slide5In {
+  0% {
+    top: calc(50% - var(--sizeProject) / 2);
+    right: 0;
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  8% {
+    opacity: 1;
+    right: 0;
+  }
+  25% {
+    width: var(--sizeProject);
+    right: 0;
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+    top: calc(50% - var(--sizeProject) / 2);
+  }
+  70% {
+    top: calc(50% - var(--sizeProject) / 2);
+    height: var(--sizeProject);
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes slide5Out {
+  100% {
+    top: calc(50% - var(--sizeProject) / 2);
+    right: 0;
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  92% {
+    opacity: 1;
+    right: 0;
+  }
+  75% {
+    width: var(--sizeProject);
+    right: 0;
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+    top: calc(50% - var(--sizeProject) / 2);
+  }
+  30% {
+    top: calc(50% - var(--sizeProject) / 2);
+    height: var(--sizeProject);
+  }
+  0% {
+    top: 0;
+  }
+}
+
+.slide5-enter {
+  animation: slide5In var(--timeanim) forwards;
+}
+
+.slide5-enter-active {
+  animation: slide5In var(--timeanim) forwards;
+}
+
+.slide5-exit {
+  animation: slide5Out var(--timeanimout) forwards;
+}
+
+.slide5-exit-active {
+  animation: slide5Out var(--timeanimout) forwards;
+}
+
+/* SLIDE 6 # # # # # # # # # # # # # # # # # # # # # #  */
+
+@keyframes slide6In {
+  0% {
+    top: calc(50% + var(--sizeProject) / 2);
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  8% {
+    opacity: 1;
+  }
+  25% {
+    width: var(--sizeProject);
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+  }
+  70% {
+    top: calc(50% + var(--sizeProject) / 2);
+    height: var(--sizeProject);
+  }
+  100% {
+    top: 0;
+    height: calc(var(--sizeProject) * 3);
+  }
+}
+@keyframes slide6Out {
+  100% {
+    top: calc(50% + var(--sizeProject) / 2);
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  92% {
+    opacity: 1;
+  }
+  75% {
+    width: var(--sizeProject);
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+  }
+  30% {
+    top: calc(50% + var(--sizeProject) / 2);
+    height: var(--sizeProject);
+  }
+  0% {
+    top: 0;
+    height: calc(var(--sizeProject) * 3);
+  }
+}
+
+.slide6-enter {
+  animation: slide6In var(--timeanim) forwards;
+}
+
+.slide6-enter-active {
+  animation: slide6In var(--timeanim) forwards;
+}
+
+.slide6-exit {
+  animation: slide6Out var(--timeanimout) forwards;
+}
+
+.slide6-exit-active {
+  animation: slide6Out var(--timeanimout) forwards;
+}
+
+/* SLIDE 7 # # # # # # # # # # # # # # # # # # # # # #  */
+@keyframes slide7In {
+  0% {
+    top: calc(50% + var(--sizeProject) / 2);
+    left: calc(50% - var(--sizeProject) / 2);
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  8% {
+    opacity: 1;
+  }
+  25% {
+    width: var(--sizeProject);
+    left: calc(50% - var(--sizeProject) / 2);
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+    left: 0;
+  }
+  70% {
+    top: calc(50% + var(--sizeProject) / 2);
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes slide7Out {
+  100% {
+    top: calc(50% + var(--sizeProject) / 2);
+    left: calc(50% - var(--sizeProject) / 2);
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  92% {
+    opacity: 1;
+  }
+  75% {
+    width: var(--sizeProject);
+    left: calc(50% - var(--sizeProject) / 2);
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+    left: 0;
+  }
+  25% {
+    top: calc(50% + var(--sizeProject) / 2);
+    width: calc(var(--sizeProject) * 3);
+    height: var(--sizeProject);
+  }
+  0% {
+    top: 0;
+  }
+}
+
+.slide7-enter {
+  animation: slide7In var(--timeanim) forwards;
+}
+
+.slide7-enter-active {
+  animation: slide7In var(--timeanim) forwards;
+}
+
+.slide7-exit {
+  animation: slide7Out var(--timeanimout) forwards;
+}
+
+.slide7-exit-active {
+  animation: slide7Out var(--timeanimout) forwards;
+}
+
+/* SLIDE * # # # # # # # # # # # # # # # # # # # # # #  */
+@keyframes slide8In {
+  0% {
+    top: calc(50% + var(--sizeProject) / 2);
+    right: 0;
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  8% {
+    opacity: 1;
+    right: 0;
+  }
+  25% {
+    width: var(--sizeProject);
+    right: 0;
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+  }
+  70% {
+    top: calc(50% + var(--sizeProject) / 2);
+    height: var(--sizeProject);
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes slide8Out {
+  100% {
+    top: calc(50% + var(--sizeProject) / 2);
+    right: 0;
+    opacity: 0;
+    width: var(--sizeProject);
+    height: var(--sizeProject);
+  }
+  80% {
+    opacity: 1;
+    right: 0;
+  }
+  75% {
+    width: var(--sizeProject);
+    right: 0;
+  }
+  50% {
+    width: calc(var(--sizeProject) * 3);
+  }
+  30% {
+    top: calc(50% + var(--sizeProject) / 2);
+    height: var(--sizeProject);
+  }
+  0% {
+    top: 0;
+  }
+}
+
+.slide8-enter {
+  animation: slide8In var(--timeanim) forwards;
+}
+
+.slide8-enter-active {
+  animation: slide8In var(--timeanim) forwards;
+}
+
+.slide8-exit {
+  animation: slide8Out var(--timeanimout) forwards;
+}
+
+.slide8-exit-active {
+  animation: slide8Out var(--timeanimout) forwards;
+}

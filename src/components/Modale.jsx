@@ -1,32 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Chevron from "./Chevron";
 import Description from "./Description";
+import Close from "../assets/svg/close.jsx";
+import VideoButton from "./VideoButton.jsx";
+import VideoPlayer from "./VideoPlayer.jsx";
+import { CSSTransition } from "react-transition-group";
 
-const Modale = ({ project }) => {
+const Modale = ({ project, closeModal, pos }) => {
+  //Detect when top of Scroll then change chevrons direction
   useEffect(() => {
     const el = document.querySelector(".description");
-    if (el) {
+    const limitscroll = () => {
       const limitpx = document.body.clientWidth < 850 ? 250 : 400;
-      // console.log(el.scrollTop)
-      el.addEventListener("scroll", () => {
-        if (el.scrollTop > limitpx) {
-          document.querySelector(".chevron").classList.add("chevronDown");
-        } else {
-          document.querySelector(".chevron").classList.remove("chevronDown");
-        }
-      });
+      if (el.scrollTop > limitpx) {
+        document.querySelector(".chevron").classList.add("chevronDown");
+      } else {
+        document.querySelector(".chevron").classList.remove("chevronDown");
+      }
+    };
+    if (el) {
+      el.addEventListener("scroll", limitscroll);
     }
-    return () => {};
+    return () => {
+      removeEventListener("scroll", limitscroll);
+    };
   }, []);
-  //Detect when top of Scroll then change chevrons direction
+  const [playvideo, setPlayvideo] = useState(false);
 
   return (
     <div className="modale">
-      {/* this div to set a background gradient */}
+      {/* <div className="modale" style={{ animationName: `slide${pos}` }}> */}
       <img src={project.img ? project.img : project.gif} alt="img" />
       <div className="description">
         <div>
           <span>Scroll</span>
+          <div className="closeModal" onClick={closeModal}>
+            <Close size={35} />
+          </div>
           <Chevron className="chevron" />
           <div>
             <Description text={project.description} />
@@ -37,12 +47,37 @@ const Modale = ({ project }) => {
                 {project.button1}
               </a>
             )}
+
             {project.link2 && (
               <a href={project.link2} target="_blank">
                 {project.button2}
               </a>
             )}
+            {project.buttonvideo && (
+              <VideoButton
+                buttonvideo={project.buttonvideo}
+                setPlayvideo={setPlayvideo}
+              />
+            )}
+            {project.buttonvideo2 && (
+              <VideoButton
+                buttonvideo={project.buttonvideo2}
+                setPlayvideo={setPlayvideo}
+              />
+            )}
           </div>
+
+          <CSSTransition
+            in={playvideo}
+            timeout={300} // Duration of the animation
+            classNames="videoanim"
+            unmountOnExit // Unmount the component after animation
+          >
+            <VideoPlayer
+              setPlayvideo={setPlayvideo}
+              linkvideo={project.linkvideo}
+            />
+          </CSSTransition>
         </div>
       </div>
     </div>

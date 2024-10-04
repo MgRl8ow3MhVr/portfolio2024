@@ -1,70 +1,48 @@
 import React, { useState, useEffect } from "react";
 
 import "./App.css";
+import "./animations/anims.css";
 import Project from "./components/Project.jsx";
 import cartes from "./Cartes.jsx";
 import sortProjects from "./components/SortLetters.jsx";
 import Modale from "./components/Modale";
 import Dice from "./components/Dice/Dice.jsx";
+import { CSSTransition } from "react-transition-group";
 
 function App() {
   // const wordsList = [
-  //   "fullstack",
-  //   "malleret",
-  //   "react",
-  //   "algorithm",
+  //   "web apps",
+  //   "mobile",
+  //   "code",
+  //   "no code",
   //   "pierre",
-  //   "frontend",
-  //   "html",
-  //   "node.js",
-  //   "backend",
-  //   "mongo.db",
-  //   "express",
-  //   "algorithm",
-  //   "git",
-  //   "github",
+  //   "malleret",
   // ];
-  const wordsList = [
-    "bienvenue",
-    "sur   le",
-    "portfolio",
-    "de pierre",
-    "malleret",
-    "je sais",
-    "faire des",
-    "apps  et",
-    "web   apps",
-    "design",
-    "creatif",
-    "responsiv",
-    "react",
-    "javascript",
-    "contacte",
-    "moi !",
-  ];
-  const [carts, setCarts] = useState([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
+  const wordsList = ["bienvenue", "sur le", "portfolio", "de", "pierre"];
+
+  // DECOUVREZ AU FIL DE CES CARTES MES SAVOIR FAIRE, MES PROJETS REALISES, AINSI QUE LES TECHNOLOGIES QUE JE MAITRISE, DU DEVELOPEMENT WEB AUX CMS EN PASSANT PAR LE NO CODE
+
+  const [hovercart, setHoverCart] = useState(null);
   const [wordNum, setWordNum] = useState(-1);
-  const [justLanded, setJustLanded] = useState(true);
-  const [projetsList, setProjectList] = useState(cartes);
-  const [prevProjList, setPrevProjList] = useState(cartes);
-  const [modaleNum, setModaleNum] = useState(null);
+  const [projetsList, setProjectList] = useState(
+    JSON.parse(JSON.stringify(cartes))
+  );
+  const [modaleNum, setModaleNum] = useState([0, 0]);
+  const [openModal, setOpenModal] = useState(false);
   const [showTryThis, setShowTryThis] = useState(true);
+
+  const closeModal = () => {
+    const el = document.querySelector(".description");
+    el.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    setOpenModal(false);
+  };
 
   //pick the next word from the list and reorganize the projecList with new order and new bigletters
   const pickAWord = () => {
-    //first save previous project list
-    setPrevProjList(projetsList);
-
     //pick next word or first one if end of list
     let num = wordNum;
     if (num === wordsList.length - 1) {
@@ -75,7 +53,7 @@ function App() {
     setWordNum(num);
 
     // Change the list according to the new picked word
-    setProjectList(sortProjects(wordsList[num], cartes));
+    setProjectList(sortProjects(wordsList[num], projetsList));
     if (showTryThis) {
       setShowTryThis(false);
     }
@@ -85,43 +63,15 @@ function App() {
   useEffect(() => {
     pickAWord(wordNum);
     setTimeout(() => {
-      setJustLanded(false);
       setShowTryThis(true);
     }, 200);
   }, []);
 
-  //open one card. set all other card state to false
-  const setACart = (num) => {
-    const newValue = !carts[num];
-    let arr = [];
-    for (let i = 0; i < 9; i++) {
-      if (i === num) {
-        arr.push(newValue);
-      } else arr.push(false);
-    }
-    setCarts(arr);
-  };
-
-  // Search the position of a cart in the sorted project List. to be used in the map where we need to set previous positions
-  const search = (id) => {
-    for (let i = 0; i < 9; i++) {
-      if (id === projetsList[i].id) {
-        return i;
-      }
-    }
-  };
-  /* # # # # # # APP # # # # # # # # # # # # # # # # # # # # # # # # # # */
-
   return (
-    <div
-      className="app"
-      onClick={() => {
-        setModaleNum(null);
-      }}
-    >
+    <div className="app" onClick={closeModal}>
       <div className="header">PIERRE MALLERET</div>
       <div className="subtitle">
-        <span>PROJETS CHOISIS</span>
+        <span>DÉVELOPPEUR WEB</span>
       </div>
       <div className="dice">
         {showTryThis && (
@@ -145,24 +95,37 @@ function App() {
           event.stopPropagation();
         }}
       >
-        {/* MODAL TO WATCH ONE */}
-        {modaleNum !== null && <Modale project={projetsList[modaleNum]} />}
+        <CSSTransition
+          in={openModal}
+          timeout={1100} // Duration of the animation
+          classNames={`slide${modaleNum[1]}`} // Prefix for class names
+          unmountOnExit // Unmounts the component after the animation
+        >
+          <Modale
+            project={cartes[modaleNum[0]]}
+            closeModal={closeModal}
+            pos={modaleNum[1]}
+          />
+        </CSSTransition>
 
         <div className="projectscontenair">
           {/* We Map according to the previous ProjecList so the positions don't change instantly
         Positions will then progressively translate to new ProjectList because we give them classes according to the new projectList order*/}
-          {prevProjList.map((projet, index) => {
+          {cartes.map((projet, index) => {
             //Search position of the current project in the new Array Projectlist and set it to the class.
-            const pos = search(projet.id);
-            // const currProj = prevProjList[pos];
+            const pos = projetsList.findIndex((p) => p.id === projet.id);
+            const size = window.innerWidth > 850 ? 170 : 115;
+            const bigLetter = projetsList[pos].bigletter;
+            const row = Math.floor(pos / 3);
+            const col = pos % 3;
             return (
               <div
-                key={index}
-                className={
-                  !justLanded
-                    ? "project projectPos" + pos
-                    : "project projectPos1"
-                }
+                key={projet.title}
+                className="project"
+                style={{
+                  top: `${row * size}px`,
+                  left: `${col * size}px`,
+                }}
               >
                 <Project
                   gif={projet.gif}
@@ -170,13 +133,18 @@ function App() {
                   title={projet.title}
                   color={projet.color}
                   link={projet.link}
-                  show={carts[index]}
-                  setCarts={() => {
-                    setACart(index);
+                  show={hovercart === index}
+                  hoverMe={() => {
+                    setHoverCart(index);
                   }}
-                  bigletter={projet.bigletter}
+                  hoverOff={() => {
+                    setHoverCart(null);
+                  }}
+                  index={index}
+                  bigletter={bigLetter}
                   openModale={() => {
-                    setModaleNum(pos);
+                    setOpenModal(true);
+                    setModaleNum([index, pos]);
                   }}
                 />
               </div>
