@@ -44,22 +44,22 @@ const obj1 = {
 const obj2 = {
   id: 2,
   title: "Formateur web",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/c_crop,w_320/v1727800724/portfolio/gifs/yfketmnkysmoaamaaxvy.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/c_scale,w_338/v1727800776/portfolio/imgs/hai8b9zvrzz6gezwcjwb.jpg",
+  img: "https://res.cloudinary.com/pierredev/image/upload/c_crop,w_320/v1727800724/portfolio/gifs/yfketmnkysmoaamaaxvy.gif",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/c_scale,w_338/v1727800776/portfolio/imgs/hai8b9zvrzz6gezwcjwb.jpg",
   description: `
   \n>Formateur Web et numérique \n
-  Je prends beaucoup de plaisir à transmettre mes connaissances de développeur web pour un public en reconversion. Ainsi, j'ai conçu et animé les formations suivantes :
-  - Mon premier langage de programmation avec Javascript (avec Html/CSS)
-  - Le framework React 
-  - Les métiers du Web (atelier de vulgarisation destiné à un public qui travaille dans l'orientation)
+  Je prends plaisir à transmettre mes connaissances de développeur web pour un public en reconversion. Ainsi, j'ai conçu et animé les formations suivantes :
+  - Débuter avec Javascript
+  - Concevoir des sites dynamiques avec React
+  - Les métiers du Web (atelier destiné aux entreprises qui travaillent dans l'orientation numérique)
 
-  Enfin, l'impact environnemental du numérique est un sujet qui me tient à coeur. Aussi, j'agis à mon échelle en animant régulièrement la fresque du climat, et la fresque du numérique.
-
+  Je suis également engagé comme animateur de la fresque du numérique et la fresque du climat. Pour en savoir plus visitez-les !
 `,
-  button1: "fresque climat",
-  link1: "https://fresqueduclimat.org/",
-  button2: "fresque numérique",
-  link2: "https://www.fresquedunumerique.org/",
+
+  button1: "Numérique",
+  link1: "https://www.fresquedunumerique.org/",
+  button2: "Climat",
+  link2: "https://fresqueduclimat.org/",
 };
 /* # # # # # # ELEARNING # # # # # # # # # # # # # # # */
 const obj3 = {

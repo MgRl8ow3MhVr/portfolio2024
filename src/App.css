@@ -311,74 +311,6 @@ h2 {
   transform: scale(1.05);
 }
 
-/* # # # # # # # # # # # # # # #  RESPONSIVE # # # # # # # # #  */
-
-@media (max-width: 850px) {
-  body {
-    --sizeProject: 115px;
-  }
-
-  .header {
-    font-size: 30px;
-    margin-top: 20px;
-    letter-spacing: 4px;
-  }
-
-  .subtitle > span {
-    letter-spacing: 8px;
-    font-size: 15px;
-  }
-
-  .t1 {
-    font-size: 45px;
-    transition: all 0.5s;
-  }
-  .t2 {
-    color: white;
-    font-size: 10px;
-    transition: all 0.3s ease;
-    text-align: center;
-  }
-  .t1h {
-    font-size: 12px;
-  }
-  .t2h {
-    font-size: 12px;
-  }
-
-  /* DESCRIPTION */
-  .description p {
-    font-size: 10px;
-    color: white;
-  }
-
-  .description a {
-    background-color: #d8b4a0;
-    border-radius: 3px;
-    margin-top: 0px;
-    padding: 5px 20px 5px 20px;
-    opacity: 1;
-    font-weight: bold;
-    margin: 10px;
-    font-size: 14px;
-  }
-  h2 {
-    font-size: 14px;
-    margin: 5px 0 5px 0;
-  }
-  .description > div {
-    padding: 5px 5px 0px 5px;
-  }
-
-  .chevron {
-    height: 20px;
-  }
-
-  .buttons {
-    padding: 5px;
-  }
-}
-
 /* Footer */
 
 .footer {
@@ -454,6 +386,7 @@ h2 {
 
 .videobutton {
   display: flex;
+  align-items: center;
   gap: 10px;
   background-color: #d8b4a0;
   border-radius: 3px;
@@ -574,4 +507,85 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   background: var(--diceCol2);
   box-shadow: -80px 0 0 80px var(--diceCol2);
+}
+
+/* # # # # # # # # # # # # # # #  RESPONSIVE # # # # # # # # #  */
+
+@media (max-width: 850px) {
+  body {
+    --sizeProject: 115px;
+  }
+
+  .header {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 4px;
+  }
+
+  .subtitle > span {
+    letter-spacing: 8px;
+    font-size: 15px;
+  }
+
+  .t1 {
+    font-size: 45px;
+    transition: all 0.5s;
+  }
+  .t2 {
+    color: white;
+    font-size: 10px;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  .t1h {
+    font-size: 12px;
+  }
+  .t2h {
+    font-size: 12px;
+  }
+
+  .description p {
+    font-size: 10px;
+    color: white;
+  }
+
+  .description a {
+    background-color: #d8b4a0;
+    border-radius: 3px;
+    margin-top: 0px;
+    /* padding: 5px 20px 5px 20px; */
+    opacity: 1;
+    font-weight: bold;
+    margin: 10px;
+    font-size: 11px;
+  }
+  h2 {
+    font-size: 14px;
+    margin: 5px 0 5px 0;
+  }
+  .description > div {
+    padding: 5px 5px 0px 5px;
+  }
+
+  .chevron {
+    height: 20px;
+  }
+
+  .buttons {
+    padding: 5px;
+  }
+  .videobutton {
+    font-size: 11px;
+  }
+  .triangle-play-button {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 18px solid var(--diceCol2);
+  }
+
+  .triangle-play-button-small {
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 14px solid rgb(113, 138, 113); /* Triangle color */
+  }
 }

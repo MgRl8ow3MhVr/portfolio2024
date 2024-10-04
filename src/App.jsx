@@ -18,7 +18,19 @@ function App() {
   //   "pierre",
   //   "malleret",
   // ];
-  const wordsList = ["bienvenue", "sur le", "portfolio", "de", "pierre"];
+  const wordsList = [
+    "bienvenue",
+    "sur le",
+    "portfolio",
+    "de",
+    "pierre",
+    "malleret",
+    "applis",
+    "web",
+    "mobile",
+    "code",
+    "no code",
+  ];
 
   // DECOUVREZ AU FIL DE CES CARTES MES SAVOIR FAIRE, MES PROJETS REALISES, AINSI QUE LES TECHNOLOGIES QUE JE MAITRISE, DU DEVELOPEMENT WEB AUX CMS EN PASSANT PAR LE NO CODE
 
