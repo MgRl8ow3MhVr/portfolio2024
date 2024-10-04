@@ -45,7 +45,7 @@ const obj2 = {
   id: 2,
   title: "Formateur web",
   img: "https://res.cloudinary.com/pierredev/image/upload/c_crop,w_320/v1727800724/portfolio/gifs/yfketmnkysmoaamaaxvy.gif",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/c_scale,w_338/v1727800776/portfolio/imgs/hai8b9zvrzz6gezwcjwb.jpg",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/c_crop,h_389/v1728056977/portfolio/imgs/le5yidqslwjzcwic28tc.png",
   description: `
   \n>Formateur Web et numérique \n
   Je prends plaisir à transmettre mes connaissances de développeur web pour un public en reconversion. Ainsi, j'ai conçu et animé les formations suivantes :
