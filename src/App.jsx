@@ -10,14 +10,6 @@ import Dice from "./components/Dice/Dice.jsx";
 import { CSSTransition } from "react-transition-group";
 
 function App() {
-  // const wordsList = [
-  //   "web apps",
-  //   "mobile",
-  //   "code",
-  //   "no code",
-  //   "pierre",
-  //   "malleret",
-  // ];
   const wordsList = [
     "bienvenue",
     "sur le",
@@ -39,6 +31,7 @@ function App() {
   const [projetsList, setProjectList] = useState(
     JSON.parse(JSON.stringify(cartes))
   );
+  const [checkedCarts, setCheckedCarts] = useState([]);
   const [modaleNum, setModaleNum] = useState([0, 0]);
   const [openModal, setOpenModal] = useState(false);
   const [showTryThis, setShowTryThis] = useState(true);
@@ -49,6 +42,12 @@ function App() {
       top: 0,
       behavior: "smooth",
     });
+    setTimeout(() => {
+      const checkedCp = [...checkedCarts];
+
+      checkedCp.push(modaleNum[0]);
+      setCheckedCarts(checkedCp);
+    }, 1100);
 
     setOpenModal(false);
   };
@@ -70,6 +69,7 @@ function App() {
       setShowTryThis(false);
     }
   };
+  console.log(checkedCarts);
 
   //and use it with first word of the list at landing
   useEffect(() => {
@@ -140,6 +140,7 @@ function App() {
                 }}
               >
                 <Project
+                  checked={checkedCarts.includes(index)}
                   gif={projet.gif}
                   description={projet.description}
                   title={projet.title}

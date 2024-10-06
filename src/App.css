@@ -5,7 +5,7 @@
   padding: 0;
   font-family: "Nanum Gothic", sans-serif;
   text-decoration: none;
-  color: black;
+  color: var(--col2);
 }
 
 body {
@@ -70,19 +70,16 @@ body {
 }
 
 .cart {
-  /* flexand pos */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Style */
   width: calc((var(--sizeProject) - 5px));
   height: calc((var(--sizeProject) - 5px));
-
-  /* background-color: #303030; */
   background-color: #303030;
-  /* margin: 3px; */
   overflow: hidden;
+  /* text-decoration: line-through;
+  text-decoration-color: red; */
 }
 .cart:hover {
   cursor: pointer;
@@ -118,8 +115,6 @@ body {
   /* border: 2px orange solid; */
   display: flex;
   flex-wrap: wrap;
-
-  /* background-color: black; */
 }
 
 .t1 {
@@ -304,6 +299,7 @@ h2 {
   margin: 10px;
   font-size: 18px;
   transition: all 0.2s;
+  color: black;
 }
 
 .description a:hover {
@@ -398,6 +394,7 @@ h2 {
   font-size: 18px;
   transition: transform 0.2s;
   cursor: pointer;
+  color: black;
 }
 
 .videobutton:hover {

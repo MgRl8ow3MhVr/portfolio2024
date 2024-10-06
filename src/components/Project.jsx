@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import Fade from "./Fade.jsx";
+import CheckBox from "./CheckBox.jsx";
 
 function Project({
   gif,
@@ -10,6 +9,7 @@ function Project({
   color,
   bigletter,
   openModale,
+  checked,
 }) {
   const pos = bigletter !== undefined ? bigletter : -1;
   return (
@@ -23,6 +23,8 @@ function Project({
       }}
       style={color && { backgroundColor: color }}
     >
+      {/* <div className="checked"> ✅ </div> */}
+      {checked && <CheckBox />}
       <div className={show ? "titlesin" : "titlesout"}>
         {title.substring(0, pos)
           ? title
@@ -30,7 +32,6 @@ function Project({
               .split(show ? " " : "$")
               .map((w) => <div className={show ? "t2h" : "t2"}>{w}</div>)
           : !show && <div className="hideme">{``}</div>}
-
         <div className={show ? "t1h" : "t1"}>{title.charAt(pos)}</div>
         {title.substring(pos + 1)
           ? title
