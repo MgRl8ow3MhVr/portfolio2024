@@ -128,8 +128,10 @@ function App() {
             const pos = projetsList.findIndex((p) => p.id === projet.id);
             const size = window.innerWidth > 850 ? 170 : 115;
             const bigLetter = projetsList[pos].bigletter;
-            const row = Math.floor(pos / 3);
-            const col = pos % 3;
+            const row = Math.floor(index / 3);
+            const col = index % 3;
+            // const row = Math.floor(pos / 3);
+            // const col = pos % 3;
             return (
               <div
                 key={projet.title}
