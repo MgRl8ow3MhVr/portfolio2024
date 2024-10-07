@@ -127,7 +127,7 @@ const obj5 = {
 /* # # # # # # DIAGRAMMES # # # # # # # # # # # # # # # */
 const obj6 = {
   id: 6,
-  title: "Diagrammes interactifs interactifs",
+  title: "Diagrammes interactifs",
   description: `
   \n>Diagramme de flux pour Alkalee\n
     Alkalee a développé un moteur de simulation des circuits électriques dans les automobiles.

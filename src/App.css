@@ -3,6 +3,8 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Roboto Mono", monospace;
+
   font-family: "Nanum Gothic", sans-serif;
   text-decoration: none;
   color: var(--col2);
@@ -81,26 +83,6 @@ body {
 }
 .cart:hover {
   cursor: pointer;
-}
-
-/* # # # # # # # # # IMG de la Carte  # # # # # # # # #  */
-
-.gifcard {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  animation: appear 0.6s;
-}
-
-.gifcard img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  /* object-position: bottom; */
-  position: absolute;
-  background-color: var(--col2);
-  background-color: white;
-  /* background-color: #fbf2ec; */
 }
 
 /* # # # # # # # # # # # MODALE # # # # # # # # # # # # # # # # #  */

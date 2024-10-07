@@ -13,10 +13,11 @@ function Project({
   checked,
 }) {
   const lettersList = title.split("");
-  const size = window.innerWidth > 850 ? 170 : 115;
-  const padding = 17;
-  const spacing = 11;
-  const linespacing = 15;
+  const big = window.innerWidth > 850;
+  const size = big ? 170 : 115;
+  const padding = big ? 17 : 12;
+  const spacing = big ? 11 : 8;
+  const linespacing = big ? 17 : 12;
   const maxperline = Math.round((size - 2 * padding) / spacing) - 2;
 
   // to center line 1
@@ -46,7 +47,7 @@ function Project({
         ? maxperline
         : mb.length - maxperline;
     // V. BLOCK POS
-    top = mb.pos === "top" ? padding : size - 2 * padding;
+    top = mb.pos === "top" ? padding : size - 2.5 * padding;
     if (mb.myline === 2) {
       top += linespacing;
     } // V. LINE SPACING
@@ -57,13 +58,27 @@ function Project({
     // H. GLOBALE POS
     left = (mb.myposinline + 1) * spacing;
     // H. CENTER
-    left += ((maxperline - mb.mylineletters) / 2) * spacing;
+    left += ((maxperline - mb.mylineletters) / 2 + 0.5) * spacing;
 
     // IF NO BIG LETTER, SIMPLY RECENTER VERT
     if (bigletter === -1) {
       top -= size / 2 - 2 * padding;
     }
 
+    return { top: top + "px", left: left + "px" };
+  };
+
+  const positionMakerShow = (index) => {
+    let top, left;
+    const lines = lettersList.length > maxperline ? 2 : 1;
+    const myline = index > maxperline ? 2 : 1;
+    const myposinline = myline === 2 ? index - maxperline : index;
+    top = 2;
+    if (myline === 2) {
+      top += linespacing;
+    } // V. LINE SPACING
+    // H. GLOBALE POS
+    left = 5 + myposinline * spacing;
     return { top: top + "px", left: left + "px" };
   };
 
@@ -81,16 +96,20 @@ function Project({
       {checked && <CheckBox />}
       <div className={show ? "titlesin" : "titlesout"}>
         {lettersList.map((letter, index) => {
-          const isBigLetter = index === bigletter;
           // # # # # BIG LETTER # # # # #
-          if (isBigLetter) {
-            return <div className="letter bigLetter">{letter}</div>;
+          if (index === bigletter && !show) {
+            return (
+              <div key={index + letter} className="letter bigLetter">
+                {letter}
+              </div>
+            );
             // # # # # SMALL # # # # #
           } else {
             return (
               <div
+                key={index + letter}
                 className={`letter smallLetter`}
-                style={positionMaker(index)}
+                style={!show ? positionMaker(index) : positionMakerShow(index)}
               >
                 {letter}
               </div>

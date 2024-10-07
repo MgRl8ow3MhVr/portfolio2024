@@ -37,6 +37,7 @@ function App() {
   const [showTryThis, setShowTryThis] = useState(true);
 
   const closeModal = () => {
+    if (!openModal) return null;
     const el = document.querySelector(".description");
     el.scrollTo({
       top: 0,
@@ -69,7 +70,6 @@ function App() {
       setShowTryThis(false);
     }
   };
-  console.log(checkedCarts);
 
   //and use it with first word of the list at landing
   useEffect(() => {
@@ -128,10 +128,8 @@ function App() {
             const pos = projetsList.findIndex((p) => p.id === projet.id);
             const size = window.innerWidth > 850 ? 170 : 115;
             const bigLetter = projetsList[pos].bigletter;
-            const row = Math.floor(index / 3);
-            const col = index % 3;
-            // const row = Math.floor(pos / 3);
-            // const col = pos % 3;
+            const row = Math.floor(pos / 3);
+            const col = pos % 3;
             return (
               <div
                 key={projet.title}
