@@ -3,8 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Roboto Mono", monospace;
-
   font-family: "Nanum Gothic", sans-serif;
   text-decoration: none;
   color: var(--col2);
@@ -15,7 +13,7 @@ body {
   background-color: #fbf2ec;
   -webkit-tap-highlight-color: transparent;
   --sizeProject: 170px;
-  --transTime: 1s;
+  --transTime: 0.85s;
   --col1: rgba(89, 87, 87, 0.872);
   --col2: rgba(46, 46, 46, 0.872);
   --bg: #fbf2ec;

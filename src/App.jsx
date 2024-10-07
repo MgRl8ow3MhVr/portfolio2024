@@ -11,16 +11,26 @@ import { CSSTransition } from "react-transition-group";
 
 function App() {
   const wordsList = [
+    "zzz",
     "bienvenue",
     "sur le",
     "portfolio",
     "de",
     "pierre",
     "malleret",
+    "dev web",
+    "et",
+    "formateur",
+    "je",
+    "sais",
+    "faire",
+    "des",
     "applis",
     "web",
+    "ou",
     "mobile",
-    "code",
+    "en code",
+    "ou",
     "no code",
   ];
 

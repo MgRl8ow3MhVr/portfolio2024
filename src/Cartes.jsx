@@ -12,7 +12,8 @@ const obj0 = {
 
   À l'écoute de vos besoins et pédagogue (je suis aussi formateur), je saurai choisir la technologie la plus adaptée à votre budget, et vous accompagner depuis la conception de maquettes, jusqu'à la livraison.
 
-  Découvrez mes savoir-faire et mes plus belles réalisations au fil de des 8 autres cartes mouvantes, et n'oubliez pas de cliquer sur le petit dé :)
+  Découvrez mes savoir-faire et mes plus belles réalisations au fil des huit autres cartes mouvantes. 
+  Et n'oubliez pas de cliquer et re-cliquer sur le petit 🎲 !
 
   Bonne visite
 `,

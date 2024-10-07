@@ -3,8 +3,8 @@ import "./CheckBox.css";
 const CheckBox = () => {
   return (
     <div className="checkbox-wrapper-19">
-      <input type="checkbox" checked />
-      <label for="cbtest-19" className="check-box" />
+      <input type="checkbox" defaultChecked />
+      <label className="check-box" />
     </div>
   );
 };

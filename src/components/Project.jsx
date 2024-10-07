@@ -64,8 +64,16 @@ function Project({
     if (bigletter === -1) {
       top -= size / 2 - 2 * padding;
     }
+    const textTransform = index === 0 ? "uppercase" : "lowercase";
+    const transitionDelay = Math.floor(Math.random() * 120) + "ms";
+    // const transitionDelay = index * 20 + "ms";
 
-    return { top: top + "px", left: left + "px" };
+    return {
+      top: top + "px",
+      left: left + "px",
+      textTransform,
+      transitionDelay,
+    };
   };
 
   const positionMakerShow = (index) => {
