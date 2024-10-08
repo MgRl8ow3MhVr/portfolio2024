@@ -98,7 +98,7 @@ function App() {
       <div className="dice">
         {showTryThis && (
           <div className="trythis">
-            <span>Cliquez!</span> <div>{`>`}</div> <div>{`>`}</div>{" "}
+            <span>Cliquez !</span> <div>{`>`}</div> <div>{`>`}</div>{" "}
             <div>{`>`}</div>
           </div>
         )}

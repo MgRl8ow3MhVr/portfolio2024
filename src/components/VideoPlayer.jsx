@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Close from "../assets/svg/close";
+import "./VideoPlayer.css";
 
 const VideoPlayer = ({ linkvideo, setPlayvideo }) => {
   const videoRef = useRef(null); // Reference to the video element
@@ -42,15 +43,18 @@ const VideoPlayer = ({ linkvideo, setPlayvideo }) => {
       >
         <Close size={25} />
       </div>
-
-      <video
-        ref={videoRef}
-        src={linkvideo} // Replace with your video URL or path
-        onTimeUpdate={handleProgress}
-        onClick={togglePlayPause}
-        width="100%"
-        controls={false} // Hide default controls to use custom controls
-      />
+      <div className="controls"></div>
+      <div className="videoContainer">
+        <video
+          ref={videoRef}
+          src={linkvideo}
+          onTimeUpdate={handleProgress}
+          onClick={togglePlayPause}
+          width="100%"
+          // preload="none"
+          controls={false} // Hide default controls to use custom controls
+        />
+      </div>
 
       <div className="controls">
         <div className="playcontainer" onClick={togglePlayPause}>

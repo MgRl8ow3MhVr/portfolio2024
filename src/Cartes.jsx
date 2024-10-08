@@ -1,16 +1,16 @@
 /* # # # # # # ABOUT ME # # # # # # # # # # # # # # # */
 const obj0 = {
   id: 0,
-  title: "Qui suis-je",
+  title: "Qui suis-je ?",
   color: "grey",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/g39tl9gae4jpzofnul5z.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795018/portfolio/imgs/bnykj67eazhs6ejtclmt.jpg",
   description: `
   \n>BIENVENUE SUR CE SITE\n
 
-  Je m'appelle Pierre, je suis développeur fullstack. Cela signifie que je sais concevoir un site complet et personnalisé à vos besoins métier, de l'interface (web ou mobile) à la base de données en passant par des animations, avec une sensibilité particulière pour les interfaces créatives.
+  Je m'appelle Pierre, je suis développeur fullstack. Cela signifie que je sais concevoir une application web complète et personnalisée à vos besoins, de l'interface (web ou mobile) à la base de données en passant par des animations, avec une sensibilité particulière pour les interfaces créatives.
 
-  À l'écoute de vos besoins et pédagogue (je suis aussi formateur), je saurai choisir la technologie la plus adaptée à votre budget, et vous accompagner depuis la conception de maquettes, jusqu'à la livraison.
+  À l'écoute de vos besoins et pédagogue - je suis occasionnellement formateur -, je saurai vous aider à choisir la technologie la plus adaptée à votre projet, et vous accompagner depuis la conception de maquettes, jusqu'à la livraison.
 
   Découvrez mes savoir-faire et mes plus belles réalisations au fil des huit autres cartes mouvantes. 
   Et n'oubliez pas de cliquer et re-cliquer sur le petit 🎲 !
@@ -25,15 +25,14 @@ const obj0 = {
 const obj1 = {
   id: 1,
   title: "Contact",
-  // color: "#5c5c5c",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1727796858/portfolio/gifs/da55jowozj3lrft4kyci.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1728052982/portfolio/imgs/bwcgvjevxviknuumayd8.jpg",
   description: `
   \n>Contactez moi\n
   
-  Avez-vous des besoins de conception de site web ? Recherchez-vous un formateur passionné ?
+  Avez-vous des besoins de conception d'application web ? Recherchez-vous un formateur passionné ?
 
-  N'hésitez pas à prendre contact par email ou sur Linkedin :
+  N'hésitez pas à prendre m'écrire sur Linkedin ou m'envoyer un email :
     `,
   button1: "Linkedin",
   link1: "https://www.linkedin.com/in/pierredevpro/",
@@ -91,10 +90,10 @@ const obj4 = {
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795017/portfolio/imgs/dlfzuic9vqg2jsadnrgo.png",
   description: `
   \n>Morpion géant\n
-  \n Au collège ou au lycée, lorsque je voulais faire passer le temps, je sortais une feuille de papier quadrillée et démarrais un morpion sans limite avec mon voisin.
-  J'ai conçu la version en ligne de ce concept de jeu :
+  \n En classe au lycée, lorsque je voulais faire passer le temps, je sortais une feuille de papier quadrillée et démarrais un morpion sans limite avec mon voisin.
+  J'ai conçu la version en ligne de ce jeu :
   \n>Mode opératoire\n
-  Deux personnes doivent ouvrir l'url sur ci-dessous sur leur navigateur ou leur téléphone. Entrer un nom d'utilisateur. Attendre que le nom de l'adversaire apparaisse, et cliquer dessus pour démarrer une partie.
+  Deux personnes entrent l'url du jeu sur leur navigateur ou leur téléphone. Entrer un nom d'utilisateur. Cliquer sur le nom de l'adversaire pour démarrer une partie.
   \n>Stack technique\n
    node.js, express, React, websockets, render.com
     `,
@@ -131,8 +130,8 @@ const obj6 = {
   title: "Diagrammes interactifs",
   description: `
   \n>Diagramme de flux pour Alkalee\n
-    Alkalee a développé un moteur de simulation des circuits électriques dans les automobiles.
-    L'interface que j'ai développée permet à un utilisateur de "connecter des boîtes entre elles" afin de construire un shéma électronique. Un appel à l'API de leur moteur affichera ensuite les résultats.
+    
+    L'interface que j'ai développée permet à un utilisateur de "connecter des boîtes entre elles" afin de construire un shéma qui simule les composants électroniques des voitures. Un appel à l'API de leur moteur affichera ensuite les résultats de la simulation.
 
   Stack utilisée : React, Bryntum, React-Flow, api Jira 
 

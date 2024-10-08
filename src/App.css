@@ -170,7 +170,6 @@ body {
 /* Writting inside description */
 .description p {
   font-family: "Hind Siliguri", sans-serif;
-  /* text-align: justify; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 12px;
   font-size: 16px;
@@ -197,6 +196,8 @@ h2 {
 
 /* Button links */
 .description a {
+  display: flex;
+  align-items: center;
   background-color: #d8b4a0;
   border-radius: 3px;
   margin-top: 20px;
@@ -234,12 +235,20 @@ h2 {
 
 .trythis {
   color: rgba(46, 46, 46, 0.872);
-  width: 70px;
+  width: 85px;
   display: flex;
   font-weight: 500;
   transform: translateX(-20px);
   font-size: 15px;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  /* font-weight: 600; */
+}
+
+.trythis > span {
+  font-size: 13px;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .trythis > div:nth-child(2) {
@@ -285,134 +294,6 @@ h2 {
   }
 }
 
-/* # # # # # # #  VIDEO PLAYER */
-
-.videobutton {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #d8b4a0;
-  border-radius: 3px;
-  margin-top: 20px;
-  padding: 10px 30px 10px 30px;
-  opacity: 1;
-  font-weight: bold;
-  margin: 10px;
-  font-size: 18px;
-  transition: transform 0.2s;
-  cursor: pointer;
-  color: black;
-}
-
-.videobutton:hover {
-  transform: scale(1.1);
-}
-
-.videoplayer {
-  animation: slide3 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  opacity: 1;
-  z-index: 1000;
-}
-
-/* Initial state when entering */
-.videoanim-enter {
-  transform: translate(-100%, 0);
-}
-/* Entering state */
-.videoanim-enter-active {
-  transform: translate(0, 0);
-  transition: transform 300ms;
-}
-/* Initial state when exiting */
-.videoanim-exit {
-  transform: translate(0, 0);
-}
-/* Exiting state */
-.videoanim-exit-active {
-  transform: translate(-100%, 0);
-  transition: transform 300ms;
-}
-
-.controls {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.playcontainer {
-  width: 40px;
-  height: 30px;
-}
-
-.triangle-play-button {
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 27px solid var(--diceCol2); /* Triangle color */
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.triangle-play-button-small {
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 18px solid rgb(113, 138, 113); /* Triangle color */
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.triangle-play-button:hover {
-  transform: scale(1.1);
-}
-
-.video-player input[type="range"] {
-  cursor: pointer;
-}
-
-.pause-button {
-  display: flex;
-  gap: 6px;
-}
-.pause-button > div {
-  width: 5px;
-  height: 27px;
-  background-color: var(--diceCol2);
-  border-radius: 2px;
-}
-
-input[type="range"] {
-  overflow: hidden;
-  width: 140px;
-  -webkit-appearance: none;
-  background-color: var(--diceCol1);
-  border-radius: 10px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  width: 5px;
-  border-radius: 5px;
-  -webkit-appearance: none;
-  height: 10px;
-  cursor: pointer;
-  background: var(--diceCol2);
-  box-shadow: -80px 0 0 80px var(--diceCol2);
-}
-
 /* # # # # # # # # # # # # # # #  RESPONSIVE # # # # # # # # #  */
 
 @media (max-width: 850px) {
@@ -431,38 +312,13 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 15px;
   }
 
-  .t1 {
-    font-size: 45px;
-    transition: all 0.5s;
-  }
-  .t2 {
-    color: white;
-    font-size: 10px;
-    transition: all 0.3s ease;
-    text-align: center;
-  }
-  .t1h {
-    font-size: 12px;
-  }
-  .t2h {
-    font-size: 12px;
-  }
-
   .description p {
-    font-size: 10px;
+    font-size: 12px;
     color: white;
+    margin-bottom: 8px;
+    word-spacing: 0px;
   }
 
-  .description a {
-    background-color: #d8b4a0;
-    border-radius: 3px;
-    margin-top: 0px;
-    /* padding: 5px 20px 5px 20px; */
-    opacity: 1;
-    font-weight: bold;
-    margin: 10px;
-    font-size: 11px;
-  }
   h2 {
     font-size: 14px;
     margin: 5px 0 5px 0;
@@ -475,12 +331,15 @@ input[type="range"]::-webkit-slider-thumb {
     height: 20px;
   }
 
+  .description a {
+    font-size: 11px;
+    padding: 7px 25px 7px 25px;
+  }
+
   .buttons {
     padding: 5px;
   }
-  .videobutton {
-    font-size: 11px;
-  }
+
   .triangle-play-button {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;

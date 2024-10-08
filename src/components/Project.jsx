@@ -87,7 +87,9 @@ function Project({
     } // V. LINE SPACING
     // H. GLOBALE POS
     left = 5 + myposinline * spacing;
-    return { top: top + "px", left: left + "px" };
+    const textTransform = index === bigletter ? "uppercase" : "lowercase";
+
+    return { top: top + "px", left: left + "px", textTransform };
   };
 
   return (

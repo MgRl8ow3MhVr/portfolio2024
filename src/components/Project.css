@@ -18,21 +18,22 @@
 
 .letter {
   color: white;
-  text-transform: lowercase;
   position: absolute;
   text-align: center;
-  /* border: 1px blue solid; */
   transition: all 0.2s ease-in;
 }
 
 .smallLetter {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "Roboto Mono", monospace;
+  /* font-family: "Nanum Gothic Coding", monospace; */
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 300;
   width: 12px;
   /* border: 1px blue solid; */
 }
 .bigLetter {
+  /* font-family: "Nanum Gothic Coding", monospace; */
+
   text-transform: uppercase;
   font-size: 75px;
   top: calc(var(--sizeProject/2));

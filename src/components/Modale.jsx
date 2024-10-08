@@ -6,7 +6,7 @@ import VideoButton from "./VideoButton.jsx";
 import VideoPlayer from "./VideoPlayer.jsx";
 import { CSSTransition } from "react-transition-group";
 
-const Modale = ({ project, closeModal, pos }) => {
+const Modale = ({ project, closeModal }) => {
   //Detect when top of Scroll then change chevrons direction
   useEffect(() => {
     const el = document.querySelector(".description");
@@ -29,7 +29,6 @@ const Modale = ({ project, closeModal, pos }) => {
 
   return (
     <div className="modale">
-      {/* <div className="modale" style={{ animationName: `slide${pos}` }}> */}
       <img src={project.img ? project.img : project.gif} alt="img" />
       <div className="description">
         <div>

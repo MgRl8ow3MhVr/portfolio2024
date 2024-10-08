@@ -1,0 +1,140 @@
+/* # # # # # # #  VIDEO PLAYER */
+
+.videobutton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #d8b4a0;
+  border-radius: 3px;
+  margin-top: 20px;
+  padding: 10px 30px 10px 30px;
+  opacity: 1;
+  font-weight: bold;
+  margin: 10px;
+  font-size: 18px;
+  transition: transform 0.2s;
+  cursor: pointer;
+  color: black;
+}
+@media (max-width: 850px) {
+  .videobutton {
+    font-size: 11px;
+    padding: 7px 25px 7px 25px;
+  }
+}
+
+.videobutton:hover {
+  transform: scale(1.1);
+}
+
+.videoplayer {
+  animation: slide3 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: absolute;
+  /* padding-top: 50px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.videoContainer {
+  display: flex;
+  align-items: center;
+  height: 70%;
+}
+
+.controls {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Initial state when entering */
+.videoanim-enter {
+  transform: translate(-100%, 0);
+}
+/* Entering state */
+.videoanim-enter-active {
+  transform: translate(0, 0);
+  transition: transform 300ms;
+}
+/* Initial state when exiting */
+.videoanim-exit {
+  transform: translate(0, 0);
+}
+/* Exiting state */
+.videoanim-exit-active {
+  transform: translate(-100%, 0);
+  transition: transform 300ms;
+}
+
+.playcontainer {
+  width: 40px;
+  height: 30px;
+}
+
+.triangle-play-button {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 27px solid var(--diceCol2); /* Triangle color */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.triangle-play-button-small {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 18px solid rgb(113, 138, 113); /* Triangle color */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.triangle-play-button:hover {
+  transform: scale(1.1);
+}
+
+.video-player input[type="range"] {
+  cursor: pointer;
+}
+
+.pause-button {
+  display: flex;
+  gap: 6px;
+}
+.pause-button > div {
+  width: 5px;
+  height: 27px;
+  background-color: var(--diceCol2);
+  border-radius: 2px;
+}
+
+input[type="range"] {
+  overflow: hidden;
+  width: 140px;
+  -webkit-appearance: none;
+  background-color: var(--diceCol1);
+  border-radius: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 5px;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  height: 10px;
+  cursor: pointer;
+  background: var(--diceCol2);
+  box-shadow: -80px 0 0 80px var(--diceCol2);
+}

@@ -4,8 +4,8 @@
   --checkcolor: #6bd172;
   --checkbox-height: 18px;
   position: absolute;
-  top: 6px;
-  left: 6px;
+  top: 4px;
+  left: 4px;
 }
 
 @-moz-keyframes dothabottomcheck-19 {
