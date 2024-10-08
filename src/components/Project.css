@@ -1,8 +1,6 @@
-.titlesout {
-  /* transition: all 0.3s ease; */
-}
 .titlesin {
   width: 100%;
+  pointer-events: none;
   position: absolute;
   top: 0;
   height: 60px;
@@ -33,7 +31,6 @@
 }
 .bigLetter {
   /* font-family: "Nanum Gothic Coding", monospace; */
-
   text-transform: uppercase;
   font-size: 75px;
   top: calc(var(--sizeProject/2));
@@ -47,6 +44,9 @@
   }
   .bigLetter {
     font-size: 50px;
+  }
+  .titlesin {
+    height: 40px;
   }
 }
 

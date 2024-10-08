@@ -89,7 +89,12 @@ function Project({
     left = 5 + myposinline * spacing;
     const textTransform = index === bigletter ? "uppercase" : "lowercase";
 
-    return { top: top + "px", left: left + "px", textTransform };
+    return {
+      top: top + "px",
+      left: left + "px",
+      textTransform,
+      fontWeight: "400",
+    };
   };
 
   return (
