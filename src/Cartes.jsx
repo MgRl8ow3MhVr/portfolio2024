@@ -115,7 +115,7 @@ const obj5 = {
   Garelli95 est une association à qui l'état confie des mineurs isolés étrangers.
   Leur besoin était d'enregistrer l'évolution des jeunes via un questionnaire réalisé tous les six mois, et ainsi évaluer leur action. L'interface se devait d'être chaleureuse et animée, pour donner envie.
 
-  J'ai conçu en complément une interface Back-office (en fond d'écran) qui permet de paramétrer les questions, catégories, utilisateurs etc... N'hésitez pas à les contacter pour leur demander des retours sur notre collaboration
+  J'ai conçu en complément une interface Back-office qui permet de paramétrer les questions, catégories, utilisateurs etc... N'hésitez pas à les contacter pour leur demander des retours sur notre collaboration
   
   Stack technique : React, Zustand, Strapi, Cloudinary, MySql, Heroku`,
   link1: "https://www.donbosco-actionsociale.org/associations/garelli-95/",
