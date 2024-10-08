@@ -178,7 +178,7 @@ const obj8 = {
   `,
   img: "https://res.cloudinary.com/pierredev/image/upload/v1728051872/portfolio/imgs/v92lskrsjnm4ohrg9dch.jpg",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1728052135/portfolio/gifs/q33hqg1kl4wxin4ngm01.gif",
-  link1: "www.loomandfield.com",
+  link1: "https://www.loomandfield.com/",
   button1: "Visitez la boutique",
 };
 
