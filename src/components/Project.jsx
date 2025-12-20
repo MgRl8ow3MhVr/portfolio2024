@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import CheckBox from "./CheckBox.jsx";
 import "./Project.css";
 
@@ -19,6 +20,11 @@ function Project({
   const spacing = big ? 11 : 8;
   const linespacing = big ? 17 : 12;
   const maxperline = Math.round((size - 2 * padding) / spacing) - 2;
+
+  // Generate stable random delays once per title
+  const transitionDelays = useMemo(() => {
+    return lettersList.map(() => Math.floor(Math.random() * 120) + "ms");
+  }, [title]);
 
   // to center line 1
   const positionMaker = (index) => {
@@ -65,8 +71,7 @@ function Project({
       top -= size / 2 - 2 * padding;
     }
     const textTransform = index === 0 ? "uppercase" : "lowercase";
-    const transitionDelay = Math.floor(Math.random() * 120) + "ms";
-    // const transitionDelay = index * 20 + "ms";
+    const transitionDelay = transitionDelays[index];
 
     return {
       top: top + "px",
