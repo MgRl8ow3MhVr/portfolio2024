@@ -1,50 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 
 import "./App.css";
 import "./animations/anims.css";
 import Project from "./components/Project.jsx";
 import cartes from "./Cartes.jsx";
-import sortProjects from "./components/SortLetters.jsx";
+import CartesPortfolio from "./CartesPortfolio.jsx";
 import Modale from "./components/Modale";
 import Dice from "./components/Dice/Dice.jsx";
 import { CSSTransition } from "react-transition-group";
 
 function App() {
-  const wordsList = [
-    "zzz",
-    "bienvenue",
-    "sur le",
-    "portfolio",
-    "de",
-    "pierre",
-    "malleret",
-    "dev web",
-    "et",
-    "formateur",
-    "je",
-    "sais",
-    "faire",
-    "des",
-    "applis",
-    "web",
-    "ou",
-    "mobile",
-    "en code",
-    "ou",
-    "no code",
-  ];
-
-  // DECOUVREZ AU FIL DE CES CARTES MES SAVOIR FAIRE, MES PROJETS REALISES, AINSI QUE LES TECHNOLOGIES QUE JE MAITRISE, DU DEVELOPEMENT WEB AUX CMS EN PASSANT PAR LE NO CODE
-
   const [hovercart, setHoverCart] = useState(null);
-  const [wordNum, setWordNum] = useState(-1);
-  const [projetsList, setProjectList] = useState(
-    JSON.parse(JSON.stringify(cartes))
-  );
   const [checkedCarts, setCheckedCarts] = useState([]);
   const [modaleNum, setModaleNum] = useState([0, 0]);
   const [openModal, setOpenModal] = useState(false);
-  const [showTryThis, setShowTryThis] = useState(true);
+
+  // Portfolio navigation states
+  const [isGathering, setIsGathering] = useState(false);
+  const [gatherToCenter, setGatherToCenter] = useState(false);
+  const [currentCardSet, setCurrentCardSet] = useState("home");
+  const [activeCartes, setActiveCartes] = useState(cartes);
+  const [clickedCardIndex, setClickedCardIndex] = useState(null);
+
+  // Generate stable random delays for each card transition
+  const cardDelays = useMemo(() => {
+    return activeCartes.map((_, index) => {
+      // Clicked card gets 0 delay, others get random delay
+      if (index === clickedCardIndex) return "0ms";
+      return Math.floor(Math.random() * 120) + 10 + "ms";
+    });
+  }, [activeCartes, clickedCardIndex]);
 
   const closeModal = () => {
     if (!openModal) return null;
@@ -63,31 +48,38 @@ function App() {
     setOpenModal(false);
   };
 
-  //pick the next word from the list and reorganize the projecList with new order and new bigletters
-  const pickAWord = () => {
-    //pick next word or first one if end of list
-    let num = wordNum;
-    if (num === wordsList.length - 1) {
-      num = 0;
-    } else {
-      num++;
-    }
-    setWordNum(num);
+  // Handle card navigation with gather/spread animation
+  const handleCardSetSwitch = (newCartes, newCardSet) => {
+    if (isGathering) return; // Prevent clicks during animation
 
-    // Change the list according to the new picked word
-    setProjectList(sortProjects(wordsList[num], projetsList));
-    if (showTryThis) {
-      setShowTryThis(false);
+    // Close modal if open
+    if (openModal) {
+      setOpenModal(false);
     }
+
+    // Start gathering animation
+    setIsGathering(true);
+    setGatherToCenter(true);
+
+    // After 850ms (wait for gather animation to complete), swap cards
+    setTimeout(() => {
+      setActiveCartes(newCartes);
+      setCurrentCardSet(newCardSet);
+      // Keep gathered for a brief moment before spreading
+      setTimeout(() => {
+        setGatherToCenter(false);
+      }, 50);
+    }, 750);
+
+    // After 1700ms (animation complete), re-enable interactions
+    setTimeout(() => {
+      setIsGathering(false);
+    }, 1700);
   };
 
-  //and use it with first word of the list at landing
-  useEffect(() => {
-    pickAWord(wordNum);
-    setTimeout(() => {
-      setShowTryThis(true);
-    }, 200);
-  }, []);
+  const handlePortfolioClick = () =>
+    handleCardSetSwitch(CartesPortfolio, "portfolio");
+  const handleHomeClick = () => handleCardSetSwitch(cartes, "home");
 
   return (
     <div className="app" onClick={closeModal}>
@@ -96,20 +88,9 @@ function App() {
         <span>DÉVELOPPEUR WEB</span>
       </div>
       <div className="dice">
-        {showTryThis && (
-          <div className="trythis">
-            <span>Cliquez !</span> <div>{`>`}</div> <div>{`>`}</div>{" "}
-            <div>{`>`}</div>
-          </div>
-        )}
-        <div
-          onClick={() => {
-            pickAWord();
-          }}
-        >
-          <Dice word={wordsList[wordNum]} />
+        <div>
+          <Dice word={"TOTOTO"} isGathering={isGathering} />
         </div>
-        {showTryThis && <div className="trythis"></div>}
       </div>
       <div
         className="gridprojects"
@@ -124,59 +105,83 @@ function App() {
           unmountOnExit // Unmounts the component after the animation
         >
           <Modale
-            project={cartes[modaleNum[0]]}
+            project={activeCartes[modaleNum[0]]}
             closeModal={closeModal}
             pos={modaleNum[1]}
           />
         </CSSTransition>
 
-        <div className="projectscontenair">
+        <div
+          className="projectscontenair"
+          style={{
+            pointerEvents: isGathering ? "none" : "auto",
+          }}
+        >
           {/* We Map according to the previous ProjecList so the positions don't change instantly
         Positions will then progressively translate to new ProjectList because we give them classes according to the new projectList order*/}
-          {cartes.map((projet, index) => {
-            //Search position of the current project in the new Array Projectlist and set it to the class.
-            const pos = projetsList.findIndex((p) => p.id === projet.id);
+          {(() => {
+            // Calculate size once for all cards to prevent layout thrashing
             const size = window.innerWidth > 850 ? 170 : 115;
-            const bigLetter = projetsList[pos].bigletter;
-            const row = Math.floor(pos / 3);
-            const col = pos % 3;
-            return (
-              <div
-                key={projet.title}
-                className="project"
-                style={{
-                  top: `${row * size}px`,
-                  left: `${col * size}px`,
-                }}
-              >
-                <Project
-                  checked={checkedCarts.includes(index)}
-                  gif={projet.gif}
-                  description={projet.description}
-                  title={projet.title}
-                  color={projet.color}
-                  link={projet.link}
-                  show={hovercart === index}
-                  hoverMe={() => {
-                    setHoverCart(index);
+            const centerPos = size; // Center is at position 1,1
+
+            return activeCartes.map((projet, index) => {
+              const row = Math.floor(index / 3);
+              const col = index % 3;
+
+              return (
+                <div
+                  key={projet.title}
+                  className="project"
+                  style={{
+                    top: gatherToCenter ? `${centerPos}px` : `${row * size}px`,
+                    left: gatherToCenter ? `${centerPos}px` : `${col * size}px`,
+                    transitionDelay: cardDelays[index],
+                    zIndex: index === clickedCardIndex ? 10 : 1,
                   }}
-                  hoverOff={() => {
-                    setHoverCart(null);
-                  }}
-                  index={index}
-                  bigletter={bigLetter}
-                  openModale={() => {
-                    setOpenModal(true);
-                    setModaleNum([index, pos]);
-                  }}
-                />
-              </div>
-            );
-          })}
+                >
+                  <Project
+                    checked={checkedCarts.includes(index)}
+                    gif={projet.gif}
+                    description={projet.description}
+                    title={projet.title}
+                    color={projet.color}
+                    link={projet.link}
+                    show={hovercart === index}
+                    isGathering={gatherToCenter && index !== clickedCardIndex}
+                    hoverMe={() => {
+                      setHoverCart(index);
+                    }}
+                    hoverOff={() => {
+                      setHoverCart(null);
+                    }}
+                    index={index}
+                    openModale={() => {
+                      // Check if this is Portfolio card
+                      if (projet.id === 8 && currentCardSet === "home") {
+                        setClickedCardIndex(index);
+                        handlePortfolioClick();
+                      }
+                      // Check if this is Home card
+                      else if (
+                        projet.id === 10 &&
+                        currentCardSet === "portfolio"
+                      ) {
+                        setClickedCardIndex(index);
+                        handleHomeClick();
+                      } else {
+                        setOpenModal(true);
+                        setModaleNum([index, index]);
+                      }
+                    }}
+                  />
+                </div>
+              );
+            });
+          })()}
         </div>
         {/* end of gridProject */}
       </div>
-      <p className="footer"> &#169; Pierre Malleret 2024</p>
+      <p className="footer"> &#169; Pierre Malleret 2026</p>
       {/* end of App */}
     </div>
   );

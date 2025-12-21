@@ -99,11 +99,6 @@
   }
 }
 
-@keyframes horizontal-spin {
-  from {
-    transform: rotateY(0) rotateX(0);
-  }
-  to {
-    transform: rotateY(360deg) rotateX(360deg);
-  }
+.cube.fast-spin {
+  animation: horizontal-spin 1.5s infinite linear !important;
 }

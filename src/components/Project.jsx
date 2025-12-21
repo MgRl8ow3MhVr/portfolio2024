@@ -9,9 +9,9 @@ function Project({
   hoverOff,
   title,
   color,
-  bigletter,
   openModale,
   checked,
+  isGathering,
 }) {
   const lettersList = title.split("");
   const big = window.innerWidth > 850;
@@ -26,50 +26,26 @@ function Project({
     return lettersList.map(() => Math.floor(Math.random() * 120) + "ms");
   }, [title]);
 
-  // to center line 1
+  // Position letters centered vertically
   const positionMaker = (index) => {
-    let top, left;
-    // mb for myblock
-    const mb =
-      index < bigletter
-        ? {
-            pos: "top",
-            myindex: index,
-            length: bigletter - 2,
-          }
-        : {
-            pos: "bot",
-            myindex: index - bigletter,
-            length: lettersList.length - 1 - bigletter,
-          };
+    const lines = lettersList.length > maxperline ? 2 : 1;
+    const myline = index > maxperline ? 2 : 1;
+    const myposinline = myline === 2 ? index - maxperline : index;
 
-    mb.lines = mb.length > maxperline ? 2 : 1;
-    mb.myline = mb.myindex > maxperline ? 2 : 1;
-    mb.myposinline = mb.myline === 2 ? mb.myindex - maxperline : mb.myindex;
-    mb.mylineletters =
-      mb.lines === 1
-        ? mb.length
-        : mb.myline === 1
-        ? maxperline
-        : mb.length - maxperline;
-    // V. BLOCK POS
-    top = mb.pos === "top" ? padding : size - 2.5 * padding;
-    if (mb.myline === 2) {
+    // Vertical position - centered
+    let top = size / 2 - padding;
+    if (myline === 2) {
       top += linespacing;
-    } // V. LINE SPACING
-    if (mb.lines === 2) {
-      top -= linespacing / 1.5;
-    } // V. LINE RECENTER
-
-    // H. GLOBALE POS
-    left = (mb.myposinline + 1) * spacing;
-    // H. CENTER
-    left += ((maxperline - mb.mylineletters) / 2 + 0.5) * spacing;
-
-    // IF NO BIG LETTER, SIMPLY RECENTER VERT
-    if (bigletter === -1) {
-      top -= size / 2 - 2 * padding;
     }
+    if (lines === 2) {
+      top -= linespacing / 1.5;
+    }
+
+    // Horizontal position
+    const mylineletters = lines === 1 ? lettersList.length : (myline === 1 ? maxperline : lettersList.length - maxperline);
+    let left = (myposinline + 1) * spacing;
+    left += ((maxperline - mylineletters) / 2 + 0.5) * spacing;
+
     const textTransform = index === 0 ? "uppercase" : "lowercase";
     const transitionDelay = transitionDelays[index];
 
@@ -82,17 +58,17 @@ function Project({
   };
 
   const positionMakerShow = (index) => {
-    let top, left;
     const lines = lettersList.length > maxperline ? 2 : 1;
     const myline = index > maxperline ? 2 : 1;
     const myposinline = myline === 2 ? index - maxperline : index;
-    top = 2;
+
+    let top = 2;
     if (myline === 2) {
       top += linespacing;
-    } // V. LINE SPACING
-    // H. GLOBALE POS
-    left = 5 + myposinline * spacing;
-    const textTransform = index === bigletter ? "uppercase" : "lowercase";
+    }
+
+    const left = 5 + myposinline * spacing;
+    const textTransform = index === 0 ? "uppercase" : "lowercase";
 
     return {
       top: top + "px",
@@ -114,31 +90,21 @@ function Project({
       style={color && { backgroundColor: color }}
     >
       {checked && <CheckBox />}
-      <div className={show ? "titlesin" : "titlesout"}>
-        {lettersList.map((letter, index) => {
-          // # # # # BIG LETTER # # # # #
-          if (index === bigletter && !show) {
-            return (
-              <div key={index + letter} className="letter bigLetter">
-                {letter}
-              </div>
-            );
-            // # # # # SMALL # # # # #
-          } else {
-            return (
-              <div
-                key={index + letter}
-                className={`letter smallLetter`}
-                style={!show ? positionMaker(index) : positionMakerShow(index)}
-              >
-                {letter}
-              </div>
-            );
-          }
-        })}
-      </div>
+      {!isGathering && (
+        <div className={show ? "titlesin" : "titlesout"}>
+          {lettersList.map((letter, index) => (
+            <div
+              key={index + letter}
+              className="letter smallLetter"
+              style={!show ? positionMaker(index) : positionMakerShow(index)}
+            >
+              {letter}
+            </div>
+          ))}
+        </div>
+      )}
 
-      {show && (
+      {show && !isGathering && (
         <div className="gifcard">
           <img
             src={gif}
