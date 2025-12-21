@@ -1,0 +1,85 @@
+/* =====================================================
+   DICE CONTAINER & TRY THIS
+   ===================================================== */
+
+.dice {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: appear 1.7s ease-in;
+}
+
+.trythis {
+  color: rgba(46, 46, 46, 0.872);
+  width: 85px;
+  display: flex;
+  font-weight: 500;
+  transform: translateX(-20px);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.trythis > span {
+  font-size: 13px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.trythis > div:nth-child(2) {
+  animation: trythis1 0.6s infinite alternate;
+}
+
+.trythis > div:nth-child(3) {
+  animation: trythis2 0.6s infinite alternate;
+}
+
+.trythis > div:nth-child(4) {
+  animation: trythis3 0.6s infinite alternate;
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes trythis1 {
+  from {
+  }
+  to {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes trythis2 {
+  from {
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes trythis3 {
+  from {
+  }
+  to {
+    transform: translateX(12px);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+   ===================================================== */
+
+@media (max-width: 850px) {
+  .triangle-play-button {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 18px solid var(--diceCol2);
+  }
+
+  .triangle-play-button-small {
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 14px solid rgb(113, 138, 113);
+  }
+}

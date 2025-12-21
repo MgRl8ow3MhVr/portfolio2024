@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Modale.css";
 import Chevron from "./Chevron";
 import Description from "./Description";
 import Close from "../assets/svg/close.jsx";

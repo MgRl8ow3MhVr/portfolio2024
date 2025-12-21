@@ -2,6 +2,9 @@ import React, { useState, useMemo } from "react";
 
 import "./App.css";
 import "./animations/anims.css";
+import "./components/Header.css";
+import "./components/Footer.css";
+import "./components/DiceContainer.css";
 import Project from "./components/Project.jsx";
 import cartes from "./Cartes.jsx";
 import CartesPortfolio from "./CartesPortfolio.jsx";

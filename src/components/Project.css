@@ -50,7 +50,33 @@
   }
 }
 
-/* # # # # # # # # # IMG de la Carte  # # # # # # # # #  */
+/* =====================================================
+   PROJECT CARD
+   ===================================================== */
+
+.project {
+  position: absolute;
+  transition: var(--transTime) cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc((var(--sizeProject) - 5px));
+  height: calc((var(--sizeProject) - 5px));
+  background-color: #303030;
+  overflow: hidden;
+}
+
+.cart:hover {
+  cursor: pointer;
+}
+
+/* =====================================================
+   PROJECT GIF
+   ===================================================== */
 
 .gifcard {
   position: absolute;
