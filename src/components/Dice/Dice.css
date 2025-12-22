@@ -100,5 +100,5 @@
 }
 
 .cube.fast-spin {
-  animation: horizontal-spin 1.5s infinite linear !important;
+  animation: horizontal-spin 1s infinite linear !important;
 }

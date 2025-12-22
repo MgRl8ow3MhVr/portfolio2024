@@ -57,7 +57,10 @@
 
 .project {
   position: absolute;
-  transition: var(--transTime) cubic-bezier(0.1, 0.9, 0.2, 1);
+  transition: top var(--transTime) cubic-bezier(0.1, 0.9, 0.2, 1),
+              left var(--transTime) cubic-bezier(0.1, 0.9, 0.2, 1),
+              box-shadow 0.2s ease-out,
+              transform 0.2s ease-out;
 }
 
 .cart {

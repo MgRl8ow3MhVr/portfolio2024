@@ -26,6 +26,11 @@ function App() {
   const [currentCardSet, setCurrentCardSet] = useState("home");
   const [activeCartes, setActiveCartes] = useState(cartes);
   const [clickedCardIndex, setClickedCardIndex] = useState(null);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+  // Dice lottery animation
+  const [isRolling, setIsRolling] = useState(false);
+  const [highlightedCard, setHighlightedCard] = useState(null);
 
   // Generate stable random delays for each card transition
   const cardDelays = useMemo(() => {
@@ -35,6 +40,13 @@ function App() {
       return Math.floor(Math.random() * 120) + 10 + "ms";
     });
   }, [activeCartes, clickedCardIndex]);
+
+  // Generate linear appearance delays for initial load
+  const cardAppearDelays = useMemo(() => {
+    return activeCartes.map((_, index) => {
+      return 0.8 + index * 0.08; // Linear delay: 0.8s, 0.88s, 0.96s, etc. (80ms increments)
+    });
+  }, [activeCartes.length]);
 
   const closeModal = () => {
     if (!openModal) return null;
@@ -67,6 +79,11 @@ function App() {
       setOpenModal(false);
     }
 
+    // Disable initial load animations after first navigation
+    if (isInitialLoad) {
+      setIsInitialLoad(false);
+    }
+
     // Start gathering animation
     setIsGathering(true);
     setGatherToCenter(true);
@@ -91,23 +108,94 @@ function App() {
     handleCardSetSwitch(CartesPortfolio, "portfolio");
   const handleHomeClick = () => handleCardSetSwitch(cartes, "home");
 
+  // Handle dice click - lottery animation
+  const handleDiceClick = () => {
+    if (isRolling || isGathering || openModal) return;
+
+    // Get unchecked cards (exclude Portfolio/Retour navigation cards)
+    const checkedCarts =
+      currentCardSet === "home" ? checkedCartsHome : checkedCartsPortfolio;
+    const uncheckedCards = activeCartes
+      .map((carte, index) => ({ carte, index }))
+      .filter(
+        ({ carte, index }) =>
+          !checkedCarts.includes(index) &&
+          carte.id !== 8 && // Exclude Portfolio card
+          carte.id !== 10 // Exclude Retour card
+      );
+
+    if (uncheckedCards.length === 0) return; // No cards to select
+
+    setIsRolling(true);
+
+    // Create decelerating highlight sequence
+    const totalDuration = 2000; // 2 seconds total
+    const highlights = [];
+    let elapsed = 0;
+    let delay = 50; // Start with 50ms between highlights
+    const deceleration = 1.15; // Multiply delay by this factor each step
+
+    // Build the sequence with decelerating intervals
+    while (elapsed < totalDuration - 200) {
+      // Leave 200ms for final selection
+      const randomCard =
+        uncheckedCards[Math.floor(Math.random() * uncheckedCards.length)];
+      highlights.push({ cardIndex: randomCard.index, time: elapsed });
+      elapsed += delay;
+      delay *= deceleration;
+    }
+
+    // Final selected card
+    const finalCard =
+      uncheckedCards[Math.floor(Math.random() * uncheckedCards.length)];
+    highlights.push({ cardIndex: finalCard.index, time: totalDuration - 200 });
+
+    // Execute the highlight sequence
+    highlights.forEach(({ cardIndex, time }) => {
+      setTimeout(() => {
+        setHighlightedCard(cardIndex);
+      }, time);
+    });
+
+    // Open the final card after 2 seconds
+    setTimeout(() => {
+      setHighlightedCard(null);
+      setIsRolling(false);
+      setOpenModal(true);
+      setModaleNum([finalCard.index, finalCard.index]);
+    }, totalDuration);
+  };
+
   return (
     <div className="app" onClick={closeModal}>
-      <div className="header">PIERRE MALLERET</div>
+      <div
+        className="header"
+        style={{
+          animation: isInitialLoad ? "appear 0.3s ease-in" : "none",
+        }}
+      >
+        PIERRE MALLERET
+      </div>
       <div
         className="subtitle"
         style={{
           opacity: gatherToCenter ? 0 : 1,
           transition: `opacity ${gatherToCenter ? "0.5s" : "0.6s"} ease-out`,
+          animation: isInitialLoad ? "appear 0.3s ease-in 0.15s both" : "none",
         }}
       >
         <span>
           {currentCardSet === "home" ? "DÉVELOPPEUR WEB" : "PORTFOLIO"}
         </span>
       </div>
-      <div className="dice">
-        <div>
-          <Dice word={"TOTOTO"} isGathering={isGathering} />
+      <div
+        className="dice"
+        style={{
+          animation: isInitialLoad ? "appear 0.3s ease-in 0.3s both" : "none",
+        }}
+      >
+        <div onClick={handleDiceClick} style={{ cursor: "pointer" }}>
+          <Dice word={"TOTOTO"} isGathering={isRolling} />
         </div>
       </div>
       <div
@@ -156,6 +244,8 @@ function App() {
                   ? homeCheckColor
                   : portfolioCheckColor;
 
+              const isHighlighted = highlightedCard === index;
+
               return (
                 <div
                   key={projet.title}
@@ -165,6 +255,13 @@ function App() {
                     left: gatherToCenter ? `${centerPos}px` : `${col * size}px`,
                     transitionDelay: isGathering ? cardDelays[index] : "0ms",
                     zIndex: index === clickedCardIndex ? 10 : 1,
+                    boxShadow: isHighlighted
+                      ? "0 0 25px 8px rgba(216, 180, 160, 0.8)"
+                      : "none",
+                    transform: isHighlighted ? "scale(1.05)" : "scale(1)",
+                    animation: isInitialLoad
+                      ? `appear 0.2s ease-in ${cardAppearDelays[index]}s both`
+                      : "none",
                   }}
                 >
                   <Project
