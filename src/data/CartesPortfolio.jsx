@@ -1,71 +1,43 @@
-import { homeCardsColor, portfolioCardsColor } from "./config.js";
+import { homeCardsColor, portfolioCardsColor } from "../config.js";
 
-/* # # # # # # ABOUT ME # # # # # # # # # # # # # # # */
+/* # # # # # # # # # # # # # # # # # # # # # */
 const obj0 = {
-  id: 0,
-  title: "Qui suis-je ?",
+  id: 10,
+  title: "Retour",
+  color: homeCardsColor,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/g39tl9gae4jpzofnul5z.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795018/portfolio/imgs/bnykj67eazhs6ejtclmt.jpg",
   description: `
-  \n>BIENVENUE SUR CE SITE\n
+  \n>Retour à la page principale\n
 
-  Je m'appelle Pierre, je suis développeur fullstack. Cela signifie que je sais concevoir une application web complète et personnalisée à vos besoins, de l'interface (web ou mobile) à la base de données en passant par des animations, avec une sensibilité particulière pour les interfaces créatives.
-
-  À l'écoute de vos besoins et pédagogue - je suis occasionnellement formateur -, je saurai vous aider à choisir la technologie la plus adaptée à votre projet, et vous accompagner depuis la conception de maquettes, jusqu'à la livraison.
-
-  Découvrez mes savoir-faire et mes plus belles réalisations au fil des huit autres cartes mouvantes. 
-  Et n'oubliez pas de cliquer et re-cliquer sur le petit 🎲 !
-
-  Bonne visite
-`,
+  Cliquez sur cette carte pour revenir aux cartes de présentation.
+  `,
 };
-
-// Issu d'une école d'ingénieur, le développement web est ma troisième carrière dans le numérique: en tant qu'ancien consultant dans les télécoms, je sais organiser des projets complexes, en tant que co-fondateur d'une boutique en ligne, je comprends les problématiques de mes clients entrepreneurs.
 
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj1 = {
-  id: 1,
-  title: "Contact",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1727796858/portfolio/gifs/da55jowozj3lrft4kyci.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1728052982/portfolio/imgs/bwcgvjevxviknuumayd8.jpg",
-  description: `
-  \n>Contactez moi\n
-  
-  Avez-vous des besoins de conception d'application web ? Recherchez-vous un formateur passionné ?
-
-  N'hésitez pas à prendre m'écrire sur Linkedin ou m'envoyer un email :
-    `,
-  button1: "Linkedin",
-  link1: "https://www.linkedin.com/in/pierredevpro/",
-  button2: "email",
-  link2: "mailto:pierredevpro@gmail.com",
+  id: 11,
+  title: "",
+  color: portfolioCardsColor,
+  gif: "",
+  img: "",
+  description: "",
 };
 
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj2 = {
-  id: 2,
-  title: "Formateur web",
-  img: "https://res.cloudinary.com/pierredev/image/upload/c_crop,w_320/v1727800724/portfolio/gifs/yfketmnkysmoaamaaxvy.gif",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/c_crop,h_389/v1728056977/portfolio/imgs/le5yidqslwjzcwic28tc.png",
-  description: `
-  \n>Formateur Web et numérique \n
-  Je prends plaisir à transmettre mes connaissances de développeur web pour un public en reconversion. Ainsi, j'ai conçu et animé les formations suivantes :
-  - Débuter avec Javascript
-  - Concevoir des sites dynamiques avec React
-  - Les métiers du Web (atelier destiné aux entreprises qui travaillent dans l'orientation numérique)
-
-  Je suis également engagé comme animateur de la fresque du numérique et la fresque du climat. Pour en savoir plus visitez-les !
-`,
-
-  button1: "Numérique",
-  link1: "https://www.fresquedunumerique.org/",
-  button2: "Climat",
-  link2: "https://fresqueduclimat.org/",
+  id: 12,
+  title: "",
+  color: portfolioCardsColor,
+  gif: "",
+  img: "",
+  description: "",
 };
 /* # # # # # # ELEARNING # # # # # # # # # # # # # # # */
 const obj3 = {
-  id: 3,
+  id: 13,
   title: "E-learning",
+  color: portfolioCardsColor,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/k0gdbvq7falkwbs48erj.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/c_scale/v1727795014/portfolio/imgs/fzcxdrsxj3l4nbgi75ge.jpg",
   description: `
@@ -85,7 +57,8 @@ const obj3 = {
 };
 /* # # # # # # JEUX # # # # # # # # # # # # # # # */
 const obj4 = {
-  id: 4,
+  id: 14,
+  color: portfolioCardsColor,
   title: "Web app multijoueur",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1727795013/portfolio/imgs/i5ghqryzpu2ttjnlghhb.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795017/portfolio/imgs/dlfzuic9vqg2jsadnrgo.png",
@@ -106,7 +79,8 @@ const obj4 = {
 };
 /* # # # # # # GARELLI # # # # # # # # # # # # # # # */
 const obj5 = {
-  id: 5,
+  id: 15,
+  color: portfolioCardsColor,
   title: "Association Garelli",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063335/portfolio/gifs/b41rkf50l2q9yjfdbvfn.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1728037414/portfolio/imgs/ion2xo98zlxxhvlyzrp9.jpg",
@@ -127,31 +101,55 @@ const obj5 = {
 };
 /* # # # # # # DIAGRAMMES # # # # # # # # # # # # # # # */
 const obj6 = {
-  id: 6,
-  title: "Diagrammes interactifs",
+  id: 16,
+  color: portfolioCardsColor,
+  title: "ADIE",
   description: `
-  \n>Diagramme de flux pour Alkalee\n
+  \n>Outils No Code\n
+    Je sais coder, mais je sais aussi no-coder ! Les outils de No Code permettent de répondre rapidement à un besoin métier spécifique. 
     
-    L'interface que j'ai développée permet à un utilisateur de "connecter des boîtes entre elles" afin de construire un shéma qui simule les composants électroniques des voitures. Un appel à l'API de leur moteur affichera ensuite les résultats de la simulation.
-
-  Stack utilisée : React, Bryntum, React-Flow, api Jira 
-
-  \n>Gantt personalisé pour Quantic Dream\n
-  Quantic Dream est un grand éditeur de jeu vidéo français. J'ai conçu pour eux un diagramme de Gantt à l'échelle de cinq ans qui permet de faire ressortir dépendances entre chantiers.
+    \n>Préfecture d'Occitanie\n
+    Par exemple, pour la Préfecture d'Occitaine, j'ai développé en "Grist" une interface de gestion des places en crèches pour les agents publics de la région. Un outil désormais à leur disposition et facile à utiliser.
+    
+        \n>ADIE\n
+    Ou encore, pour l'ADIE, la première banque de micro-crédit de France, à l'aide de Ksaar, j'ai créé un simulateur d'impact écologique à destination des petites entreprises.
   `,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1728042846/portfolio/gifs/u6gumr9iuelbzbtmnh73.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1728042370/portfolio/imgs/kyi9jxxr3bsueihvzecq.jpg",
-  buttonvideo: "Alakee",
+  buttonvideo: "Préfecture",
   linkvideo:
     "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/upzfa0fy5qozxxju0dpr.mov",
-  buttonvideo2: "Quantic Dream",
+  buttonvideo2: "ADIE",
   linkvideo2:
     "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/nmvi0hfmbmasep8ds5n3.mov",
 };
+// const obj6 = {
+//   id: 6,
+//   title: "Diagrammes interactifs",
+//   description: `
+//   \n>Diagramme de flux pour Alkalee\n
+
+//     L'interface que j'ai développée permet à un utilisateur de "connecter des boîtes entre elles" afin de construire un shéma qui simule les composants électroniques des voitures. Un appel à l'API de leur moteur affichera ensuite les résultats de la simulation.
+
+//   Stack utilisée : React, Bryntum, React-Flow, api Jira
+
+//   \n>Gantt personalisé pour Quantic Dream\n
+//   Quantic Dream est un grand éditeur de jeu vidéo français. J'ai conçu pour eux un diagramme de Gantt à l'échelle de cinq ans qui permet de faire ressortir dépendances entre chantiers.
+//   `,
+//   gif: "https://res.cloudinary.com/pierredev/image/upload/v1728042846/portfolio/gifs/u6gumr9iuelbzbtmnh73.gif",
+//   img: "https://res.cloudinary.com/pierredev/image/upload/v1728042370/portfolio/imgs/kyi9jxxr3bsueihvzecq.jpg",
+//   buttonvideo: "Alakee",
+//   linkvideo:
+//     "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/upzfa0fy5qozxxju0dpr.mov",
+//   buttonvideo2: "Quantic Dream",
+//   linkvideo2:
+//     "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/nmvi0hfmbmasep8ds5n3.mov",
+// };
 /* # # # # # # LIVRAISON # # # # # # # # # # # # # # # */
 const obj7 = {
-  id: 7,
-  title: "App de livraison",
+  id: 17,
+  color: portfolioCardsColor,
+  title: "Needeat Livraison",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063335/portfolio/gifs/q7hmlwl9k1gilnirugey.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795014/portfolio/imgs/rssjb4lscxmhhscxkdvw.jpg",
   description: `
@@ -168,11 +166,11 @@ const obj7 = {
 };
 /* # # # # # # Eco # # # # # # # # # # # # # # # */
 const obj8 = {
-  id: 8,
-  title: "Portfolio",
+  id: 18,
   color: portfolioCardsColor,
+  title: "Loom & Field",
   description: `
-  \n>portfolio\n
+  \n>E-Commerce\n
   
   Loom & Field est une boutique en ligne d'objets de déco d'intérieur issus de l'artisanat : tapis, coussins, poufs, paniers. Ces textiles sont fabriqués à la main par des coopératives au Maroc, au Guatemala, Mexique ou encore Turquie.
   
