@@ -25,7 +25,7 @@ function Project({
   // Generate stable random delays once per title
   const transitionDelays = useMemo(() => {
     return lettersList.map(() => Math.floor(Math.random() * 120) + "ms");
-  }, [title]);
+  }, [lettersList.length, title]);
 
   // Position letters centered vertically
   const positionMaker = (index) => {

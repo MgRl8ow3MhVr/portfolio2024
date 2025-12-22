@@ -18,7 +18,8 @@
   color: white;
   position: absolute;
   text-align: center;
-  transition: all 0.2s ease-in;
+  transition: top 0.2s ease-in, left 0.2s ease-in, font-weight 0.2s ease-in, text-transform 0.2s ease-in;
+  will-change: top, left;
 }
 
 .smallLetter {

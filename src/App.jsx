@@ -94,8 +94,16 @@ function App() {
   return (
     <div className="app" onClick={closeModal}>
       <div className="header">PIERRE MALLERET</div>
-      <div className="subtitle">
-        <span>DÉVELOPPEUR WEB</span>
+      <div
+        className="subtitle"
+        style={{
+          opacity: gatherToCenter ? 0 : 1,
+          transition: `opacity ${gatherToCenter ? "0.5s" : "0.6s"} ease-out`,
+        }}
+      >
+        <span>
+          {currentCardSet === "home" ? "DÉVELOPPEUR WEB" : "PORTFOLIO"}
+        </span>
       </div>
       <div className="dice">
         <div>
@@ -139,8 +147,14 @@ function App() {
               const col = index % 3;
 
               // Get checked state and color based on current card set
-              const checkedCarts = currentCardSet === "home" ? checkedCartsHome : checkedCartsPortfolio;
-              const checkColor = currentCardSet === "home" ? homeCheckColor : portfolioCheckColor;
+              const checkedCarts =
+                currentCardSet === "home"
+                  ? checkedCartsHome
+                  : checkedCartsPortfolio;
+              const checkColor =
+                currentCardSet === "home"
+                  ? homeCheckColor
+                  : portfolioCheckColor;
 
               return (
                 <div
@@ -149,7 +163,7 @@ function App() {
                   style={{
                     top: gatherToCenter ? `${centerPos}px` : `${row * size}px`,
                     left: gatherToCenter ? `${centerPos}px` : `${col * size}px`,
-                    transitionDelay: cardDelays[index],
+                    transitionDelay: isGathering ? cardDelays[index] : "0ms",
                     zIndex: index === clickedCardIndex ? 10 : 1,
                   }}
                 >
