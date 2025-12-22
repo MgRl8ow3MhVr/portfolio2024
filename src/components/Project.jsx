@@ -11,6 +11,7 @@ function Project({
   color,
   openModale,
   checked,
+  checkColor,
   isGathering,
 }) {
   const lettersList = title.split("");
@@ -89,7 +90,7 @@ function Project({
       }}
       style={color && { backgroundColor: color }}
     >
-      {checked && <CheckBox />}
+      {checked && <CheckBox checkColor={checkColor} />}
       {!isGathering && (
         <div className={show ? "titlesin" : "titlesout"}>
           {lettersList.map((letter, index) => (

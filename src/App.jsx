@@ -11,10 +11,12 @@ import CartesPortfolio from "./CartesPortfolio.jsx";
 import Modale from "./components/Modale";
 import Dice from "./components/Dice/Dice.jsx";
 import { CSSTransition } from "react-transition-group";
+import { homeCheckColor, portfolioCheckColor } from "./config.js";
 
 function App() {
   const [hovercart, setHoverCart] = useState(null);
-  const [checkedCarts, setCheckedCarts] = useState([]);
+  const [checkedCartsHome, setCheckedCartsHome] = useState([]);
+  const [checkedCartsPortfolio, setCheckedCartsPortfolio] = useState([]);
   const [modaleNum, setModaleNum] = useState([0, 0]);
   const [openModal, setOpenModal] = useState(false);
 
@@ -42,10 +44,15 @@ function App() {
       behavior: "smooth",
     });
     setTimeout(() => {
-      const checkedCp = [...checkedCarts];
-
-      checkedCp.push(modaleNum[0]);
-      setCheckedCarts(checkedCp);
+      if (currentCardSet === "home") {
+        const checkedCp = [...checkedCartsHome];
+        checkedCp.push(modaleNum[0]);
+        setCheckedCartsHome(checkedCp);
+      } else {
+        const checkedCp = [...checkedCartsPortfolio];
+        checkedCp.push(modaleNum[0]);
+        setCheckedCartsPortfolio(checkedCp);
+      }
     }, 1100);
 
     setOpenModal(false);
@@ -131,6 +138,10 @@ function App() {
               const row = Math.floor(index / 3);
               const col = index % 3;
 
+              // Get checked state and color based on current card set
+              const checkedCarts = currentCardSet === "home" ? checkedCartsHome : checkedCartsPortfolio;
+              const checkColor = currentCardSet === "home" ? homeCheckColor : portfolioCheckColor;
+
               return (
                 <div
                   key={projet.title}
@@ -144,6 +155,7 @@ function App() {
                 >
                   <Project
                     checked={checkedCarts.includes(index)}
+                    checkColor={checkColor}
                     gif={projet.gif}
                     description={projet.description}
                     title={projet.title}

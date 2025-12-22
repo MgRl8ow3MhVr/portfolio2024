@@ -18,7 +18,7 @@ const obj0 = {
 const obj1 = {
   id: 11,
   title: "",
-  //   color: "",
+  color: portfolioCardsColor,
   gif: "",
   img: "",
   description: "",
@@ -28,7 +28,7 @@ const obj1 = {
 const obj2 = {
   id: 12,
   title: "",
-  //   color: "",
+  color: portfolioCardsColor,
   gif: "",
   img: "",
   description: "",

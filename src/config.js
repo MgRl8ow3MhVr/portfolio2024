@@ -26,3 +26,7 @@ export const wordsList = ["zzz", "lana", "portfolio"];
 // Card colors
 export const homeCardsColor = "#303030";
 export const portfolioCardsColor = "#5c5c5c";
+
+// Checkmark colors
+export const homeCheckColor = "#6bd172";
+export const portfolioCheckColor = "#7dd683";
