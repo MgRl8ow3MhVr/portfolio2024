@@ -13,10 +13,10 @@ function Project({
   checked,
   checkColor,
   isGathering,
+  size,
 }) {
   const lettersList = title.split("");
   const big = window.innerWidth > 850;
-  const size = big ? 170 : 115;
   const padding = big ? 17 : 12;
   const spacing = big ? 11 : 8;
   const linespacing = big ? 17 : 12;

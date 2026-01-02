@@ -11,7 +11,7 @@ import CartesPortfolio from "./data/CartesPortfolio.jsx";
 import Modale from "./components/Modale";
 import Dice from "./components/Dice/Dice.jsx";
 import { CSSTransition } from "react-transition-group";
-import { homeCheckColor, portfolioCheckColor } from "./config.js";
+import { homeCheckColor, portfolioCheckColor, portraitSizeRatio, landscapeSizeRatio } from "./config.js";
 
 function App() {
   const [hovercart, setHoverCart] = useState(null);
@@ -166,8 +166,14 @@ function App() {
     }, totalDuration);
   };
 
+  // Calculate size for CSS variable
+  const isPortrait = window.innerHeight > window.innerWidth;
+  const calculatedSize = isPortrait
+    ? window.innerWidth * portraitSizeRatio
+    : window.innerHeight * landscapeSizeRatio;
+
   return (
-    <div className="app" onClick={closeModal}>
+    <div className="app" onClick={closeModal} style={{ '--sizeProject': `${calculatedSize}px` }}>
       <div
         className="header"
         style={{
@@ -227,7 +233,10 @@ function App() {
         Positions will then progressively translate to new ProjectList because we give them classes according to the new projectList order*/}
           {(() => {
             // Calculate size once for all cards to prevent layout thrashing
-            const size = window.innerWidth > 850 ? 170 : 115;
+            const isPortrait = window.innerHeight > window.innerWidth;
+            const size = isPortrait
+              ? window.innerWidth * portraitSizeRatio
+              : window.innerHeight * landscapeSizeRatio;
             const centerPos = size; // Center is at position 1,1
 
             return activeCartes.map((projet, index) => {
@@ -274,6 +283,7 @@ function App() {
                     link={projet.link}
                     show={hovercart === index}
                     isGathering={gatherToCenter && index !== clickedCardIndex}
+                    size={size}
                     hoverMe={() => {
                       setHoverCart(index);
                     }}

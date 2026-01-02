@@ -14,7 +14,7 @@ body {
   overflow: scroll;
   background-color: #fbf2ec;
   -webkit-tap-highlight-color: transparent;
-  --sizeProject: 170px;
+  --sizeProject: 170px; /* Default fallback value */
   --transTime: 0.85s;
   --col1: rgba(89, 87, 87, 0.872);
   --col2: rgba(46, 46, 46, 0.872);
@@ -65,8 +65,4 @@ body {
    RESPONSIVE - MOBILE
    ===================================================== */
 
-@media (max-width: 850px) {
-  body {
-    --sizeProject: 115px;
-  }
-}
+/* CSS variable --sizeProject is now dynamically set in App.jsx */
