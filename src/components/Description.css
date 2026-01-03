@@ -1,0 +1,111 @@
+.description {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.description::-webkit-scrollbar {
+  display: none;
+}
+
+.description > div {
+  position: relative;
+  background-color: rgb(0, 0, 0, 0.8);
+  padding: 5px 20px 0px 20px;
+  margin-top: 80%;
+  height: calc(100% - 5px);
+  min-height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description p {
+  font-family: "Hind Siliguri", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  word-spacing: 2px;
+}
+
+.description ul {
+  font-family: "Hind Siliguri", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: white;
+  text-align: left;
+  word-spacing: 2px;
+  list-style-position: inside;
+  margin-left: 20px;
+}
+
+.description li {
+  color: white;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+  color: white;
+  text-align: center;
+}
+
+.chevron {
+  transform: rotate(-90deg);
+  transition: all 0.2s;
+}
+
+.chevronDown {
+  transform: rotate(90deg);
+}
+
+.inline-link {
+  display: inline;
+  color: var(--col2);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background-color: #d8b4a0;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.inline-link:hover {
+  background-color: #c9a591;
+  transform: none !important;
+  color: #3d2817;
+}
+
+@media (max-width: 850px) {
+  .description p {
+    font-size: 15px;
+    color: white;
+    margin-bottom: 8px;
+    word-spacing: 1px;
+  }
+
+  .description ul {
+    font-size: 12px;
+    word-spacing: 0px;
+  }
+
+  .description li {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin: 5px 0 5px 0;
+  }
+}

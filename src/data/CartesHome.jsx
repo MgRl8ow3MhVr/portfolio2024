@@ -1,26 +1,25 @@
-import { homeCardsColor, portfolioCardsColor } from "../config.js";
+import { portfolioCardsColor } from "../config.js";
 
-/* # # # # # # ABOUT ME # # # # # # # # # # # # # # # */
+/* # # # # # # # # # # # # # # # # # # # # # */
 const obj0 = {
   id: 0,
   title: "Qui suis-je ?",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/g39tl9gae4jpzofnul5z.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795018/portfolio/imgs/bnykj67eazhs6ejtclmt.jpg",
   description: `
-  \n>BIENVENUE SUR CE SITE\n
+  >BIENVENUE SUR CE SITE
 
-  Je m'appelle Pierre, je suis développeur fullstack. Cela signifie que je sais concevoir une application web complète et personnalisée à vos besoins, de l'interface (web ou mobile) à la base de données en passant par des animations, avec une sensibilité particulière pour les interfaces créatives.
+  Je m'appelle Pierre Malleret, je suis développeur web. Cela signifie que je peux concevoir et héberger une application complète et personnalisée à vos besoins, de l'interface (web ou mobile) à la base de données en passant par des automations.
 
-  À l'écoute de vos besoins et pédagogue - je suis occasionnellement formateur -, je saurai vous aider à choisir la technologie la plus adaptée à votre projet, et vous accompagner depuis la conception de maquettes, jusqu'à la livraison.
+  À l'écoute de vos besoins et pédagogue - je suis occasionnellement formateur -, je saurai vous aider à choisir la technologie la plus adaptée à votre projet, et vous accompagner depuis la conception de maquettes, jusqu'à la livraison de votre outil.
 
-  Découvrez mes savoir-faire et mes plus belles réalisations au fil des huit autres cartes mouvantes. 
-  Et n'oubliez pas de cliquer et re-cliquer sur le petit 🎲 !
+  Découvrez mes savoir-faire et mes plus belles réalisations au fil des autres cartes qu'il vous reste à découvrir. 
+  
+  Et si vous ne savez pas par quelle carte commencer, cliquez sur le dé !
 
   Bonne visite
 `,
 };
-
-// Issu d'une école d'ingénieur, le développement web est ma troisième carrière dans le numérique: en tant qu'ancien consultant dans les télécoms, je sais organiser des projets complexes, en tant que co-fondateur d'une boutique en ligne, je comprends les problématiques de mes clients entrepreneurs.
 
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj1 = {
@@ -29,11 +28,11 @@ const obj1 = {
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1727796858/portfolio/gifs/da55jowozj3lrft4kyci.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1728052982/portfolio/imgs/bwcgvjevxviknuumayd8.jpg",
   description: `
-  \n>Contactez moi\n
+  >Contactez moi
   
-  Avez-vous des besoins de conception d'application web ? Recherchez-vous un formateur passionné ?
+  Avez-vous besoin d'une application web pour fluidifier votre métier ? D'un outil de gestion dans votre équipe quand excel ne suffit plus ? Recherchez-vous un formateur passionné ?
 
-  N'hésitez pas à prendre m'écrire sur Linkedin ou m'envoyer un email :
+  N'hésitez pas à prendre contact sur Linkedin ou m'envoyer un email :
     `,
   button1: "Linkedin",
   link1: "https://www.linkedin.com/in/pierredevpro/",
@@ -44,122 +43,131 @@ const obj1 = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj2 = {
   id: 2,
-  title: "Formateur web",
-  img: "https://res.cloudinary.com/pierredev/image/upload/c_crop,w_320/v1727800724/portfolio/gifs/yfketmnkysmoaamaaxvy.gif",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/c_crop,h_389/v1728056977/portfolio/imgs/le5yidqslwjzcwic28tc.png",
-  description: `
-  \n>Formateur Web et numérique \n
-  Je prends plaisir à transmettre mes connaissances de développeur web pour un public en reconversion. Ainsi, j'ai conçu et animé les formations suivantes :
-  - Débuter avec Javascript
-  - Concevoir des sites dynamiques avec React
-  - Les métiers du Web (atelier destiné aux entreprises qui travaillent dans l'orientation numérique)
-
-  Je suis également engagé comme animateur de la fresque du numérique et la fresque du climat. Pour en savoir plus visitez-les !
-`,
-
-  button1: "Numérique",
-  link1: "https://www.fresquedunumerique.org/",
-  button2: "Climat",
-  link2: "https://fresqueduclimat.org/",
-};
-/* # # # # # # ELEARNING # # # # # # # # # # # # # # # */
-const obj3 = {
-  id: 3,
-  title: "E-learning",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/k0gdbvq7falkwbs48erj.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/c_scale/v1727795014/portfolio/imgs/fzcxdrsxj3l4nbgi75ge.jpg",
-  description: `
-  \n>E-Learning de conduite auto\n
-
-  Pour l'entreprise The Good Drive, j'ai réalisé un E-Learning qui permet aux élèves des auto-école de s'entrainer avant de démarrer les heures de conduite.
-  \n>Fonctionnalités\n
-  Lecture audio du texte, QCM, lecture vidéos, reconstitution de panneaux routiers, clic sur vidéo pour détecter les dangers. Et surtout, rien n'est figé: via un back-office puissant, le client peut écrire ses propres exercices, uploader ses propres vidéos. C'est un vrai CMS de E-Learning.
-  \n>TECHNOLOGIES\n
-    React.js, Javascript, Express.js, AWS S3 EC2 Polly, 
-    `,
-  button1: "the good drive",
-  link1: "https://www.thegooddrive.fr/",
-  buttonvideo: "démo vidéo",
-  linkvideo:
-    "https://res.cloudinary.com/pierredev/video/upload/v1727980345/portfolio/videos/ujdsybauosyhl78osi8j.mov",
-};
-/* # # # # # # JEUX # # # # # # # # # # # # # # # */
-const obj4 = {
-  id: 4,
-  title: "Web app multijoueur",
+  title: "Applications web & mobiles",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1727795013/portfolio/imgs/i5ghqryzpu2ttjnlghhb.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795017/portfolio/imgs/dlfzuic9vqg2jsadnrgo.png",
   description: `
-  \n>Morpion géant\n
-  \n En classe au lycée, lorsque je voulais faire passer le temps, je sortais une feuille de papier quadrillée et démarrais un morpion sans limite avec mon voisin.
-  J'ai conçu la version en ligne de ce jeu :
-  \n>Mode opératoire\n
-  Deux personnes entrent l'url du jeu sur leur navigateur ou leur téléphone. Entrer un nom d'utilisateur. Cliquer sur le nom de l'adversaire pour démarrer une partie.
-  \n>Stack technique\n
-   node.js, express, React, websockets, render.com
+  >Applications Web et Mobile
+
+  Formé en école d'ingénieur et fort de 6 ans d'expérience en développement web, je conçois des applications mobiles complètes, de la base de données à l'interface utilisateur. Je travaille seul ou avec des designers selon les besoins. J'utilise principalement la stack React / JavaScript / Nest.js ou Strapi, avec un hébergement souverain sur Scalingo. Ayant géré un commerce en ligne, je comprends les enjeux business. Mon expérience de consultant télécoms m'apporte rigueur, professionnalisme et gestion de projet.
+
+  Découvrez mes meilleurs projets dans la carte "cas clients"
     `,
-  button1: "Essayez-le !",
-  link1: "https://pierremorpion.netlify.app/",
-  buttonvideo: "démo vidéo",
-  linkvideo:
-    "https://res.cloudinary.com/pierredev/video/upload/v1728036802/portfolio/videos/d07vg4ki7sowwcye4wz1.mov",
+};
+/* # # # # # # # # # # # # # # # # # # # # # */
+const obj3 = {
+  id: 3,
+  title: "Outils No Code et IA",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/k0gdbvq7falkwbs48erj.gif",
+  img: "https://res.cloudinary.com/pierredev/image/upload/c_scale/v1727795014/portfolio/imgs/fzcxdrsxj3l4nbgi75ge.jpg",
+  description: `
+  >Qu'est-ce que le No Code ?
+
+  Ce sont des outils numériques en ligne qui permettent de créer des applications et des automatisations via des interfaces visuelles, sans nécessiter de compétence de code. Ceux que je maîtrise le mieux sont Grist, N8N et Ksaar
+  
+  > Grist
+  Grist est un outil d'organisation des données, promu par le gouvernement pour remplacer Excel dans les collectivités. 
+  J'ai particulièrement acquis une expertise sur Grist en travaillant pour différents ministères.pour remplacer.
+  
+  > Code ou No Code ?
+  
+  De part ma formation d'ingénieur en informatique, j’ai acquis double compétence : coder ou utiliser le No Code. Selon les besoins et le budget, je saurai choisir la technologie la plus pertinente.
+  
+  > et l'IA ?
+  De plus avec le développement des IAs, la frontière entre code et no code est redéfinie. En tant que freelance, je me forme en continu sur toutes les nouvelles technologies.
+   
+    `,
+  // button1: "the good drive",
+  // link1: "https://www.thegooddrive.fr/",
+  // buttonvideo: "démo vidéo",
+  // linkvideo:
+  //   "https://res.cloudinary.com/pierredev/video/upload/v1727980345/portfolio/videos/ujdsybauosyhl78osi8j.mov",
+};
+/* # # # # # # # # # # # # # # # # # # # # # */
+const obj4 = {
+  id: 4,
+  title: "Formations",
+  img: "https://res.cloudinary.com/pierredev/image/upload/c_crop,w_320/v1727800724/portfolio/gifs/yfketmnkysmoaamaaxvy.gif",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/c_crop,h_389/v1728056977/portfolio/imgs/le5yidqslwjzcwic28tc.png",
+  description: `
+  >Formateur web et numérique
+  Diplômé 2008 de l'ENSIMAG, école d'ingénieurs informatique, puis spécialisé dans le Web au Reacteur en 2017, je prends désormais plaisir à transmettre mes acquis et mon expérience à un public en renconversion.
+  J'ai ainsi conçu et animé les formations suivantes, pour le <link href="https://www.greta-iledefrance.fr/" title="Greta">, <link href="https://www.ifocop.fr/" title="Ifocop"> et <link href="https://www.aucarre.tech/" title="Au Carré"> :
+  <ul>
+  - "Débuter avec Javascript"
+  - "Concevoir des sites dynamiques avec React"
+  - "Passer de excel à Grist"
+  - "Les métiers du Web" : un atelier destiné aux entreprises qui travaillent dans l'orientation numérique
+  </ul>
+`,
+
+  // button1: "Numérique",
+  // link1: "https://www.fresquedunumerique.org/",
+  // button2: "Climat",
+  // link2: "https://fresqueduclimat.org/",
 };
 /* # # # # # # GARELLI # # # # # # # # # # # # # # # */
 const obj5 = {
   id: 5,
-  title: "Association Garelli",
+  title: "Ils m'ont fait confiance",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063335/portfolio/gifs/b41rkf50l2q9yjfdbvfn.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1728037414/portfolio/imgs/ion2xo98zlxxhvlyzrp9.jpg",
   description: `
-  \n>Suivi de mineurs isolés étrangers\n
-  
-  Garelli95 est une association à qui l'état confie des mineurs isolés étrangers.
-  Leur besoin était d'enregistrer l'évolution des jeunes via un questionnaire réalisé tous les six mois, et ainsi évaluer leur action. L'interface se devait d'être chaleureuse et animée, pour donner envie.
+  >Développement d'applications web
+  <space/>
+  <link href="https://www.needeat.nc/fr/" title="Needeat"> <link href="https://www.donbosco-actionsociale.org/associations/garelli-95/" title="association Garelli"> <link href="https://https://www.thegooddrive.fr/" title="The good drive"> <link href="https://www.quanticdream.com" title="Quantic Dream"> <link href="https://www.vertigo-labs.com" title="Vertigo Labs">
+  <space/>
 
-  J'ai conçu en complément une interface Back-office qui permet de paramétrer les questions, catégories, utilisateurs etc... N'hésitez pas à les contacter pour leur demander des retours sur notre collaboration
-  
-  Stack technique : React, Zustand, Strapi, Cloudinary, MySql, Heroku`,
-  link1: "https://www.donbosco-actionsociale.org/associations/garelli-95/",
-  button1: "Garelli 95",
-  buttonvideo: "démo vidéo",
-  linkvideo:
-    "https://res.cloudinary.com/pierredev/video/upload/v1727713156/portfolio/videos/ubmpjasnytrhofumrsth.mov",
+  >Outils No Code
+    <space/>
+  <link href="https://www.economie.gouv.fr" title="Ministère des finances"> <link href="https://www.occitanie.gouv.fr" title="Préfecture d'occitanie"> <link href="https://www.numerique.gouv.fr" title="DINUM"> <link href="https://www.adie.org" title="Adie"> <link href="https://www.veolia.com" title="Veolia">
+    <space/>
+
+
+  >Chef de projet numérique
+    <space/>
+  <link href="https://aucarre.fr" title="Au Carré">
+    <space/>
+
+
+  > Formateur
+    <space/>
+  <link href="https://www.greta.fr" title="Greta"> <link href="https://www.ifocop.fr" title="IFOCOP"> <link href="https://ecoleatla.fr" title="Ecole ATLA">
+
+  `,
 };
-/* # # # # # # DIAGRAMMES # # # # # # # # # # # # # # # */
+/* # # # # # # # # # # # # # # # # # # # # # */
 const obj6 = {
   id: 6,
-  title: "Diagrammes interactifs",
+  title: "Comment travailler ensemble",
   description: `
-  \n>Diagramme de flux pour Alkalee\n
+  >Comment travailler ensemble ?
     
-    L'interface que j'ai développée permet à un utilisateur de "connecter des boîtes entre elles" afin de construire un shéma qui simule les composants électroniques des voitures. Un appel à l'API de leur moteur affichera ensuite les résultats de la simulation.
+   Je travaille sous le statut d'auto-entrepeneur. Qu'une mission se concrétise ou non, je trouve qu'une rencontre est toujours enrichissante.
 
-  Stack utilisée : React, Bryntum, React-Flow, api Jira 
+  > Etude du besoin & contractualisation
+   Lors d'une première rencontre, j'écouterai votre besoin et j'identifierai les technologies les plus pertinentes. Si le projet fait appel à des compétences que je n'ai pas, je saurai réunir une équipe de freelance via mon réseau de Freelance for Good.
 
-  \n>Gantt personalisé pour Quantic Dream\n
-  Quantic Dream est un grand éditeur de jeu vidéo français. J'ai conçu pour eux un diagramme de Gantt à l'échelle de cinq ans qui permet de faire ressortir dépendances entre chantiers.
+   Puis je vous enverrai un chiffrage détaillé reprenant toutes les fonctionnalités détaillées, et le temps estimé nécessaire pour chacune. Nous nous accordons sur un planning de réalisation.
+
+  > Réalisation
+  En phase de réalisation, nous gardons un contact régulier, pour vous faire part de l'avancement et décider d'ajustement nécessaires.
+
+  > Livraison & Maintenance
+  Une fois votre produit numérique livré, nous convenons d'une période de test qui vous permettra de détecter d'éventuels améliorations. Une fois cette phase passée, l'outil vous appartient, mais nous ne perdons pas le contact ! Je resterai disponible pour d'éventuels travaux d'amélioration ou de maintenance
+
+
   `,
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1728042846/portfolio/gifs/u6gumr9iuelbzbtmnh73.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1728042370/portfolio/imgs/kyi9jxxr3bsueihvzecq.jpg",
-  buttonvideo: "Alakee",
-  linkvideo:
-    "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/upzfa0fy5qozxxju0dpr.mov",
-  buttonvideo2: "Quantic Dream",
-  linkvideo2:
-    "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/nmvi0hfmbmasep8ds5n3.mov",
 };
-/* # # # # # # LIVRAISON # # # # # # # # # # # # # # # */
+/* # # # # # # # # # # # # # # # # # # # # # */
 const obj7 = {
   id: 7,
-  title: "App de livraison",
+  title: "Donner du sens",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063335/portfolio/gifs/q7hmlwl9k1gilnirugey.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795014/portfolio/imgs/rssjb4lscxmhhscxkdvw.jpg",
   description: `
-  \n>Application de livraison de repas\n
-  Needeat est le "Deliveroo" de Noumea, leader de la livraison de repas en nouvelle calédonie. En équipe de trois développeurs, nous avons créé les trois applications nécessaires pour faire tourner un tel réseau: l'app utilisateur, l'app livreur, l'app restautant.
-  Le tout est orchestré par un programme back-end qui dispatche intelligemment les commandes aux livreurs géolocalisés.
-  \n>Stack technique\n
-   React Native, React, React-admin, Node.js, express, Stripe, lemonway`,
+  >Freelance for good
+   Je tiens`,
   link1: "https://needeat-nc.com/",
   button1: "needeat",
   buttonvideo: "démo restau",
@@ -169,13 +177,13 @@ const obj7 = {
 /* # # # # # # Eco # # # # # # # # # # # # # # # */
 const obj8 = {
   id: 8,
-  title: "Portfolio",
+  title: "Cas clients",
   color: portfolioCardsColor,
   description: `
-  \n>portfolio\n
-  
+  >portfolio
+
   Loom & Field est une boutique en ligne d'objets de déco d'intérieur issus de l'artisanat : tapis, coussins, poufs, paniers. Ces textiles sont fabriqués à la main par des coopératives au Maroc, au Guatemala, Mexique ou encore Turquie.
-  
+
   En tant que co-fondateur de cette aventure, j'ai créé et customisé ce site marchand sur Shopify.
   `,
   img: "https://res.cloudinary.com/pierredev/image/upload/v1728051872/portfolio/imgs/v92lskrsjnm4ohrg9dch.jpg",

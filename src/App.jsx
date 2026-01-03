@@ -6,12 +6,17 @@ import "./components/Header.css";
 import "./components/Footer.css";
 import "./components/DiceContainer.css";
 import Project from "./components/Project.jsx";
-import cartes from "./data/CartesHome.jsx";
+import cartesHome from "./data/CartesHome.jsx";
 import CartesPortfolio from "./data/CartesPortfolio.jsx";
 import Modale from "./components/Modale";
 import Dice from "./components/Dice/Dice.jsx";
 import { CSSTransition } from "react-transition-group";
-import { homeCheckColor, portfolioCheckColor, portraitSizeRatio, landscapeSizeRatio } from "./config.js";
+import {
+  homeCheckColor,
+  portfolioCheckColor,
+  portraitSizeRatio,
+  landscapeSizeRatio,
+} from "./config.js";
 
 function App() {
   const [hovercart, setHoverCart] = useState(null);
@@ -24,7 +29,7 @@ function App() {
   const [isGathering, setIsGathering] = useState(false);
   const [gatherToCenter, setGatherToCenter] = useState(false);
   const [currentCardSet, setCurrentCardSet] = useState("home");
-  const [activeCartes, setActiveCartes] = useState(cartes);
+  const [activeCartes, setActiveCartes] = useState(cartesHome);
   const [clickedCardIndex, setClickedCardIndex] = useState(null);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
 
@@ -106,7 +111,7 @@ function App() {
 
   const handlePortfolioClick = () =>
     handleCardSetSwitch(CartesPortfolio, "portfolio");
-  const handleHomeClick = () => handleCardSetSwitch(cartes, "home");
+  const handleHomeClick = () => handleCardSetSwitch(cartesHome, "home");
 
   // Handle dice click - lottery animation
   const handleDiceClick = () => {
@@ -173,7 +178,11 @@ function App() {
     : window.innerHeight * landscapeSizeRatio;
 
   return (
-    <div className="app" onClick={closeModal} style={{ '--sizeProject': `${calculatedSize}px` }}>
+    <div
+      className="app"
+      onClick={closeModal}
+      style={{ "--sizeProject": `${calculatedSize}px` }}
+    >
       <div
         className="header"
         style={{
@@ -191,7 +200,7 @@ function App() {
         }}
       >
         <span>
-          {currentCardSet === "home" ? "DÉVELOPPEUR WEB" : "PORTFOLIO"}
+          {currentCardSet === "home" ? "SOLUTIONS NUMÉRIQUES " : "PORTFOLIO"}
         </span>
       </div>
       <div
@@ -201,7 +210,10 @@ function App() {
         }}
       >
         <div onClick={handleDiceClick} style={{ cursor: "pointer" }}>
-          <Dice word={"TOTOTO"} isGathering={isRolling} />
+          <Dice
+            titles={activeCartes.map((carte) => carte.title)}
+            isGathering={isRolling}
+          />
         </div>
       </div>
       <div
@@ -265,7 +277,7 @@ function App() {
                     transitionDelay: isGathering ? cardDelays[index] : "0ms",
                     zIndex: index === clickedCardIndex ? 10 : 1,
                     boxShadow: isHighlighted
-                      ? "0 0 25px 8px rgba(216, 180, 160, 0.8)"
+                      ? "0 0 12.5px 4px rgba(216, 180, 160, 0.8)"
                       : "none",
                     transform: isHighlighted ? "scale(1.05)" : "scale(1)",
                     animation: isInitialLoad

@@ -43,13 +43,13 @@ const Modale = ({ project, closeModal }) => {
           </div>
           <div className="buttons">
             {project.link1 && (
-              <a href={project.link1} target="_blank">
+              <a href={project.link1} target="_blank" className="button-link">
                 {project.button1}
               </a>
             )}
 
             {project.link2 && (
-              <a href={project.link2} target="_blank">
+              <a href={project.link2} target="_blank" className="button-link">
                 {project.button2}
               </a>
             )}
