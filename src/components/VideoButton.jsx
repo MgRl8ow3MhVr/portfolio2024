@@ -1,8 +1,9 @@
-export default ({ buttonvideo, setPlayvideo }) => {
+export default ({ buttonvideo, setPlayvideo, setCurrentVideoLink, linkvideo }) => {
   return (
     <div
       className="videobutton"
       onClick={() => {
+        setCurrentVideoLink(linkvideo);
         setPlayvideo(true);
       }}
     >

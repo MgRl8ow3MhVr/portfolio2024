@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef } from "react";
 
 import "./App.css";
 import "./animations/anims.css";
@@ -24,12 +24,15 @@ function App() {
   const [checkedCartsPortfolio, setCheckedCartsPortfolio] = useState([]);
   const [modaleNum, setModaleNum] = useState([0, 0]);
   const [openModal, setOpenModal] = useState(false);
+  const modaleRef = useRef(null);
 
   // Portfolio navigation states
   const [isGathering, setIsGathering] = useState(false);
   const [gatherToCenter, setGatherToCenter] = useState(false);
-  const [currentCardSet, setCurrentCardSet] = useState("home");
-  const [activeCartes, setActiveCartes] = useState(cartesHome);
+  const [currentCardSet, setCurrentCardSet] = useState("portfolio");
+  const [activeCartes, setActiveCartes] = useState(CartesPortfolio);
+  // const [currentCardSet, setCurrentCardSet] = useState("home");
+  // const [activeCartes, setActiveCartes] = useState(cartesHome);
   const [clickedCardIndex, setClickedCardIndex] = useState(null);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
 
@@ -227,8 +230,10 @@ function App() {
           timeout={1100} // Duration of the animation
           classNames={`slide${modaleNum[1]}`} // Prefix for class names
           unmountOnExit // Unmounts the component after the animation
+          nodeRef={modaleRef}
         >
           <Modale
+            ref={modaleRef}
             project={activeCartes[modaleNum[0]]}
             closeModal={closeModal}
             pos={modaleNum[1]}
@@ -241,8 +246,6 @@ function App() {
             pointerEvents: isGathering ? "none" : "auto",
           }}
         >
-          {/* We Map according to the previous ProjecList so the positions don't change instantly
-        Positions will then progressively translate to new ProjectList because we give them classes according to the new projectList order*/}
           {(() => {
             // Calculate size once for all cards to prevent layout thrashing
             const isPortrait = window.innerHeight > window.innerWidth;
@@ -291,6 +294,7 @@ function App() {
                     gif={projet.gif}
                     description={projet.description}
                     title={projet.title}
+                    customer={projet.customer}
                     color={projet.color}
                     link={projet.link}
                     show={hovercart === index}

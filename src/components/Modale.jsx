@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, forwardRef, useRef } from "react";
 import "./Modale.css";
 import Chevron from "./Chevron";
 import Description from "./Description";
@@ -7,7 +7,8 @@ import VideoButton from "./VideoButton.jsx";
 import VideoPlayer from "./VideoPlayer.jsx";
 import { CSSTransition } from "react-transition-group";
 
-const Modale = ({ project, closeModal }) => {
+const Modale = forwardRef(({ project, closeModal }, ref) => {
+  const videoPlayerRef = useRef(null);
   //Detect when top of Scroll then change chevrons direction
   useEffect(() => {
     const el = document.querySelector(".description");
@@ -27,9 +28,10 @@ const Modale = ({ project, closeModal }) => {
     };
   }, []);
   const [playvideo, setPlayvideo] = useState(false);
+  const [currentVideoLink, setCurrentVideoLink] = useState("");
 
   return (
-    <div className="modale">
+    <div className="modale" ref={ref}>
       <img src={project.img ? project.img : project.gif} alt="img" />
       <div className="description">
         <div>
@@ -57,12 +59,16 @@ const Modale = ({ project, closeModal }) => {
               <VideoButton
                 buttonvideo={project.buttonvideo}
                 setPlayvideo={setPlayvideo}
+                setCurrentVideoLink={setCurrentVideoLink}
+                linkvideo={project.linkvideo}
               />
             )}
             {project.buttonvideo2 && (
               <VideoButton
                 buttonvideo={project.buttonvideo2}
                 setPlayvideo={setPlayvideo}
+                setCurrentVideoLink={setCurrentVideoLink}
+                linkvideo={project.linkvideo2}
               />
             )}
           </div>
@@ -72,15 +78,20 @@ const Modale = ({ project, closeModal }) => {
             timeout={300} // Duration of the animation
             classNames="videoanim"
             unmountOnExit // Unmount the component after animation
+            nodeRef={videoPlayerRef}
           >
             <VideoPlayer
+              ref={videoPlayerRef}
               setPlayvideo={setPlayvideo}
-              linkvideo={project.linkvideo}
+              linkvideo={currentVideoLink}
             />
           </CSSTransition>
         </div>
       </div>
     </div>
   );
-};
+});
+
+Modale.displayName = "Modale";
+
 export default Modale;

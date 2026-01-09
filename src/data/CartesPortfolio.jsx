@@ -5,38 +5,50 @@ const obj0 = {
   id: 10,
   title: "Retour",
   color: homeCardsColor,
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/g39tl9gae4jpzofnul5z.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1727795018/portfolio/imgs/bnykj67eazhs6ejtclmt.jpg",
-  description: `
-  >Retour à la page principale
-
-  Cliquez sur cette carte pour revenir aux cartes de présentation.
-  `,
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767975814/portfolio/imgs/xg0j1ei0rsmgcxgigpxm.png",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1767975814/portfolio/imgs/xg0j1ei0rsmgcxgigpxm.png",
+  description: ``,
 };
 
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj1 = {
   id: 11,
-  title: "",
+  title: "Intranet micro-apps",
+  customer: "Veolia",
   color: portfolioCardsColor,
-  gif: "",
-  img: "",
-  description: "",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767991845/portfolio/imgs/djd6gvrkwmlgrlayjzub.png",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1767991845/portfolio/imgs/djd6gvrkwmlgrlayjzub.png",
+  description: "Veolia est une entreprise ",
+  buttonvideo: "démo vidéo",
+  linkvideo:
+    "https://res.cloudinary.com/pierredev/video/upload/v1767991748/portfolio/videos/tqisdaxqtqj3ejn9ak57.mov",
 };
 
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj2 = {
   id: 12,
-  title: "",
+  title: "Calcul d'impact écologique",
+  customer: "Adie",
   color: portfolioCardsColor,
-  gif: "",
-  img: "",
-  description: "",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767975356/portfolio/imgs/rnrpg0q16nprbqy7sbkl.png",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1767975356/portfolio/imgs/rnrpg0q16nprbqy7sbkl.png",
+  description: `
+      L'ADIE, la première banque de micro-crédit de France. Ils ont imaginé pour leurs clients et leurs prospects un simulateur d'impact écologique d'une activité.
+      L'utilisateur répond d'abord à plusieurs questions interactives, puis selon un score calculé, l'application lui propose plusieurs conseils.
+      En intégrant l'outil Low Code Ksaar, j'ai créé pour eux ce simulateur d'impact.
+`,
+  button1: "Adie",
+  link1:
+    "https://monentreprisedurable21.applicatif.net/v2/customer/af3504c1-641c-47a1-9561-f2668d054a9b/firstPage/027a5a36-0aa9-470f-b698-9af52f786af4",
+  buttonvideo: "démo vidéo",
+  linkvideo:
+    "https://res.cloudinary.com/pierredev/video/upload/v1767456759/portfolio/videos/ypltyyz6kcgbaejjr2jt.mov",
 };
 /* # # # # # # ELEARNING # # # # # # # # # # # # # # # */
 const obj3 = {
   id: 13,
-  title: "E-learning",
+  title: "E-learning auto-écoles",
+  customer: "The Good Drive",
   color: portfolioCardsColor,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/k0gdbvq7falkwbs48erj.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/c_scale/v1727795014/portfolio/imgs/fzcxdrsxj3l4nbgi75ge.jpg",
@@ -47,7 +59,7 @@ const obj3 = {
   >Fonctionnalités
   Lecture audio du texte, QCM, lecture vidéos, reconstitution de panneaux routiers, clic sur vidéo pour détecter les dangers. Et surtout, rien n'est figé: via un back-office puissant, le client peut écrire ses propres exercices, uploader ses propres vidéos. C'est un vrai CMS de E-Learning.
   >TECHNOLOGIES
-    React.js, Javascript, Express.js, AWS S3 EC2 Polly, 
+    React.js, Javascript, Express.js, AWS S3 EC2 Polly,
     `,
   button1: "the good drive",
   link1: "https://www.thegooddrive.fr/",
@@ -55,43 +67,40 @@ const obj3 = {
   linkvideo:
     "https://res.cloudinary.com/pierredev/video/upload/v1727980345/portfolio/videos/ujdsybauosyhl78osi8j.mov",
 };
-/* # # # # # # JEUX # # # # # # # # # # # # # # # */
+/* # # # # # # # # # # # # # # # # # # # # # */
 const obj4 = {
   id: 14,
+  title: "Diagrammes interactifs",
+  customer: "Alkalee",
   color: portfolioCardsColor,
-  title: "Web app multijoueur",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1727795013/portfolio/imgs/i5ghqryzpu2ttjnlghhb.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1727795017/portfolio/imgs/dlfzuic9vqg2jsadnrgo.png",
   description: `
-  >Morpion géant
-   En classe au lycée, lorsque je voulais faire passer le temps, je sortais une feuille de papier quadrillée et démarrais un morpion sans limite avec mon voisin.
-  J'ai conçu la version en ligne de ce jeu :
-  >Mode opératoire
-  Deux personnes entrent l'url du jeu sur leur navigateur ou leur téléphone. Entrer un nom d'utilisateur. Cliquer sur le nom de l'adversaire pour démarrer une partie.
-  >Stack technique
-   node.js, express, React, websockets, render.com
-    `,
-  button1: "Essayez-le !",
-  link1: "https://pierremorpion.netlify.app/",
-  buttonvideo: "démo vidéo",
+  >Diagramme de flux
+  Alkalee est une entreprise qui développe des simulateurs de circuits électoniques pour les constructeurs automobiles.
+    L'interface que j'ai développée pour eux permet à un utilisateur de "connecter modules entre eux afin d'appeler leur moteur de simulation par API et d'afficher les résultats de la simulation.
+  Stack utilisée : React, React-Flow
+  `,
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1728042846/portfolio/gifs/u6gumr9iuelbzbtmnh73.gif",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1728042370/portfolio/imgs/kyi9jxxr3bsueihvzecq.jpg",
+  buttonvideo: "Alakee",
   linkvideo:
-    "https://res.cloudinary.com/pierredev/video/upload/v1728036802/portfolio/videos/d07vg4ki7sowwcye4wz1.mov",
+    "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/upzfa0fy5qozxxju0dpr.mov",
 };
-/* # # # # # # GARELLI # # # # # # # # # # # # # # # */
+/* # # # # # # # # # # # # # # # # # # # # # */
 const obj5 = {
   id: 15,
   color: portfolioCardsColor,
-  title: "Association Garelli",
+  title: "Suivi des MIE",
+  customer: "Garelli 95",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063335/portfolio/gifs/b41rkf50l2q9yjfdbvfn.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1728037414/portfolio/imgs/ion2xo98zlxxhvlyzrp9.jpg",
   description: `
   >Suivi de mineurs isolés étrangers
-  
+
   Garelli95 est une association à qui l'état confie des mineurs isolés étrangers.
   Leur besoin était d'enregistrer l'évolution des jeunes via un questionnaire réalisé tous les six mois, et ainsi évaluer leur action. L'interface se devait d'être chaleureuse et animée, pour donner envie.
 
   J'ai conçu en complément une interface Back-office qui permet de paramétrer les questions, catégories, utilisateurs etc... N'hésitez pas à les contacter pour leur demander des retours sur notre collaboration
-  
+
   Stack technique : React, Zustand, Strapi, Cloudinary, MySql, Heroku`,
   link1: "https://www.donbosco-actionsociale.org/associations/garelli-95/",
   button1: "Garelli 95",
@@ -99,57 +108,34 @@ const obj5 = {
   linkvideo:
     "https://res.cloudinary.com/pierredev/video/upload/v1727713156/portfolio/videos/ubmpjasnytrhofumrsth.mov",
 };
-/* # # # # # # DIAGRAMMES # # # # # # # # # # # # # # # */
+/* # # # # # # # # # # # # # # # # # # # # # */
 const obj6 = {
   id: 16,
   color: portfolioCardsColor,
-  title: "ADIE",
+  title: "Intégrations de Grist",
+  customer: "Ministère des finances",
   description: `
-  >Outils No Code
-    Je sais coder, mais je sais aussi no-coder ! Les outils de No Code permettent de répondre rapidement à un besoin métier spécifique. 
-    
-    >Préfecture d'Occitanie
-    Par exemple, pour la Préfecture d'Occitaine, j'ai développé en "Grist" une interface de gestion des places en crèches pour les agents publics de la région. Un outil désormais à leur disposition et facile à utiliser.
-    
-        >ADIE
-    Ou encore, pour l'ADIE, la première banque de micro-crédit de France, à l'aide de Ksaar, j'ai créé un simulateur d'impact écologique à destination des petites entreprises.
+  >Passer d'excel à Grist
+Grist est un tableur moderne combinant la simplicité d’Excel avec la puissance d’une base de données. Il permet de structurer les données, d’automatiser des règles, de gérer finement les droits et de collaborer en temps réel, là où Excel atteint vite ses limites.
+  <space/>
+J’ai intégré Grist pour l’arbre de Noël du ministère des Finances, un projet complexe nécessitant l’autonomie de chaque département et une gestion des droits très fine. J’ai aussi développé pour la préfecture d’Occitanie un outil de suivi du budget des places en crèches des agents publics, et enfin pour la DINUM, des templates Grist (dont un annuaire avancé) aujourd’hui accessibles à tous les agents publics.
+
   `,
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1728042846/portfolio/gifs/u6gumr9iuelbzbtmnh73.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1728042370/portfolio/imgs/kyi9jxxr3bsueihvzecq.jpg",
-  buttonvideo: "Préfecture",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767996829/portfolio/imgs/pruwrpuyjtmi59nvstpl.webp",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1767996829/portfolio/imgs/pruwrpuyjtmi59nvstpl.webp",
+  buttonvideo: "Arbre de Noel",
   linkvideo:
-    "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/upzfa0fy5qozxxju0dpr.mov",
-  buttonvideo2: "ADIE",
+    "https://res.cloudinary.com/pierredev/video/upload/v1767996750/portfolio/videos/l8ojg4figjdeas23fanj.mov",
+  buttonvideo2: "Annuaire",
   linkvideo2:
-    "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/nmvi0hfmbmasep8ds5n3.mov",
+    "https://res.cloudinary.com/pierredev/video/upload/v1767996752/portfolio/videos/jlff22egwvsuu9fmkcrt.mov",
 };
-// const obj6 = {
-//   id: 6,
-//   title: "Diagrammes interactifs",
-//   description: `
-//   >Diagramme de flux pour Alkalee
 
-//     L'interface que j'ai développée permet à un utilisateur de "connecter des boîtes entre elles" afin de construire un shéma qui simule les composants électroniques des voitures. Un appel à l'API de leur moteur affichera ensuite les résultats de la simulation.
-
-//   Stack utilisée : React, Bryntum, React-Flow, api Jira
-
-//   >Gantt personalisé pour Quantic Dream
-//   Quantic Dream est un grand éditeur de jeu vidéo français. J'ai conçu pour eux un diagramme de Gantt à l'échelle de cinq ans qui permet de faire ressortir dépendances entre chantiers.
-//   `,
-//   gif: "https://res.cloudinary.com/pierredev/image/upload/v1728042846/portfolio/gifs/u6gumr9iuelbzbtmnh73.gif",
-//   img: "https://res.cloudinary.com/pierredev/image/upload/v1728042370/portfolio/imgs/kyi9jxxr3bsueihvzecq.jpg",
-//   buttonvideo: "Alakee",
-//   linkvideo:
-//     "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/upzfa0fy5qozxxju0dpr.mov",
-//   buttonvideo2: "Quantic Dream",
-//   linkvideo2:
-//     "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/nmvi0hfmbmasep8ds5n3.mov",
-// };
-/* # # # # # # LIVRAISON # # # # # # # # # # # # # # # */
 const obj7 = {
   id: 17,
   color: portfolioCardsColor,
-  title: "Needeat Livraison",
+  title: "Livraison à Noumea",
+  customer: "Needeat",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063335/portfolio/gifs/q7hmlwl9k1gilnirugey.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795014/portfolio/imgs/rssjb4lscxmhhscxkdvw.jpg",
   description: `
@@ -168,12 +154,13 @@ const obj7 = {
 const obj8 = {
   id: 18,
   color: portfolioCardsColor,
-  title: "Loom & Field",
+  title: "Boutique en ligne",
+  customer: "Loom & Field",
   description: `
   >E-Commerce
-  
-  Loom & Field est une boutique en ligne d'objets de déco d'intérieur issus de l'artisanat : tapis, coussins, poufs, paniers. Ces textiles sont fabriqués à la main par des coopératives au Maroc, au Guatemala, Mexique ou encore Turquie.
-  
+
+  Loom & Field est une boutique en ligne d'objets de décoration d'intérieur issus de l'artisanat : tapis, coussins, poufs, paniers. Ces textiles sont fabriqués à la main par des coopératives au Maroc, au Guatemala, Mexique ou encore Turquie.
+
   En tant que co-fondateur de cette aventure, j'ai créé et customisé ce site marchand sur Shopify.
   `,
   img: "https://res.cloudinary.com/pierredev/image/upload/v1728051872/portfolio/imgs/v92lskrsjnm4ohrg9dch.jpg",
