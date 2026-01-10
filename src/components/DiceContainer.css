@@ -69,17 +69,3 @@
 /* =====================================================
    RESPONSIVE - MOBILE
    ===================================================== */
-
-@media (max-width: 850px) {
-  .triangle-play-button {
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 18px solid var(--diceCol2);
-  }
-
-  .triangle-play-button-small {
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 14px solid rgb(113, 138, 113);
-  }
-}

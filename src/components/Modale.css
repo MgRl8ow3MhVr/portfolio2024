@@ -14,11 +14,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.modale span {
-  font-size: 10px;
-  color: white;
-}
-
 .modale > img {
   position: absolute;
   width: 100%;
@@ -45,14 +40,6 @@
   transform: scale(1.1);
 }
 
-/* =====================================================
-   MODAL DESCRIPTION
-   ===================================================== */
-
-/* =====================================================
-   MODAL BUTTONS
-   ===================================================== */
-
 .buttons {
   width: 100%;
   display: flex;
@@ -71,7 +58,7 @@
   font-weight: bold;
   margin: 10px;
   font-size: 18px;
-  transition: all 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
   color: black;
 }
 

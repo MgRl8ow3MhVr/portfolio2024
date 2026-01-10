@@ -29,10 +29,10 @@ function App() {
   // Portfolio navigation states
   const [isGathering, setIsGathering] = useState(false);
   const [gatherToCenter, setGatherToCenter] = useState(false);
-  const [currentCardSet, setCurrentCardSet] = useState("portfolio");
-  const [activeCartes, setActiveCartes] = useState(CartesPortfolio);
-  // const [currentCardSet, setCurrentCardSet] = useState("home");
-  // const [activeCartes, setActiveCartes] = useState(cartesHome);
+  // const [currentCardSet, setCurrentCardSet] = useState("portfolio");
+  // const [activeCartes, setActiveCartes] = useState(CartesPortfolio);
+  const [currentCardSet, setCurrentCardSet] = useState("home");
+  const [activeCartes, setActiveCartes] = useState(cartesHome);
   const [clickedCardIndex, setClickedCardIndex] = useState(null);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
 

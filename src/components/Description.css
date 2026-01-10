@@ -63,7 +63,7 @@ h2 {
 
 .chevron {
   transform: rotate(-90deg);
-  transition: all 0.2s;
+  transition: transform 0.2s;
 }
 
 .chevronDown {
