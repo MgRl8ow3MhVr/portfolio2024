@@ -146,61 +146,87 @@ body {
 /* SLIDE 2 # # # # # # # # # # # # # # # # # # # # # #  */
 @keyframes slide2In {
   0% {
+    left: auto;
     right: 0;
     opacity: 0;
     width: var(--sizeProject);
     height: var(--sizeProject);
   }
   8% {
+    left: auto;
     right: 0;
     opacity: 1;
   }
   25% {
+    left: auto;
     right: 0;
     width: var(--sizeProject);
   }
   50% {
+    left: auto;
     right: 0;
     width: calc(var(--sizeProject) * 3);
   }
   70% {
+    left: auto;
     right: 0;
     width: calc(var(--sizeProject) * 3);
     height: var(--sizeProject);
   }
   100% {
+    left: 0;
+    right: auto;
+    width: calc(var(--sizeProject) * 3);
+    height: calc(var(--sizeProject) * 3);
   }
 }
 @keyframes slide2Out {
   100% {
+    left: auto;
+    right: 0;
     opacity: 0;
     width: var(--sizeProject);
     height: var(--sizeProject);
-    right: 0;
   }
   92% {
+    left: auto;
+    right: 0;
     width: var(--sizeProject);
     height: var(--sizeProject);
     opacity: 1;
-    right: 0;
   }
   70% {
+    left: auto;
+    right: 0;
     opacity: 1;
     width: var(--sizeProject);
     height: var(--sizeProject);
-    right: 0;
   }
   50% {
+    left: auto;
+    right: 0;
     width: calc(var(--sizeProject) * 3);
     height: var(--sizeProject);
   }
   15% {
+    left: auto;
+    right: 0;
     width: calc(var(--sizeProject) * 3);
     height: var(--sizeProject);
   }
-
   0% {
+    left: 0;
+    right: auto;
+    width: calc(var(--sizeProject) * 3);
+    height: calc(var(--sizeProject) * 3);
   }
+}
+
+.slide2-enter,
+.slide2-enter-active,
+.slide2-exit,
+.slide2-exit-active {
+  left: auto;
 }
 
 .slide2-enter {
@@ -369,58 +395,87 @@ body {
 @keyframes slide5In {
   0% {
     top: calc(50% - var(--sizeProject) / 2);
+    left: auto;
     right: 0;
     opacity: 0;
     width: var(--sizeProject);
     height: var(--sizeProject);
   }
   8% {
-    opacity: 1;
+    left: auto;
     right: 0;
+    opacity: 1;
   }
   25% {
-    width: var(--sizeProject);
+    left: auto;
     right: 0;
+    width: var(--sizeProject);
   }
   50% {
+    left: auto;
+    right: 0;
     width: calc(var(--sizeProject) * 3);
     top: calc(50% - var(--sizeProject) / 2);
   }
   70% {
+    left: auto;
+    right: 0;
     top: calc(50% - var(--sizeProject) / 2);
     height: var(--sizeProject);
   }
   100% {
+    left: 0;
+    right: auto;
     top: 0;
+    width: calc(var(--sizeProject) * 3);
+    height: calc(var(--sizeProject) * 3);
   }
 }
 @keyframes slide5Out {
   100% {
-    top: calc(50% - var(--sizeProject) / 2);
+    left: auto;
     right: 0;
+    top: calc(50% - var(--sizeProject) / 2);
     opacity: 0;
     width: var(--sizeProject);
     height: var(--sizeProject);
   }
   92% {
-    opacity: 1;
+    left: auto;
     right: 0;
+    opacity: 1;
   }
   75% {
-    width: var(--sizeProject);
+    left: auto;
     right: 0;
+    width: var(--sizeProject);
   }
   50% {
+    left: auto;
+    right: 0;
     width: calc(var(--sizeProject) * 3);
     top: calc(50% - var(--sizeProject) / 2);
   }
   30% {
+    left: auto;
+    right: 0;
     top: calc(50% - var(--sizeProject) / 2);
     height: var(--sizeProject);
   }
   0% {
+    left: 0;
+    right: auto;
     top: 0;
+    width: calc(var(--sizeProject) * 3);
+    height: calc(var(--sizeProject) * 3);
   }
+}
+
+.slide5-enter,
+.slide5-enter-active,
+.slide5-exit,
+.slide5-exit-active {
+  left: auto;
 }
 
 .slide5-enter {
@@ -637,6 +692,13 @@ body {
   0% {
     top: 0;
   }
+}
+
+.slide8-enter,
+.slide8-enter-active,
+.slide8-exit,
+.slide8-exit-active {
+  left: auto;
 }
 
 .slide8-enter {

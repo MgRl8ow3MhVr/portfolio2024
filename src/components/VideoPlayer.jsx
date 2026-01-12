@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
+import { useRef, useState, forwardRef } from "react";
 import Close from "../assets/svg/close";
 import "./VideoPlayer.css";
 
-const VideoPlayer = ({ linkvideo, setPlayvideo }) => {
+const VideoPlayer = forwardRef(({ linkvideo, setPlayvideo }, ref) => {
   const videoRef = useRef(null); // Reference to the video element
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -33,7 +33,7 @@ const VideoPlayer = ({ linkvideo, setPlayvideo }) => {
   };
 
   return (
-    <div className="videoplayer">
+    <div className="videoplayer" ref={ref}>
       <div
         className="closeModal"
         onClick={(e) => {
@@ -78,6 +78,8 @@ const VideoPlayer = ({ linkvideo, setPlayvideo }) => {
       </div>
     </div>
   );
-};
+});
+
+VideoPlayer.displayName = "VideoPlayer";
 
 export default VideoPlayer;

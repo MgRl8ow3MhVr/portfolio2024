@@ -1,4 +1,6 @@
-/* # # # # # # # # # RESET # # # # # # # # #  */
+/* =====================================================
+   RESET & GLOBAL STYLES
+   ===================================================== */
 
 * {
   margin: 0;
@@ -8,282 +10,51 @@
   color: var(--col2);
 }
 
+/* * {
+  outline: 1px solid red;
+} */
+
 body {
   overflow: scroll;
   background-color: #fbf2ec;
   -webkit-tap-highlight-color: transparent;
-  --sizeProject: 170px;
+  --sizeProject: 170px; /* Default fallback value */
   --transTime: 0.85s;
   --col1: rgba(89, 87, 87, 0.872);
   --col2: rgba(46, 46, 46, 0.872);
   --bg: #fbf2ec;
 }
 
-/* # # # # # # # # # MAIN PAGE # # # # # # # # #  */
+/* =====================================================
+   APP CONTAINER
+   ===================================================== */
 
 .app {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   align-items: center;
-  /* margin-bottom: 50px; */
-  /* border: 2px solid red; */
   height: 100vh;
 }
 
-.header {
-  font-size: 38px;
-  color: rgba(46, 46, 46, 0.872);
-  margin-top: 20px;
-  letter-spacing: 10px;
-  animation: appear 0.3s ease-in;
-}
+/* =====================================================
+   PROJECTS GRID CONTAINER
+   ===================================================== */
 
-.subtitle {
-  margin: 5px 0 0px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  letter-spacing: 10px;
-  animation: appear 0.6s ease-in;
-}
-/* Selected project */
-.subtitle > span {
-  letter-spacing: 12px;
-  font-size: 24px;
-  color: rgba(89, 87, 87, 0.872);
+.gridprojects {
+  position: relative;
+  overflow: hidden;
 }
 
 .projectscontenair {
   width: calc((var(--sizeProject) * 3 - 5px));
   height: calc((var(--sizeProject) * 3 - 5px));
   animation: appear 0.8s ease-in;
-  /* border: 1px blue solid; */
   position: relative;
 }
 
-/* # # # # # # # # # CART # # # # # # # # #  */
-
-.project {
-  position: absolute;
-  transition: var(--transTime) cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.cart {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc((var(--sizeProject) - 5px));
-  height: calc((var(--sizeProject) - 5px));
-  background-color: #303030;
-  overflow: hidden;
-}
-.cart:hover {
-  cursor: pointer;
-}
-
-/* # # # # # # # # # # # MODALE # # # # # # # # # # # # # # # # #  */
-
-/* This represents the 3x3 grid start */
-.gridprojects {
-  /* border: 3px solid blue; */
-  position: relative;
-  overflow: hidden;
-}
-
-/* inside the modale. absolute position to gridprojects */
-.modale {
-  /* border: 2px solid purple; */
-  animation: 1.2s ease-in-out;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 100;
-}
-
-.modale span {
-  font-size: 10px;
-  color: white;
-}
-
-/* image with a little opacity */
-.modale > img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.98;
-  object-fit: contain;
-  left: 0;
-  top: 0;
-  background-color: white;
-}
-
-/* Description Contenair. Scrolling inside */
-.description {
-  /* border: solid 2px red; */
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-}
-
-.closeModal {
-  position: absolute;
-  right: 2px;
-  top: 2px;
-  z-index: 1000;
-  cursor: pointer;
-  transition: 0.1s;
-}
-
-.closeModal:hover {
-  transform: scale(1.1);
-}
-
-.description::-webkit-scrollbar {
-  display: none;
-}
-/* Actual text whith huge margin Top */
-.description > div {
-  position: relative;
-  background-color: rgb(0, 0, 0, 0.8);
-  padding: 5px 20px 0px 20px;
-  margin-top: 80%;
-  height: calc(100% - 5px);
-  min-height: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* overflow: scroll; */
-}
-/* Rotate up the top >> */
-.chevron {
-  transform: rotate(-90deg);
-  transition: all 0.2s;
-}
-.chevronDown {
-  transform: rotate(90deg);
-}
-
-/* Writting inside description */
-.description p {
-  font-family: "Hind Siliguri", sans-serif;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-bottom: 12px;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  word-spacing: 2px;
-}
-/* titles inside description */
-h2 {
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin: 20px 0 10px 0;
-  color: white;
-  text-align: center;
-}
-/* two buttons contenair */
-.buttons {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-/* Button links */
-.description a {
-  display: flex;
-  align-items: center;
-  background-color: #d8b4a0;
-  border-radius: 3px;
-  margin-top: 20px;
-  padding: 10px 30px 10px 30px;
-  opacity: 1;
-  font-weight: bold;
-  margin: 10px;
-  font-size: 18px;
-  transition: all 0.2s;
-  color: black;
-}
-
-.description a:hover {
-  background-color: #e4c4b3;
-  transform: scale(1.05);
-}
-
-/* Footer */
-
-.footer {
-  position: absolute;
-  font-size: 12px;
-  font-family: Arial, Helvetica, sans-serif;
-  bottom: 10px;
-}
-
-/*  Dice */
-.dice {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  animation: appear 1.7s ease-in;
-}
-
-.trythis {
-  color: rgba(46, 46, 46, 0.872);
-  width: 85px;
-  display: flex;
-  font-weight: 500;
-  transform: translateX(-20px);
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  /* font-weight: 600; */
-}
-
-.trythis > span {
-  font-size: 13px;
-
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.trythis > div:nth-child(2) {
-  animation: trythis1 0.6s infinite alternate;
-}
-
-.trythis > div:nth-child(3) {
-  animation: trythis2 0.6s infinite alternate;
-}
-.trythis > div:nth-child(4) {
-  animation: trythis3 0.6s infinite alternate;
-}
-
-@keyframes trythis1 {
-  from {
-  }
-  to {
-    transform: translateX(8px);
-  }
-}
-
-@keyframes trythis2 {
-  from {
-  }
-  to {
-    transform: translateX(10px);
-  }
-}
-@keyframes trythis3 {
-  from {
-  }
-  to {
-    transform: translateX(12px);
-  }
-}
+/* =====================================================
+   ANIMATIONS & KEYFRAMES
+   ===================================================== */
 
 @keyframes appear {
   from {
@@ -294,61 +65,8 @@ h2 {
   }
 }
 
-/* # # # # # # # # # # # # # # #  RESPONSIVE # # # # # # # # #  */
+/* =====================================================
+   RESPONSIVE - MOBILE
+   ===================================================== */
 
-@media (max-width: 850px) {
-  body {
-    --sizeProject: 115px;
-  }
-
-  .header {
-    font-size: 30px;
-    margin-top: 20px;
-    letter-spacing: 4px;
-  }
-
-  .subtitle > span {
-    letter-spacing: 8px;
-    font-size: 15px;
-  }
-
-  .description p {
-    font-size: 12px;
-    color: white;
-    margin-bottom: 8px;
-    word-spacing: 0px;
-  }
-
-  h2 {
-    font-size: 14px;
-    margin: 5px 0 5px 0;
-  }
-  .description > div {
-    padding: 5px 5px 0px 5px;
-  }
-
-  .chevron {
-    height: 20px;
-  }
-
-  .description a {
-    font-size: 11px;
-    padding: 7px 25px 7px 25px;
-  }
-
-  .buttons {
-    padding: 5px;
-  }
-
-  .triangle-play-button {
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 18px solid var(--diceCol2);
-  }
-
-  .triangle-play-button-small {
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 14px solid rgb(113, 138, 113); /* Triangle color */
-  }
-}
+/* CSS variable --sizeProject is now dynamically set in App.jsx */
