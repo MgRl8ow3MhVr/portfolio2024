@@ -30,6 +30,25 @@ const Modale = forwardRef(({ project, closeModal }, ref) => {
   const [playvideo, setPlayvideo] = useState(false);
   const [currentVideoLink, setCurrentVideoLink] = useState("");
 
+  const handleChevronClick = () => {
+    const el = document.querySelector(".description");
+    const chevron = document.querySelector(".chevron");
+    if (el && chevron) {
+      // If chevron is pointing down, scroll to top; if pointing right, scroll to max
+      if (chevron.classList.contains("chevronDown")) {
+        el.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      } else {
+        el.scrollTo({
+          top: el.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
   return (
     <div className="modale" ref={ref}>
       <img src={project.img ? project.img : project.gif} alt="img" />
@@ -39,7 +58,10 @@ const Modale = forwardRef(({ project, closeModal }, ref) => {
           <div className="closeModal" onClick={closeModal}>
             <Close size={35} />
           </div>
-          <Chevron className="chevron" />
+          <div className="chevron-container">
+            <Chevron className="chevron" onClick={handleChevronClick} />
+            <span className="scroll-hint">scroll or clic to read</span>
+          </div>
           <div>
             <Description text={project.description} />
           </div>

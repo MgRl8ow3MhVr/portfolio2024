@@ -215,7 +215,7 @@ function App() {
         <div onClick={handleDiceClick} style={{ cursor: "pointer" }}>
           <Dice
             titles={activeCartes.map((carte) => carte.title)}
-            isGathering={isRolling}
+            isGathering={isRolling || isGathering}
           />
         </div>
       </div>

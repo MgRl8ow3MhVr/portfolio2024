@@ -52,7 +52,7 @@ const obj1 = {
 // };
 const obj2 = {
   id: 12,
-  title: "Calcul d'impacts écologiques",
+  title: "Impact écologiques",
   customer: "Vertigo Lab",
   color: portfolioCardsColor,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1767975356/portfolio/imgs/rnrpg0q16nprbqy7sbkl.png",
@@ -72,7 +72,7 @@ const obj2 = {
 const obj3 = {
   id: 13,
   title: "E-learning auto-écoles",
-  customer: "The Good Drive",
+  customer: "TheGoodDrive",
   color: portfolioCardsColor,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/k0gdbvq7falkwbs48erj.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/c_scale/v1727795014/portfolio/imgs/fzcxdrsxj3l4nbgi75ge.jpg",
@@ -136,8 +136,8 @@ const obj5 = {
 const obj6 = {
   id: 16,
   color: portfolioCardsColor,
-  title: "Intégrations de Grist",
-  customer: "Ministère des finances",
+  title: "Grist",
+  customer: "MIN. FINANCES",
   description: `
   >Passer d'excel à Grist - 2025
 Grist est un tableur moderne combinant la simplicité d’Excel avec la puissance d’une base de données. Il permet de structurer les données, d’automatiser des règles, de gérer finement les droits et de collaborer en temps réel, là où Excel atteint vite ses limites.

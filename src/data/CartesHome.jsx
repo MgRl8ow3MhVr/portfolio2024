@@ -57,7 +57,7 @@ const obj2 = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj3 = {
   id: 3,
-  title: "Outils No Code et IA",
+  title: "Low code et IA",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1767968196/portfolio/imgs/u30hia1pv0bdpogdccq6.png",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1767968195/portfolio/imgs/yl1m3gnhj6xz0tms9vr0.webp",
   description: `
@@ -128,7 +128,7 @@ const obj6 = {
   id: 6,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1767967801/portfolio/gifs/hjhejhiaeewbkceb6inf.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1767967801/portfolio/gifs/hjhejhiaeewbkceb6inf.gif",
-  title: "Comment travailler ensemble",
+  title: "Travailler ensemble",
   description: `
    Je travaille sous le statut d'auto-entrepeneur. Qu'une mission se concrétise ou non, je trouve qu'une rencontre est toujours enrichissante.
 
@@ -151,23 +151,22 @@ const obj7 = {
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063335/portfolio/gifs/q7hmlwl9k1gilnirugey.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795014/portfolio/imgs/rssjb4lscxmhhscxkdvw.jpg",
   description: `
-  >Donner du sens
-   Je tiens`,
-  link1: "https://needeat-nc.com/",
-  button1: "needeat",
-  buttonvideo: "démo restau",
-  linkvideo:
-    "https://res.cloudinary.com/pierredev/video/upload/v1727980467/portfolio/videos/e5g7m7lf0ia93vsvg6dx.mp4",
+  >Impact social et écologique, au cœur de mes engagements professionels
+
+  Sensibilisé à l’urgence climatique et aux enjeux sociaux, (je suis formateur de la Fresque du Climat et de la Fresque du Numérique depuis 2024), Ces engagements expliquent pourquoi je priorise les projets à impact social, environnemental ou d’intérêt général. En 2024, j’ai suivi la formation Social Declik, au sein d’une communauté de freelances engagés.
+
+  >La relation humaine et la transmission
+  Au-delà des technologies, la relation humaine est centrale dans mon parcours : relation client, travail d’équipe et formation. J’apprécie particulièrement accompagner mes clients dans la prise en main des applications, en mobilisant mon sens de la pédagogie pour faciliter l’appropriation des outils et favoriser des collaborations durables.`,
 };
 /* # # # # # # Eco # # # # # # # # # # # # # # # */
 const obj8 = {
   id: 8,
-  title: "Cas clients",
+  title: "8 cas clients",
   color: portfolioCardsColor,
   description: `
   `,
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1767975994/portfolio/imgs/yipbvtatvaxei2va1euu.png",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767975994/portfolio/imgs/yipbvtatvaxei2va1euu.png",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768235707/portfolio/gifs/u0ssfi5pjhnet5xaocmk.gif",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768235707/portfolio/gifs/u0ssfi5pjhnet5xaocmk.gif",
 };
 
 export default [obj0, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8];

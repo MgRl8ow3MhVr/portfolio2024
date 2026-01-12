@@ -28,14 +28,14 @@
 .smallLetter {
   font-family: "Roboto Mono", monospace;
   /* font-family: "Nanum Gothic Coding", monospace; */
-  font-size: 17px;
+  /* font-size: controlled by JavaScript via config.js typographyConfig.letterFontSize */
   font-weight: 300;
   width: 12px;
   /* border: 1px blue solid; */
 }
 .customerLetter {
   font-family: "Roboto Mono", monospace;
-  font-size: 13px;
+  /* font-size: controlled by JavaScript via config.js typographyConfig.customerFontSize */
   font-weight: 300;
   width: 12px;
   color: #a0a0a0;
@@ -51,10 +51,10 @@
 
 @media (max-width: 850px) {
   .smallLetter {
-    font-size: 12px;
+    /* font-size: controlled by JavaScript via config.js typographyConfig.letterFontSizeMobile */
   }
   .customerLetter {
-    font-size: 10px;
+    /* font-size: controlled by JavaScript via config.js typographyConfig.customerFontSizeMobile */
   }
   .bigLetter {
     font-size: 50px;
