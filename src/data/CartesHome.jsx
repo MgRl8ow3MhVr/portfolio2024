@@ -148,8 +148,8 @@ const obj6 = {
 const obj7 = {
   id: 7,
   title: "Freelance for good",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063335/portfolio/gifs/q7hmlwl9k1gilnirugey.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1727795014/portfolio/imgs/rssjb4lscxmhhscxkdvw.jpg",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768258097/portfolio/imgs/g3whyh2vvvj8tbhcej4o.png",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768258097/portfolio/imgs/g3whyh2vvvj8tbhcej4o.png",
   description: `
   >Impact social et écologique, au cœur de mes engagements professionels
 
@@ -157,6 +157,10 @@ const obj7 = {
 
   >La relation humaine et la transmission
   Au-delà des technologies, la relation humaine est centrale dans mon parcours : relation client, travail d’équipe et formation. J’apprécie particulièrement accompagner mes clients dans la prise en main des applications, en mobilisant mon sens de la pédagogie pour faciliter l’appropriation des outils et favoriser des collaborations durables.`,
+  button1: "Social declick",
+  link1: "https://socialdeclik.com",
+  button2: "Fresque climat",
+  link2: "https://fresqueduclimat.org/",
 };
 /* # # # # # # Eco # # # # # # # # # # # # # # # */
 const obj8 = {
@@ -168,5 +172,4 @@ const obj8 = {
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768235707/portfolio/gifs/u0ssfi5pjhnet5xaocmk.gif",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768235707/portfolio/gifs/u0ssfi5pjhnet5xaocmk.gif",
 };
-
 export default [obj0, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8];

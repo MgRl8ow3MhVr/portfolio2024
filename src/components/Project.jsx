@@ -46,7 +46,7 @@ function Project({
   const splitIntoLines = (text) => {
     const words = text.split(" ");
     if (text.length <= maxLettersPerLine) {
-      return [{text: text, startIndex: 0}]; // Single line
+      return [{ text: text, startIndex: 0 }]; // Single line
     }
 
     // Try to split into 2 balanced lines
@@ -69,13 +69,13 @@ function Project({
         // Line 2 starts after line1 ends (skip any spaces)
         const line2StartIndex = text.indexOf(line2, line1EndIndex);
         return [
-          {text: line1, startIndex: 0},
-          {text: line2, startIndex: line2StartIndex}
+          { text: line1, startIndex: 0 },
+          { text: line2, startIndex: line2StartIndex },
         ];
       }
     }
 
-    return [{text: line1, startIndex: 0}];
+    return [{ text: line1, startIndex: 0 }];
   };
 
   const lines = splitIntoLines(title);
@@ -105,7 +105,8 @@ function Project({
 
     // Calculate vertical position (centered)
     // Account for letter height to properly center the text visually
-    const totalHeight = totalLines === 1 ? fontSize : (totalLines - 1) * lineSpacing + fontSize;
+    const totalHeight =
+      totalLines === 1 ? fontSize : (totalLines - 1) * lineSpacing + fontSize;
     const startTop = size / 2 - totalHeight / 2;
     const top = startTop + lineIndex * lineSpacing;
 
@@ -158,43 +159,22 @@ function Project({
     };
   };
 
-  // Split customer name into lines (if exists)
+  // Customer name (always single line)
   const customerLettersList = customer ? customer.split("") : [];
-  const customerLines = customer ? splitIntoLines(customer) : [];
-  const totalCustomerLines = customerLines.length;
+  const customerLength = customerLettersList.length;
 
   // Position customer name centered below the title
   const positionCustomerMaker = (index) => {
-    // Find which line and position in line for this letter
-    let lineIndex = 0;
-    let positionInLine = 0;
-
-    for (let i = 0; i < customerLines.length; i++) {
-      const line = customerLines[i];
-      const lineStart = line.startIndex;
-      const lineEnd = lineStart + line.text.length;
-
-      if (index >= lineStart && index < lineEnd) {
-        lineIndex = i;
-        positionInLine = index - lineStart;
-        break;
-      }
-    }
-
-    const currentLine = customerLines[lineIndex].text;
-    const lineLength = currentLine.length;
-
     // Calculate vertical position (below title, centered)
-    const titleHeight = totalLines === 1 ? fontSize : (totalLines - 1) * lineSpacing + fontSize;
-    const customerHeight = totalCustomerLines === 1 ? customerFontSize : (totalCustomerLines - 1) * lineSpacing + customerFontSize;
-    const totalContentHeight = titleHeight + customerHeight + lineSpacing; // gap between title and customer (same as line spacing)
-    const startTop = size / 2 - totalContentHeight / 2 + titleHeight + lineSpacing;
-    const top = startTop + lineIndex * lineSpacing;
+    const titleHeight =
+      totalLines === 1 ? fontSize : (totalLines - 1) * lineSpacing + fontSize;
+    const totalContentHeight = titleHeight + customerFontSize + lineSpacing; // gap between title and customer (same as line spacing)
+    const top = size / 2 - totalContentHeight / 2 + titleHeight + lineSpacing;
 
     // Calculate horizontal position (centered)
-    const lineWidth = lineLength * letterSpacing;
+    const lineWidth = customerLength * letterSpacing;
     const startLeft = size / 2 - lineWidth / 2;
-    const left = startLeft + positionInLine * letterSpacing;
+    const left = startLeft + index * letterSpacing;
 
     return {
       top: top + "px",
@@ -206,34 +186,13 @@ function Project({
 
   // Customer moves to bottom on hover
   const positionCustomerMakerShow = (index) => {
-    // Find which line and position in line for this letter
-    let lineIndex = 0;
-    let positionInLine = 0;
-
-    for (let i = 0; i < customerLines.length; i++) {
-      const line = customerLines[i];
-      const lineStart = line.startIndex;
-      const lineEnd = lineStart + line.text.length;
-
-      if (index >= lineStart && index < lineEnd) {
-        lineIndex = i;
-        positionInLine = index - lineStart;
-        break;
-      }
-    }
-
-    const currentLine = customerLines[lineIndex].text;
-    const lineLength = currentLine.length;
-
     // Position at bottom of tile
-    const customerHeight = totalCustomerLines === 1 ? customerFontSize : (totalCustomerLines - 1) * lineSpacing + customerFontSize;
-    const startTop = size - customerHeight - 5;
-    const top = startTop + lineIndex * lineSpacing;
+    const top = size - customerFontSize - 10;
 
     // Calculate horizontal position (centered)
-    const lineWidth = lineLength * letterSpacing;
+    const lineWidth = customerLength * letterSpacing;
     const startLeft = size / 2 - lineWidth / 2;
-    const left = startLeft + positionInLine * letterSpacing;
+    const left = startLeft + index * letterSpacing;
 
     return {
       top: top + "px",
@@ -261,7 +220,7 @@ function Project({
           {lettersList.map((letter, index) => (
             <div
               key={index + letter}
-              className="letter smallLetter"
+              className="letter projectLetter"
               style={!show ? positionMaker(index) : positionMakerShow(index)}
             >
               {letter}

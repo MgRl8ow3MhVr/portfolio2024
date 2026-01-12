@@ -7,13 +7,13 @@
   --diceCol3: #dddbdb;
 }
 
-.container {
+.dice-wrapper {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.container .cube-container {
+.dice-wrapper .cube-container {
   perspective: 800px;
   display: flex;
   justify-content: center;
@@ -21,22 +21,28 @@
   flex-direction: column;
   transition: ease 0.1s;
 }
-.container .cube-container:hover {
+.dice-wrapper .cube-container:hover {
   transform: scale(1.2);
   cursor: pointer;
 }
 
-.container .cube-container .cube {
+.dice-wrapper .cube-container .cube {
   transform-style: preserve-3d;
   width: var(--widthDice);
   height: var(--widthDice);
   margin: 50px 0;
   transition: transform 2s ease;
-  transform: rotateY(26deg) rotateX(26deg);
+  transform: rotateY(26deg) rotateX(26deg) translateZ(0);
   /* animation: horizontal-spin 50s infinite linear; */
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-.container .cube-container .cube .box {
+.dice-wrapper .cube-container .cube:hover {
+  animation: horizontal-spin 25s infinite linear;
+}
+.dice-wrapper .cube-container .cube .box {
   width: var(--widthDice);
   height: var(--widthDice);
   position: absolute;
@@ -48,7 +54,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* animation: clickme 3s infinite; */
   text-align: center;
   padding: 2px;
   line-height: 1.1;
@@ -57,39 +62,31 @@
   box-sizing: border-box;
 }
 
-.container .cube-container .cube .box.front {
+.dice-wrapper .cube-container .cube .box.front {
   background: var(--diceCol1);
   transform: translateZ(var(--widthDiceH));
 }
-@keyframes clickme {
-  from {
-    color: rgb(202, 202, 202);
-  }
-  to {
-    color: #5c5c5c;
-  }
-}
 
-.container .cube-container .cube .box.back {
+.dice-wrapper .cube-container .cube .box.back {
   background: var(--diceCol1);
   transform: translateZ(var(--widthDiceHN)) rotateY(180deg);
 }
-.container .cube-container .cube .box.top {
+.dice-wrapper .cube-container .cube .box.top {
   background: var(--diceCol3);
   transform: rotateX(-90deg) translateY(var(--widthDiceHN));
   transform-origin: top center;
 }
-.container .cube-container .cube .box.bottom {
+.dice-wrapper .cube-container .cube .box.bottom {
   background: var(--diceCol3);
   transform: rotateX(90deg) translateY(var(--widthDiceH));
   transform-origin: bottom center;
 }
-.container .cube-container .cube .box.left {
+.dice-wrapper .cube-container .cube .box.left {
   background: var(--diceCol2);
   transform: rotateY(270deg) translateX(var(--widthDiceHN));
   transform-origin: center left;
 }
-.container .cube-container .cube .box.right {
+.dice-wrapper .cube-container .cube .box.right {
   background: var(--diceCol2);
   transform: rotateY(-270deg) translateX(var(--widthDiceH));
   transform-origin: top right;
@@ -97,10 +94,10 @@
 
 @keyframes horizontal-spin {
   from {
-    transform: rotateY(0) rotateX(0);
+    transform: rotateY(0) rotateX(0) translateZ(0);
   }
   to {
-    transform: rotateY(360deg) rotateX(360deg);
+    transform: rotateY(360deg) rotateX(360deg) translateZ(0);
   }
 }
 

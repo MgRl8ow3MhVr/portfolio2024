@@ -2,7 +2,7 @@ import "./Dice.css";
 
 const Dice = ({ titles = [], isGathering = false }) => {
   return (
-    <div className="container">
+    <div className="dice-wrapper">
       <div className="cube-container">
         <div className={`cube ${isGathering ? "fast-spin" : ""}`} id="cube">
           <div className="box front">{titles[0] || ""}</div>

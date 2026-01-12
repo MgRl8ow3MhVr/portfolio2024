@@ -54,15 +54,13 @@ const Modale = forwardRef(({ project, closeModal }, ref) => {
       <img src={project.img ? project.img : project.gif} alt="img" />
       <div className="description">
         <div>
-          <span>Scroll</span>
           <div className="closeModal" onClick={closeModal}>
             <Close size={35} />
           </div>
           <div className="chevron-container">
             <Chevron className="chevron" onClick={handleChevronClick} />
-            <span className="scroll-hint">scroll or clic to read</span>
           </div>
-          <div>
+          <div className="descriptionContainer">
             <Description text={project.description} />
           </div>
           <div className="buttons">

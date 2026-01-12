@@ -18,16 +18,16 @@
   color: white;
   position: absolute;
   text-align: center;
-  transition: top 0.2s ease-in, left 0.2s ease-in, font-weight 0.2s ease-in, text-transform 0.2s ease-in;
+  transition: top 0.2s ease-in, left 0.2s ease-in, font-weight 0.2s ease-in,
+    text-transform 0.2s ease-in;
   will-change: top, left;
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-.smallLetter {
+.projectLetter {
   font-family: "Roboto Mono", monospace;
-  /* font-family: "Nanum Gothic Coding", monospace; */
   /* font-size: controlled by JavaScript via config.js typographyConfig.letterFontSize */
   font-weight: 300;
   width: 12px;
@@ -40,25 +40,8 @@
   width: 12px;
   color: #a0a0a0;
 }
-.bigLetter {
-  /* font-family: "Nanum Gothic Coding", monospace; */
-  text-transform: uppercase;
-  font-size: 75px;
-  top: calc(var(--sizeProject/2));
-  left: calc(var(--sizeProject/2));
-  transform: translate(-50%, -50%);
-}
 
 @media (max-width: 850px) {
-  .smallLetter {
-    /* font-size: controlled by JavaScript via config.js typographyConfig.letterFontSizeMobile */
-  }
-  .customerLetter {
-    /* font-size: controlled by JavaScript via config.js typographyConfig.customerFontSizeMobile */
-  }
-  .bigLetter {
-    font-size: 50px;
-  }
   .titlesin {
     height: 40px;
   }
@@ -71,9 +54,8 @@
 .project {
   position: absolute;
   transition: top var(--transTime) cubic-bezier(0.1, 0.9, 0.2, 1),
-              left var(--transTime) cubic-bezier(0.1, 0.9, 0.2, 1),
-              box-shadow 0.2s ease-out,
-              transform 0.2s ease-out;
+    left var(--transTime) cubic-bezier(0.1, 0.9, 0.2, 1),
+    box-shadow 0.2s ease-out, transform 0.2s ease-out;
   transform: translateZ(0);
   backface-visibility: hidden;
 }
@@ -108,7 +90,7 @@
   height: 100%;
   width: 100%;
   object-fit: contain;
-  /* object-position: bottom; */
+  object-position: bottom;
   position: absolute;
   background-color: white;
   transform: translateZ(0);
