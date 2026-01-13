@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from "react";
+import { useState, useMemo } from "react";
 
 import "./App.css";
 import "./animations/anims.css";
@@ -10,7 +10,8 @@ import cartesHome from "./data/CartesHome.jsx";
 import CartesPortfolio from "./data/CartesPortfolio.jsx";
 import Modale from "./components/Modale";
 import Dice from "./components/Dice/Dice.jsx";
-import { CSSTransition } from "react-transition-group";
+import Header from "./components/Header.jsx";
+import VideoPlayer from "./components/VideoPlayer.jsx";
 import {
   homeCheckColor,
   portfolioCheckColor,
@@ -24,7 +25,10 @@ function App() {
   const [checkedCartsPortfolio, setCheckedCartsPortfolio] = useState([]);
   const [modaleNum, setModaleNum] = useState([0, 0]);
   const [openModal, setOpenModal] = useState(false);
-  const modaleRef = useRef(null);
+
+  // Video player states
+  const [playvideo, setPlayvideo] = useState(false);
+  const [currentVideoLink, setCurrentVideoLink] = useState("");
 
   // Portfolio navigation states
   const [isGathering, setIsGathering] = useState(false);
@@ -186,59 +190,31 @@ function App() {
       onClick={closeModal}
       style={{ "--sizeProject": `${calculatedSize}px` }}
     >
-      <div
-        className="header"
-        style={{
-          animation: isInitialLoad ? "appear 0.3s ease-in" : "none",
-        }}
-      >
-        PIERRE MALLERET
-      </div>
-      <div
-        className="subtitle"
-        style={{
-          opacity: gatherToCenter ? 0 : 1,
-          transition: `opacity ${gatherToCenter ? "0.5s" : "0.6s"} ease-out`,
-          animation: isInitialLoad ? "appear 0.3s ease-in 0.15s both" : "none",
-        }}
-      >
-        <span>
-          {currentCardSet === "home" ? "SOLUTIONS NUMÉRIQUES " : "PORTFOLIO"}
-        </span>
-      </div>
-      <div
-        className="dice"
-        style={{
-          animation: isInitialLoad ? "appear 0.3s ease-in 0.3s both" : "none",
-        }}
-      >
-        <div onClick={handleDiceClick} style={{ cursor: "pointer" }}>
-          <Dice
-            titles={activeCartes.map((carte) => carte.title)}
-            isGathering={isRolling || isGathering}
-          />
-        </div>
-      </div>
+      <Header
+        currentCardSet={currentCardSet}
+        gatherToCenter={gatherToCenter}
+        isInitialLoad={isInitialLoad}
+      />
+      <Dice
+        titles={activeCartes.map((carte) => carte.title)}
+        isGathering={isRolling || isGathering}
+        onClick={handleDiceClick}
+        isInitialLoad={isInitialLoad}
+      />
       <div
         className="gridprojects"
         onClick={(event) => {
           event.stopPropagation();
         }}
       >
-        <CSSTransition
-          in={openModal}
-          timeout={1100} // Duration of the animation
-          classNames={`slide${modaleNum[1]}`} // Prefix for class names
-          unmountOnExit // Unmounts the component after the animation
-          nodeRef={modaleRef}
-        >
-          <Modale
-            ref={modaleRef}
-            project={activeCartes[modaleNum[0]]}
-            closeModal={closeModal}
-            pos={modaleNum[1]}
-          />
-        </CSSTransition>
+        <Modale
+          isOpen={openModal}
+          project={activeCartes[modaleNum[0]]}
+          closeModal={closeModal}
+          pos={modaleNum[1]}
+          setPlayvideo={setPlayvideo}
+          setCurrentVideoLink={setCurrentVideoLink}
+        />
 
         <div
           className="projectscontenair"
@@ -334,6 +310,13 @@ function App() {
         {/* end of gridProject */}
       </div>
       <p className="footer"> &#169; Pierre Malleret 2026</p>
+
+      <VideoPlayer
+        isOpen={playvideo}
+        setPlayvideo={setPlayvideo}
+        linkvideo={currentVideoLink}
+      />
+
       {/* end of App */}
     </div>
   );

@@ -37,3 +37,9 @@ export const typographyConfig = {
   // Maximum random delay for letter transitions (in milliseconds)
   maxTransitionDelay: 120,
 };
+
+// Video player configuration
+export const videoPlayerConfig = {
+  // Curtain width as percentage of screen width
+  curtainWidth: 8, // percentage (15 = 15%)
+};

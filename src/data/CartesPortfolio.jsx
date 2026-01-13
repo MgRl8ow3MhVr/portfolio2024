@@ -55,8 +55,8 @@ const obj2 = {
   title: "Impact écologiques",
   customer: "Vertigo Lab",
   color: portfolioCardsColor,
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767975356/portfolio/imgs/rnrpg0q16nprbqy7sbkl.png",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1767975356/portfolio/imgs/rnrpg0q16nprbqy7sbkl.png",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768323462/portfolio/imgs/fwkdf9lutrltlgugp3fs.png",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768323462/portfolio/imgs/fwkdf9lutrltlgugp3fs.png",
   description: `
         >Calcul d'impact écologique et socio-économiques des entreprises - 2024
      Vertigo Lab est un cabinet d'études d'impacts écologiques et socio-économiques. Ils sont missionnés par des instituts publics ou par des entreprises privées, ils développent des méthodes scientifiques afin d'évaluer les impacts des entreprises et de les conseiller en durabilité.
@@ -66,7 +66,7 @@ const obj2 = {
   link1: "https://vertigolab.eu/en/home/",
   buttonvideo: "démo vidéo",
   linkvideo:
-    "https://res.cloudinary.com/pierredev/video/upload/v1767456759/portfolio/videos/ypltyyz6kcgbaejjr2jt.mov",
+    "https://res.cloudinary.com/pierredev/video/upload/v1768316378/portfolio/videos/b2wtg7taf3lkghfd5oxh.mov",
 };
 /* # # # # # # ELEARNING # # # # # # # # # # # # # # # */
 const obj3 = {

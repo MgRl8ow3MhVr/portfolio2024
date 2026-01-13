@@ -1,14 +1,12 @@
-import React, { useEffect, useState, forwardRef, useRef } from "react";
+import React, { useEffect, forwardRef, useRef } from "react";
 import "./Modale.css";
 import Chevron from "./Chevron";
 import Description from "./Description";
 import Close from "../assets/svg/close.jsx";
 import VideoButton from "./VideoButton.jsx";
-import VideoPlayer from "./VideoPlayer.jsx";
 import { CSSTransition } from "react-transition-group";
 
-const Modale = forwardRef(({ project, closeModal }, ref) => {
-  const videoPlayerRef = useRef(null);
+const Modale = forwardRef(({ project, closeModal, setPlayvideo, setCurrentVideoLink }, ref) => {
   //Detect when top of Scroll then change chevrons direction
   useEffect(() => {
     const el = document.querySelector(".description");
@@ -27,8 +25,6 @@ const Modale = forwardRef(({ project, closeModal }, ref) => {
       removeEventListener("scroll", limitscroll);
     };
   }, []);
-  const [playvideo, setPlayvideo] = useState(false);
-  const [currentVideoLink, setCurrentVideoLink] = useState("");
 
   const handleChevronClick = () => {
     const el = document.querySelector(".description");
@@ -92,20 +88,6 @@ const Modale = forwardRef(({ project, closeModal }, ref) => {
               />
             )}
           </div>
-
-          <CSSTransition
-            in={playvideo}
-            timeout={300} // Duration of the animation
-            classNames="videoanim"
-            unmountOnExit // Unmount the component after animation
-            nodeRef={videoPlayerRef}
-          >
-            <VideoPlayer
-              ref={videoPlayerRef}
-              setPlayvideo={setPlayvideo}
-              linkvideo={currentVideoLink}
-            />
-          </CSSTransition>
         </div>
       </div>
     </div>
@@ -114,4 +96,27 @@ const Modale = forwardRef(({ project, closeModal }, ref) => {
 
 Modale.displayName = "Modale";
 
-export default Modale;
+// Wrapper component that includes CSSTransition
+const ModaleWithTransition = ({ isOpen, project, closeModal, pos, setPlayvideo, setCurrentVideoLink }) => {
+  const modaleRef = useRef(null);
+
+  return (
+    <CSSTransition
+      in={isOpen}
+      timeout={1100}
+      classNames={`slide${pos}`}
+      unmountOnExit
+      nodeRef={modaleRef}
+    >
+      <Modale
+        ref={modaleRef}
+        project={project}
+        closeModal={closeModal}
+        setPlayvideo={setPlayvideo}
+        setCurrentVideoLink={setCurrentVideoLink}
+      />
+    </CSSTransition>
+  );
+};
+
+export default ModaleWithTransition;
