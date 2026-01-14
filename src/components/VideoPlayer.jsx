@@ -57,6 +57,12 @@ const VideoPlayerWithTransition = ({ isOpen, linkvideo, setPlayvideo }) => {
     }
   };
 
+  // Close video when clicking on curtain
+  const handleCurtainClick = (e) => {
+    e.stopPropagation();
+    setPlayvideo(false);
+  };
+
   return (
     <>
       <CSSTransition
@@ -71,7 +77,7 @@ const VideoPlayerWithTransition = ({ isOpen, linkvideo, setPlayvideo }) => {
           className="videoContainer"
           style={{ "--curtain-width": `${videoPlayerConfig.curtainWidth}%` }}
         >
-          <div className="curtain curtain-left"></div>
+          <div className="curtain curtain-left" onClick={handleCurtainClick}></div>
           <video
             ref={videoRef}
             src={linkvideo}
@@ -82,7 +88,7 @@ const VideoPlayerWithTransition = ({ isOpen, linkvideo, setPlayvideo }) => {
             height="100%"
             controls={false}
           />
-          <div className="curtain curtain-right"></div>
+          <div className="curtain curtain-right" onClick={handleCurtainClick}></div>
         </div>
       </CSSTransition>
 

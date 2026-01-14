@@ -4,7 +4,7 @@ import { portfolioCardsColor } from "../config.js";
 const obj0 = {
   id: 0,
   title: "Qui suis-je ?",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/g39tl9gae4jpzofnul5z.gif",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385148/portfolio/gifs/mpvxb1t4jb4lteb1fvom.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795018/portfolio/imgs/bnykj67eazhs6ejtclmt.jpg",
   description: `
   >BIENVENUE SUR CE SITE
@@ -25,8 +25,9 @@ const obj0 = {
 const obj1 = {
   id: 1,
   title: "Contact",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767966692/portfolio/gifs/q3eco6b12bpyk0lkjdtr.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1728052982/portfolio/imgs/bwcgvjevxviknuumayd8.jpg",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/atcubm3a1wknzlnkgr5y.gif",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/atcubm3a1wknzlnkgr5y.gif",
+  // img: "https://res.cloudinary.com/pierredev/image/upload/v1728052982/portfolio/imgs/bwcgvjevxviknuumayd8.jpg",
   description: `
   >Contactez moi
   
@@ -44,12 +45,14 @@ const obj1 = {
 const obj2 = {
   id: 2,
   title: "Applications web & mobiles",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767996013/portfolio/gifs/wrrcqmc5zq4k58i0x3rb.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1767996013/portfolio/gifs/wrrcqmc5zq4k58i0x3rb.gif",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768345193/portfolio/gifs/x2rhheskwwi8t802f3eh.gif",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768345193/portfolio/gifs/x2rhheskwwi8t802f3eh.gif",
   description: `
   >Applications Web et Mobile
 
-  Formé en école d'ingénieur et fort de 6 ans d'expérience en développement web, je conçois des applications mobiles complètes, de la base de données à l'interface utilisateur. Je travaille seul ou avec des designers selon les besoins. J'utilise principalement la stack React / JavaScript / Nest.js ou Strapi, avec un hébergement souverain sur Scalingo. Ayant géré un commerce en ligne, je comprends les enjeux business. Mon expérience de consultant télécoms m'apporte rigueur, professionnalisme et gestion de projet.
+  Formé en école d'ingénieur, passé par le consulting, l'entrepeunariat, et désormais de fort de 6 ans d'expérience dans le développement web, je conçois des applications mobiles complètes, de la base de données à l'interface utilisateur.
+  <space/>
+  Je travaille seul ou en équipe selon les besoins (design, data, devops). J'utilise principalement la stack React / JavaScript / Nest.js ou Strapi, avec un hébergement souverain sur Scalingo. Ayant géré un commerce en ligne, je comprends les enjeux business. Mon expérience de consultant télécoms m'apporte rigueur, professionnalisme et gestion de projet.
 
   Découvrez mes meilleurs projets dans la carte "cas clients"
     `,
@@ -58,8 +61,8 @@ const obj2 = {
 const obj3 = {
   id: 3,
   title: "Low code et IA",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767968196/portfolio/imgs/u30hia1pv0bdpogdccq6.png",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1767968195/portfolio/imgs/yl1m3gnhj6xz0tms9vr0.webp",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385152/portfolio/gifs/tffzscu7xtl4otxdnuiw.gif",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1767968196/portfolio/imgs/u30hia1pv0bdpogdccq6.png",
   description: `
   >Qu'est-ce que le Low Code ?
 
@@ -80,8 +83,9 @@ const obj3 = {
 const obj4 = {
   id: 4,
   title: "Formations",
-  img: "https://res.cloudinary.com/pierredev/image/upload/c_crop,w_320/v1727800724/portfolio/gifs/yfketmnkysmoaamaaxvy.gif",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/c_crop,h_389/v1728056977/portfolio/imgs/le5yidqslwjzcwic28tc.png",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/jki3yfhg9oivfirwla9m.gif",
+  // gif: "https://res.cloudinary.com/pierredev/image/upload/c_crop,h_389/v1728056977/portfolio/imgs/le5yidqslwjzcwic28tc.png",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/jki3yfhg9oivfirwla9m.gif",
   description: `
   >Formateur web et numérique
   Diplômé 2008 de l'ENSIMAG, école d'ingénieurs informatique, puis spécialisé dans le Web au Reacteur en 2017, je prends désormais plaisir à transmettre mes acquis et mon expérience à un public en renconversion.
@@ -101,23 +105,23 @@ const obj5 = {
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1767964822/portfolio/gifs/l0ykp2poygfeoclkcl9n.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1767964440/portfolio/clients/oubuvwsjafvfbhxg25nt.png",
   description: `
-  >Développement d'applications web
+  >En tant que développeur d'applications web :
   <space/>
   <link href="https://www.needeat.nc/fr/" title="Needeat"> <link href="https://www.donbosco-actionsociale.org/associations/garelli-95/" title="association Garelli"> <link href="https://www.thegooddrive.fr/" title="The good drive"> <link href="https://www.quanticdream.com" title="Quantic Dream"> <link href="https://www.vertigo-labs.com" title="Vertigo Labs"> <link href="https://alkalee.fr/" title="Alkalee">
 
   
 
-  >Outils No Code
+  >En tant que développeur d'outils No Code :
     <space/>
   <link href="https://www.economie.gouv.fr" title="Ministère des finances"> <link href="https://www.occitanie.gouv.fr" title="Préfecture d'occitanie"> <link href="https://www.numerique.gouv.fr" title="DINUM"> <link href="https://www.adie.org" title="Adie"> <link href="https://www.veolia.com" title="Veolia">
 
 
-  >Chef de projet numérique
+  >En tant que de chef projet numérique :
     <space/>
   <link href="https://aucarre.fr" title="Au Carré">
 
 
-  > Formateur
+  > En tant que formateur :
     <space/>
   <link href="https://www.greta.fr" title="Greta"> <link href="https://www.ifocop.fr" title="IFOCOP"> <link href="https://ecoleatla.fr" title="Ecole ATLA">
 
@@ -126,21 +130,21 @@ const obj5 = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj6 = {
   id: 6,
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767967801/portfolio/gifs/hjhejhiaeewbkceb6inf.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1767967801/portfolio/gifs/hjhejhiaeewbkceb6inf.gif",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768386233/portfolio/gifs/w4rlfx0j70f18f6bl31r.gif",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768386233/portfolio/gifs/w4rlfx0j70f18f6bl31r.gif",
   title: "Travailler ensemble",
   description: `
    Je travaille sous le statut d'auto-entrepeneur. Qu'une mission se concrétise ou non, je trouve qu'une rencontre est toujours enrichissante.
 
-  > Etude du besoin & contractualisation
+  >1 - Etude du besoin
    En première phase, j'écouterai votre besoin et identifierai les technologies les plus pertinentes. Si le projet nécessite des compétences externes, je saurai réunir plusieurs freelances via mon réseau de Freelance for Good.
 
    Puis je vous propose un chiffrage détaillé, et nous nous accordons sur un planning de réalisation.
 
-  > Réalisation
-  En phase de réalisation, nous gardons un contact régulier, pour vous faire part de l'avancement et décider d'ajustement nécessaires.
+  >2 - Réalisation
+  En phase de réalisation, nous gardons un contact régulier, pour vous faire part de l'avancement grâce à des outils de gestion de projet comme Trello, ou Grist et décider d'ajustement nécessaires.
 
-  > Livraison & Maintenance
+  >3 - Livraison & Maintenance
   Une fois votre produit numérique livré, nous convenons d'une période de test. Une fois cette phase passée, l'outil vous appartient, mais nous ne perdons pas le contact ! Je resterai disponible pour d'éventuels travaux d'amélioration ou de maintenance
   `,
 };
@@ -169,7 +173,8 @@ const obj8 = {
   color: portfolioCardsColor,
   description: `
   `,
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1768235707/portfolio/gifs/u0ssfi5pjhnet5xaocmk.gif",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768235707/portfolio/gifs/u0ssfi5pjhnet5xaocmk.gif",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768385147/portfolio/gifs/kidyguipq8bhajwalukc.gif",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385147/portfolio/gifs/kidyguipq8bhajwalukc.gif",
+  goToPortfolio: true,
 };
 export default [obj0, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8];

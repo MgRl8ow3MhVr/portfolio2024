@@ -10,7 +10,7 @@ export const portfolioCheckColor = "#7dd683";
 
 // Square size ratios based on screen orientation
 // Portrait mode (phone): ratio based on screen width (smallest dimension)
-export const portraitSizeRatio = 0.35; // % of screen width
+export const portraitSizeRatio = 0.31; // % of screen width
 
 // Landscape mode (desktop/tablet): ratio based on screen height (smallest dimension)
 export const landscapeSizeRatio = 0.22; // 22% of screen height

@@ -1,22 +1,21 @@
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import CheckBox from "./CheckBox.jsx";
 import { typographyConfig } from "../config.js";
 import "./Project.css";
 
 function Project({
-  gif,
+  project,
   show,
   hoverMe,
   hoverOff,
-  title,
-  customer,
-  color,
   openModale,
   checked,
   checkColor,
   isGathering,
   size,
 }) {
+  // Destructure project properties
+  const { gif, title, customer, color, icon } = project;
   // Calculate layout parameters based on tile size and config ratios
   const isMobile = window.innerWidth <= 850;
   const padding = size * typographyConfig.paddingRatio;
@@ -215,7 +214,27 @@ function Project({
       style={color && { backgroundColor: color }}
     >
       {checked && <CheckBox checkColor={checkColor} />}
-      {!isGathering && (
+
+      {/* Display icon if icon property is set */}
+      {icon && (
+        <div
+          className="icon-container"
+          onClick={openModale}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100%',
+            height: '100%',
+            cursor: 'pointer',
+          }}
+        >
+          {React.createElement(icon, { size: size * 0.33, color: '#c0c0c0' })}
+        </div>
+      )}
+
+      {/* Display title and customer only if no icon */}
+      {!icon && !isGathering && (
         <div className={show ? "titlesin" : "titlesout"}>
           {lettersList.map((letter, index) => (
             <div
@@ -243,7 +262,8 @@ function Project({
         </div>
       )}
 
-      {show && !isGathering && (
+      {/* Display gif only if no icon */}
+      {!icon && show && !isGathering && (
         <div className="gifcard">
           <img
             src={gif}

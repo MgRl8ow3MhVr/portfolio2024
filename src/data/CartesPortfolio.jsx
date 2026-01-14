@@ -1,13 +1,16 @@
 import { homeCardsColor, portfolioCardsColor } from "../config.js";
+import LeftArrow from "../assets/svg/LeftArrow.jsx";
 
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj0 = {
   id: 10,
   title: "Retour",
   color: homeCardsColor,
+  icon: LeftArrow,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1767975814/portfolio/imgs/xg0j1ei0rsmgcxgigpxm.png",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1767975814/portfolio/imgs/xg0j1ei0rsmgcxgigpxm.png",
   description: ``,
+  backToHome: true,
 };
 
 /* # # # # # # # # # # # # # # # # # # # # # */
@@ -58,9 +61,13 @@ const obj2 = {
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768323462/portfolio/imgs/fwkdf9lutrltlgugp3fs.png",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768323462/portfolio/imgs/fwkdf9lutrltlgugp3fs.png",
   description: `
-        >Calcul d'impact écologique et socio-économiques des entreprises - 2024
-     Vertigo Lab est un cabinet d'études d'impacts écologiques et socio-économiques. Ils sont missionnés par des instituts publics ou par des entreprises privées, ils développent des méthodes scientifiques afin d'évaluer les impacts des entreprises et de les conseiller en durabilité.
-     Pour eux, 
+        >Calcul d'impact écologiques et socio-économiques des entreprises - 2024
+     Vertigo Lab est un cabinet d'études d'impacts écologiques et socio-économiques, missionné par des instituts publics ou par des entreprises privées.
+
+     Ils ont développé une méthode de calcul des retombées socio-économiques des entreprises dans leur région, qui prend en entrée les dépenses et les résultats des entreprises. Les chiffres produits permettent de leur apporter du conseil en durabilité pour les les inciter à se fournir localement.
+     Ils m'ont missionné pour leur livrer une interface qui permet d'automatiser ces calculs. Elle est désormais à à disposition des consultants pour leur faire gagner du temps dans leurs études clients.
+
+     La vidéo ci-dessous ne montre "que" l'interface. Tous les calculs sont dans la partie immergée de l'iceberg, le back-end, qui applique la méthode de calcul qu'ils ont mise au point.
 `,
   button1: "Vertigo Lab",
   link1: "https://vertigolab.eu/en/home/",
@@ -101,7 +108,9 @@ const obj4 = {
   >Diagramme de flux - 2022
   Alkalee est une entreprise qui développe des simulateurs de circuits électoniques pour les constructeurs automobiles.
     L'interface que j'ai développée pour eux permet à un utilisateur de "connecter modules entre eux afin d'appeler leur moteur de simulation par API et d'afficher les résultats de la simulation.
-  Stack utilisée : React, React-Flow
+
+    >Stack technique :
+  React, React-Flow. Back-end en Nest.js
   `,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1728042846/portfolio/gifs/u6gumr9iuelbzbtmnh73.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1728042370/portfolio/imgs/kyi9jxxr3bsueihvzecq.jpg",
@@ -120,12 +129,13 @@ const obj5 = {
   description: `
   >Suivi de mineurs isolés étrangers - 2024
 
-  Garelli95 est une association à qui l'état confie des mineurs isolés étrangers.
-  Leur besoin était d'enregistrer l'évolution des jeunes via un questionnaire réalisé tous les six mois, et ainsi évaluer leur action. L'interface se devait d'être chaleureuse et animée, pour donner envie.
+  Garelli95 est une association du Val d'Oise qui accompagne des mineurs isolés étrangers dans leur parcours d'intégration en France.L'état leur confie environ 70 mineurs par ans.
+  Leur besoin était double : permettre aux jeunes d'évaluer et constater leur évolution, et permettre aussi à l'association de mesurer son impact via des indicateurs de progression. Ainsi, ils ont imaginé un questionnaire réalisé tous les six mois sur une plateforme à laquelle j'ai donné vie. L'interface se devait d'être chaleureuse et animée, pour rendre cette évaluation bi-mensuelle ludique.
 
-  J'ai conçu en complément une interface Back-office qui permet de paramétrer les questions, catégories, utilisateurs etc... N'hésitez pas à les contacter pour leur demander des retours sur notre collaboration
-
-  Stack technique : React, Zustand, Strapi, Cloudinary, MySql, Heroku`,
+  J'ai conçu en complément une interface Back-office qui leur permet de paramétrer les questions, les catégories, les utilisateurs etc... Ainsi, cette plateforme peut être déclinée pour de multiples associations.
+   
+  >Stack technique :
+  React, Zustand, Strapi, Cloudinary, MySql, Heroku`,
   link1: "https://www.donbosco-actionsociale.org/associations/garelli-95/",
   button1: "Garelli 95",
   buttonvideo: "démo vidéo",
@@ -142,11 +152,12 @@ const obj6 = {
   >Passer d'excel à Grist - 2025
 Grist est un tableur moderne combinant la simplicité d’Excel avec la puissance d’une base de données. Il permet de structurer les données, d’automatiser des règles, de gérer finement les droits et de collaborer en temps réel, là où Excel atteint vite ses limites.
   <space/>
+Grist est un outil Low Code promu par la Direction du Numérique auprès des ministères et collectivités, afin de sortir d'excel et développer un commun numérique souverain. J'ai ainsi pu développer des utilisations de Grist pour l'accadémie de Mulhouse, pour la préfecture d'Occitaine, et pour le ministère des finances. Si je devais n'en 
+  <space/>
 J’ai intégré Grist pour l’arbre de Noël du ministère des Finances, un projet complexe nécessitant l’autonomie de chaque département et une gestion des droits très fine. J’ai aussi développé pour la préfecture d’Occitanie un outil de suivi du budget des places en crèches des agents publics, et enfin pour la DINUM, des templates Grist (dont un annuaire avancé) aujourd’hui accessibles à tous les agents publics.
-
   `,
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767996829/portfolio/imgs/pruwrpuyjtmi59nvstpl.webp",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1767996829/portfolio/imgs/pruwrpuyjtmi59nvstpl.webp",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768330170/portfolio/imgs/yrpmvnoto7x6tuw2hpvu.png",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768330170/portfolio/imgs/yrpmvnoto7x6tuw2hpvu.png",
   buttonvideo: "Arbre de Noel",
   linkvideo:
     "https://res.cloudinary.com/pierredev/video/upload/v1767996750/portfolio/videos/l8ojg4figjdeas23fanj.mov",

@@ -194,6 +194,9 @@ function App() {
         currentCardSet={currentCardSet}
         gatherToCenter={gatherToCenter}
         isInitialLoad={isInitialLoad}
+        handleHomeClick={handleHomeClick}
+        playvideo={playvideo}
+        setPlayvideo={setPlayvideo}
       />
       <Dice
         titles={activeCartes.map((carte) => carte.title)}
@@ -214,6 +217,7 @@ function App() {
           pos={modaleNum[1]}
           setPlayvideo={setPlayvideo}
           setCurrentVideoLink={setCurrentVideoLink}
+          firstTime={checkedCartsHome.length === 0 && checkedCartsPortfolio.length === 0}
         />
 
         <div
@@ -265,14 +269,9 @@ function App() {
                   }}
                 >
                   <Project
+                    project={projet}
                     checked={checkedCarts.includes(index)}
                     checkColor={checkColor}
-                    gif={projet.gif}
-                    description={projet.description}
-                    title={projet.title}
-                    customer={projet.customer}
-                    color={projet.color}
-                    link={projet.link}
                     show={hovercart === index}
                     isGathering={gatherToCenter && index !== clickedCardIndex}
                     size={size}
@@ -284,16 +283,13 @@ function App() {
                     }}
                     index={index}
                     openModale={() => {
-                      // Check if this is Portfolio card
-                      if (projet.id === 8 && currentCardSet === "home") {
+                      // Check if this card navigates to portfolio
+                      if (projet.goToPortfolio) {
                         setClickedCardIndex(index);
                         handlePortfolioClick();
                       }
-                      // Check if this is Home card
-                      else if (
-                        projet.id === 10 &&
-                        currentCardSet === "portfolio"
-                      ) {
+                      // Check if this card navigates back to home
+                      else if (projet.backToHome) {
                         setClickedCardIndex(index);
                         handleHomeClick();
                       } else {

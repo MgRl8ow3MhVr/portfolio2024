@@ -1,10 +1,12 @@
-const Header = ({ currentCardSet, gatherToCenter, isInitialLoad }) => {
+const Header = ({ currentCardSet, gatherToCenter, isInitialLoad, backToHome }) => {
   return (
     <>
       <div
         className="header"
+        onClick={backToHome}
         style={{
           animation: isInitialLoad ? "appear 0.3s ease-in" : "none",
+          cursor: "pointer",
         }}
       >
         PIERRE MALLERET
