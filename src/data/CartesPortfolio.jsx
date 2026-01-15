@@ -7,9 +7,6 @@ const obj0 = {
   title: "Retour",
   color: homeCardsColor,
   icon: LeftArrow,
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1767975814/portfolio/imgs/xg0j1ei0rsmgcxgigpxm.png",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1767975814/portfolio/imgs/xg0j1ei0rsmgcxgigpxm.png",
-  description: ``,
   backToHome: true,
 };
 

@@ -1,4 +1,9 @@
-export default ({ buttonvideo, setPlayvideo, setCurrentVideoLink, linkvideo }) => {
+export default ({
+  buttonvideo,
+  setPlayvideo,
+  setCurrentVideoLink,
+  linkvideo,
+}) => {
   return (
     <div
       className="videobutton"

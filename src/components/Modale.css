@@ -27,19 +27,6 @@
   backface-visibility: hidden;
 }
 
-.closeModal {
-  position: absolute;
-  right: 2px;
-  top: 2px;
-  z-index: 1000;
-  cursor: pointer;
-  transition: 0.1s;
-}
-
-.closeModal:hover {
-  transform: scale(1.1);
-}
-
 .buttons {
   width: 100%;
   display: flex;
@@ -64,7 +51,6 @@
 
 .button-link:hover {
   background-color: #e4c4b3;
-  transform: scale(1.05);
 }
 
 /* =====================================================
@@ -72,20 +58,8 @@
    ===================================================== */
 
 @media (max-width: 850px) {
-  .description > div {
-    padding: 5px 5px 0px 5px;
-  }
-
-  .chevron {
-    height: 20px;
-  }
-
   .button-link {
-    font-size: 11px;
-    padding: 7px 25px 7px 25px;
-  }
-
-  .buttons {
-    padding: 0px;
+    font-size: 16px;
+    padding: 7px 25px;
   }
 }
