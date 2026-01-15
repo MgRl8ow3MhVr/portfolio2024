@@ -15,7 +15,7 @@
 .description > div {
   position: relative;
   background-color: rgb(0, 0, 0, 0.85);
-  padding: 5px 20px 0px 20px;
+  padding: 0 30px;
   height: calc(100% - 5px);
   min-height: 40%;
   display: flex;
@@ -31,7 +31,7 @@
   font-family: "Hind Siliguri", sans-serif;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 12px;
-  font-size: 16px;
+  font-size: 17px;
   color: white;
   text-align: center;
   word-spacing: 2px;
@@ -64,8 +64,6 @@ h2 {
 }
 
 .scroll-button-container {
-  /* position: absolute; */
-  /* top: 4px; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -105,12 +103,11 @@ h2 {
 
 @media (max-width: 850px) {
   .description > div {
-    padding: 5px 5px 0px 5px;
+    padding: 0 16px;
   }
 
   .description p {
     font-size: 15px;
-    color: white;
     margin-bottom: 8px;
     word-spacing: 1px;
   }
@@ -127,6 +124,5 @@ h2 {
 
   .description h2 {
     font-size: 18px;
-    margin: 5px 0 5px 0;
   }
 }

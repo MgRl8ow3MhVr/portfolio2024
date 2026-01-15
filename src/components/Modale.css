@@ -51,7 +51,6 @@
 
 .button-link:hover {
   background-color: #e4c4b3;
-  /* transform: scale(1.05); */
 }
 
 /* =====================================================
@@ -59,16 +58,8 @@
    ===================================================== */
 
 @media (max-width: 850px) {
-  .chevron {
-    height: 20px;
-  }
-
   .button-link {
-    font-size: 11px;
-    padding: 7px 25px 7px 25px;
-  }
-
-  .buttons {
-    padding: 0px;
+    font-size: 16px;
+    padding: 7px 25px;
   }
 }

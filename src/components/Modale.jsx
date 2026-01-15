@@ -8,7 +8,14 @@ import { modalConfig } from "../config.js";
 
 const Modale = forwardRef(
   (
-    { project, closeModal, setPlayvideo, setCurrentVideoLink, calculatedSize, currentCardSet },
+    {
+      project,
+      closeModal,
+      setPlayvideo,
+      setCurrentVideoLink,
+      calculatedSize,
+      currentCardSet,
+    },
     ref
   ) => {
     const [arrowDirection, setArrowDirection] = useState("up");
@@ -36,11 +43,6 @@ const Modale = forwardRef(
             calculatedSize *
             ((100 - modalConfig.descriptionStartingPoint) / 100) -
           modalConfig.arrowDirectionChangeOffset;
-        console.log(
-          "scrollThresholdBeforeClose",
-          scrollThresholdBeforeClose,
-          el.scrollTop
-        );
 
         if (el.scrollTop > scrollThresholdBeforeClose) {
           setArrowDirection("left");

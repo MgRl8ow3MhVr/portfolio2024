@@ -7,7 +7,7 @@ export const homeCheckColor = "#6bd172";
 export const portfolioCheckColor = "#7dd683";
 
 // Square size ratios based on screen orientation
-export const portraitSizeRatio = 0.32; // % of screen height for lanscape
+export const portraitSizeRatio = 0.31; // % of screen height for lanscape
 
 // Landscape mode (desktop/tablet): ratio based on screen height (smallest dimension)
 export const landscapeSizeRatio = 0.28; // 22% of screen height for mobiles
@@ -25,7 +25,7 @@ export const typographyConfig = {
 
   // Letter font size (also used for vertical centering calculations)
   letterFontSize: 18, // pixels for desktop
-  letterFontSizeMobile: 12, // pixels for mobile
+  letterFontSizeMobile: 15, // pixels for mobile
 
   // Customer name font size
   customerFontSize: 13, // pixels for desktop

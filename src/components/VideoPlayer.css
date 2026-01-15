@@ -67,7 +67,7 @@
 
 @media (max-width: 850px) {
   .videobutton {
-    font-size: 11px;
-    padding: 7px 25px 7px 25px;
+    font-size: 14px;
+    padding: 7px 25px;
   }
 }
