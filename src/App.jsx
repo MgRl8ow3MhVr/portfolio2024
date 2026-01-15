@@ -1,4 +1,8 @@
 import { useState, useMemo } from "react";
+import {
+  handleCardSetSwitch as cardSetSwitch,
+  handleDiceClick as diceClick,
+} from "./utils/appUtils.js";
 
 import "./App.css";
 import "./animations/anims.css";
@@ -12,11 +16,13 @@ import Modale from "./components/Modale";
 import Dice from "./components/Dice/Dice.jsx";
 import Header from "./components/Header.jsx";
 import VideoPlayer from "./components/VideoPlayer.jsx";
+import DarkOverlay from "./components/DarkOverlay.jsx";
 import {
   homeCheckColor,
   portfolioCheckColor,
   portraitSizeRatio,
   landscapeSizeRatio,
+  layoutConfig,
 } from "./config.js";
 
 function App() {
@@ -33,8 +39,6 @@ function App() {
   // Portfolio navigation states
   const [isGathering, setIsGathering] = useState(false);
   const [gatherToCenter, setGatherToCenter] = useState(false);
-  // const [currentCardSet, setCurrentCardSet] = useState("portfolio");
-  // const [activeCartes, setActiveCartes] = useState(CartesPortfolio);
   const [currentCardSet, setCurrentCardSet] = useState("home");
   const [activeCartes, setActiveCartes] = useState(cartesHome);
   const [clickedCardIndex, setClickedCardIndex] = useState(null);
@@ -84,155 +88,97 @@ function App() {
 
   // Handle card navigation with gather/spread animation
   const handleCardSetSwitch = (newCartes, newCardSet) => {
-    if (isGathering) return; // Prevent clicks during animation
-
-    // Close modal if open
-    if (openModal) {
-      setOpenModal(false);
-    }
-
-    // Disable initial load animations after first navigation
-    if (isInitialLoad) {
-      setIsInitialLoad(false);
-    }
-
-    // Start gathering animation
-    setIsGathering(true);
-    setGatherToCenter(true);
-
-    // After 850ms (wait for gather animation to complete), swap cards
-    setTimeout(() => {
-      setActiveCartes(newCartes);
-      setCurrentCardSet(newCardSet);
-      // Keep gathered for a brief moment before spreading
-      setTimeout(() => {
-        setGatherToCenter(false);
-      }, 50);
-    }, 750);
-
-    // After 1700ms (animation complete), re-enable interactions
-    setTimeout(() => {
-      setIsGathering(false);
-    }, 1700);
+    cardSetSwitch(newCartes, newCardSet, {
+      isGathering,
+      openModal,
+      isInitialLoad,
+      setOpenModal,
+      setIsInitialLoad,
+      setIsGathering,
+      setGatherToCenter,
+      setActiveCartes,
+      setCurrentCardSet,
+    });
   };
-
-  const handlePortfolioClick = () =>
-    handleCardSetSwitch(CartesPortfolio, "portfolio");
-  const handleHomeClick = () => handleCardSetSwitch(cartesHome, "home");
 
   // Handle dice click - lottery animation
   const handleDiceClick = () => {
-    if (isRolling || isGathering || openModal) return;
-
-    // Get unchecked cards (exclude Portfolio/Retour navigation cards)
-    const checkedCarts =
-      currentCardSet === "home" ? checkedCartsHome : checkedCartsPortfolio;
-    const uncheckedCards = activeCartes
-      .map((carte, index) => ({ carte, index }))
-      .filter(
-        ({ carte, index }) =>
-          !checkedCarts.includes(index) &&
-          carte.id !== 8 && // Exclude Portfolio card
-          carte.id !== 10 // Exclude Retour card
-      );
-
-    if (uncheckedCards.length === 0) return; // No cards to select
-
-    setIsRolling(true);
-
-    // Create decelerating highlight sequence
-    const totalDuration = 2000; // 2 seconds total
-    const highlights = [];
-    let elapsed = 0;
-    let delay = 50; // Start with 50ms between highlights
-    const deceleration = 1.15; // Multiply delay by this factor each step
-
-    // Build the sequence with decelerating intervals
-    while (elapsed < totalDuration - 200) {
-      // Leave 200ms for final selection
-      const randomCard =
-        uncheckedCards[Math.floor(Math.random() * uncheckedCards.length)];
-      highlights.push({ cardIndex: randomCard.index, time: elapsed });
-      elapsed += delay;
-      delay *= deceleration;
-    }
-
-    // Final selected card
-    const finalCard =
-      uncheckedCards[Math.floor(Math.random() * uncheckedCards.length)];
-    highlights.push({ cardIndex: finalCard.index, time: totalDuration - 200 });
-
-    // Execute the highlight sequence
-    highlights.forEach(({ cardIndex, time }) => {
-      setTimeout(() => {
-        setHighlightedCard(cardIndex);
-      }, time);
+    diceClick({
+      isRolling,
+      isGathering,
+      openModal,
+      currentCardSet,
+      checkedCartsHome,
+      checkedCartsPortfolio,
+      activeCartes,
+      setIsRolling,
+      setHighlightedCard,
+      setOpenModal,
+      setModaleNum,
     });
-
-    // Open the final card after 2 seconds
-    setTimeout(() => {
-      setHighlightedCard(null);
-      setIsRolling(false);
-      setOpenModal(true);
-      setModaleNum([finalCard.index, finalCard.index]);
-    }, totalDuration);
   };
 
   // Calculate size for CSS variable
   const isPortrait = window.innerHeight > window.innerWidth;
   const calculatedSize = isPortrait
-    ? window.innerWidth * portraitSizeRatio
+    ? window.innerHeight * portraitSizeRatio
     : window.innerHeight * landscapeSizeRatio;
 
   return (
     <div
       className="app"
       onClick={closeModal}
-      style={{ "--sizeProject": `${calculatedSize}px` }}
+      style={{
+        "--sizeProject": `${calculatedSize}px`,
+        flexDirection: isPortrait ? "column" : "row",
+      }}
     >
-      <Header
-        currentCardSet={currentCardSet}
-        gatherToCenter={gatherToCenter}
-        isInitialLoad={isInitialLoad}
-        handleHomeClick={handleHomeClick}
-        playvideo={playvideo}
-        setPlayvideo={setPlayvideo}
-      />
-      <Dice
-        titles={activeCartes.map((carte) => carte.title)}
-        isGathering={isRolling || isGathering}
-        onClick={handleDiceClick}
-        isInitialLoad={isInitialLoad}
-      />
       <div
-        className="gridprojects"
-        onClick={(event) => {
-          event.stopPropagation();
+        className="titlesContainer"
+        style={{
+          flex: isPortrait ? "none" : layoutConfig.titlesContainerFlex,
         }}
       >
-        <Modale
-          isOpen={openModal}
-          project={activeCartes[modaleNum[0]]}
-          closeModal={closeModal}
-          pos={modaleNum[1]}
-          setPlayvideo={setPlayvideo}
-          setCurrentVideoLink={setCurrentVideoLink}
-          firstTime={checkedCartsHome.length === 0 && checkedCartsPortfolio.length === 0}
+        <Header
+          currentCardSet={currentCardSet}
+          gatherToCenter={gatherToCenter}
+          isInitialLoad={isInitialLoad}
         />
+        <Dice
+          titles={activeCartes.map((carte) => carte.title)}
+          isGathering={isRolling || isGathering}
+          onClick={handleDiceClick}
+          isInitialLoad={isInitialLoad}
+        />
+      </div>
 
+      <div
+        className="gridProjects"
+        style={{
+          flex: isPortrait ? "none" : layoutConfig.gridProjectsFlex,
+        }}
+      >
         <div
           className="projectscontenair"
+          onClick={(event) => {
+            event.stopPropagation();
+          }}
           style={{
             pointerEvents: isGathering ? "none" : "auto",
           }}
         >
+          <Modale
+            isOpen={openModal}
+            project={activeCartes[modaleNum[0]]}
+            closeModal={closeModal}
+            pos={modaleNum[1]}
+            setPlayvideo={setPlayvideo}
+            setCurrentVideoLink={setCurrentVideoLink}
+            calculatedSize={calculatedSize}
+          />
           {(() => {
-            // Calculate size once for all cards to prevent layout thrashing
-            const isPortrait = window.innerHeight > window.innerWidth;
-            const size = isPortrait
-              ? window.innerWidth * portraitSizeRatio
-              : window.innerHeight * landscapeSizeRatio;
-            const centerPos = size; // Center is at position 1,1
+            // Use already calculated size and position
+            const centerPos = calculatedSize; // Center is at position 1,1
 
             return activeCartes.map((projet, index) => {
               const row = Math.floor(index / 3);
@@ -255,8 +201,12 @@ function App() {
                   key={projet.title}
                   className="project"
                   style={{
-                    top: gatherToCenter ? `${centerPos}px` : `${row * size}px`,
-                    left: gatherToCenter ? `${centerPos}px` : `${col * size}px`,
+                    top: gatherToCenter
+                      ? `${centerPos}px`
+                      : `${row * calculatedSize}px`,
+                    left: gatherToCenter
+                      ? `${centerPos}px`
+                      : `${col * calculatedSize}px`,
                     transitionDelay: isGathering ? cardDelays[index] : "0ms",
                     zIndex: index === clickedCardIndex ? 10 : 1,
                     boxShadow: isHighlighted
@@ -272,9 +222,10 @@ function App() {
                     project={projet}
                     checked={checkedCarts.includes(index)}
                     checkColor={checkColor}
+                    currentCardSet={currentCardSet}
                     show={hovercart === index}
                     isGathering={gatherToCenter && index !== clickedCardIndex}
-                    size={size}
+                    size={calculatedSize}
                     hoverMe={() => {
                       setHoverCart(index);
                     }}
@@ -286,12 +237,12 @@ function App() {
                       // Check if this card navigates to portfolio
                       if (projet.goToPortfolio) {
                         setClickedCardIndex(index);
-                        handlePortfolioClick();
+                        handleCardSetSwitch(CartesPortfolio, "portfolio");
                       }
                       // Check if this card navigates back to home
                       else if (projet.backToHome) {
                         setClickedCardIndex(index);
-                        handleHomeClick();
+                        handleCardSetSwitch(cartesHome, "home");
                       } else {
                         setOpenModal(true);
                         setModaleNum([index, index]);
@@ -303,17 +254,16 @@ function App() {
             });
           })()}
         </div>
-        {/* end of gridProject */}
+        <p className="footer"> &#169; Pierre Malleret 2026</p>
       </div>
-      <p className="footer"> &#169; Pierre Malleret 2026</p>
+
+      <DarkOverlay isOpen={playvideo} />
 
       <VideoPlayer
         isOpen={playvideo}
         setPlayvideo={setPlayvideo}
         linkvideo={currentVideoLink}
       />
-
-      {/* end of App */}
     </div>
   );
 }

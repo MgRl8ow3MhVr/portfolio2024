@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { videoPlayerConfig } from "../config";
 import ControlBar from "./ControlBar";
+import CloseButton from "./CloseButton.jsx";
 import "./VideoPlayer.css";
 
 // Component that includes CSSTransition for both video and controls
@@ -67,7 +68,10 @@ const VideoPlayerWithTransition = ({ isOpen, linkvideo, setPlayvideo }) => {
     <>
       <CSSTransition
         in={isOpen}
-        timeout={775}
+        timeout={
+          videoPlayerConfig.videoPlayerDelay +
+          videoPlayerConfig.videoPlayerDuration
+        }
         classNames="videoanim"
         unmountOnExit
         nodeRef={videoPlayerRef}
@@ -75,9 +79,12 @@ const VideoPlayerWithTransition = ({ isOpen, linkvideo, setPlayvideo }) => {
         <div
           ref={videoPlayerRef}
           className="videoContainer"
-          style={{ "--curtain-width": `${videoPlayerConfig.curtainWidth}%` }}
+          onClick={handleCurtainClick}
+          style={{
+            "--video-duration": `${videoPlayerConfig.videoPlayerDuration}ms`,
+            "--video-delay": `${videoPlayerConfig.videoPlayerDelay}ms`,
+          }}
         >
-          <div className="curtain curtain-left" onClick={handleCurtainClick}></div>
           <video
             ref={videoRef}
             src={linkvideo}
@@ -88,13 +95,24 @@ const VideoPlayerWithTransition = ({ isOpen, linkvideo, setPlayvideo }) => {
             height="100%"
             controls={false}
           />
-          <div className="curtain curtain-right" onClick={handleCurtainClick}></div>
+          <CloseButton
+            size={50}
+            onClick={(e) => {
+              e.stopPropagation();
+              setPlayvideo(false);
+            }}
+            direction="up"
+            offset={{ right: "25px", top: "25px" }}
+          />
         </div>
       </CSSTransition>
 
       <CSSTransition
         in={isOpen}
-        timeout={775}
+        timeout={
+          videoPlayerConfig.controlBarDelay +
+          videoPlayerConfig.controlBarDuration
+        }
         classNames="controlanim"
         unmountOnExit
         nodeRef={controlBarRef}
@@ -107,7 +125,8 @@ const VideoPlayerWithTransition = ({ isOpen, linkvideo, setPlayvideo }) => {
           handleSeek={handleSeek}
           duration={duration}
           formatTime={formatTime}
-          setPlayvideo={setPlayvideo}
+          controlBarDuration={videoPlayerConfig.controlBarDuration}
+          controlBarDelay={videoPlayerConfig.controlBarDelay}
         />
       </CSSTransition>
     </>

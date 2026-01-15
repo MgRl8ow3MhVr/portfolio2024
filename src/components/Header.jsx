@@ -1,12 +1,12 @@
-const Header = ({ currentCardSet, gatherToCenter, isInitialLoad, backToHome }) => {
+import Portfolio from "../assets/svg/Portfolio.jsx";
+
+const Header = ({ currentCardSet, gatherToCenter, isInitialLoad }) => {
   return (
     <>
       <div
         className="header"
-        onClick={backToHome}
         style={{
           animation: isInitialLoad ? "appear 0.3s ease-in" : "none",
-          cursor: "pointer",
         }}
       >
         PIERRE MALLERET
@@ -19,8 +19,15 @@ const Header = ({ currentCardSet, gatherToCenter, isInitialLoad, backToHome }) =
           animation: isInitialLoad ? "appear 0.3s ease-in 0.15s both" : "none",
         }}
       >
-        <span>
-          {currentCardSet === "home" ? "SOLUTIONS NUMÉRIQUES " : "PORTFOLIO"}
+        <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          {currentCardSet === "home" ? (
+            "SOLUTIONS NUMÉRIQUES "
+          ) : (
+            <>
+              <Portfolio size={30} color="rgba(89, 87, 87, 0.872)" />
+              PROJETS CHOISIS
+            </>
+          )}
         </span>
       </div>
     </>

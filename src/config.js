@@ -9,11 +9,10 @@ export const homeCheckColor = "#6bd172";
 export const portfolioCheckColor = "#7dd683";
 
 // Square size ratios based on screen orientation
-// Portrait mode (phone): ratio based on screen width (smallest dimension)
-export const portraitSizeRatio = 0.31; // % of screen width
+export const portraitSizeRatio = 0.28; // % of screen height for lanscape
 
 // Landscape mode (desktop/tablet): ratio based on screen height (smallest dimension)
-export const landscapeSizeRatio = 0.22; // 22% of screen height
+export const landscapeSizeRatio = 0.28; // 22% of screen height for mobiles
 
 // Typography layout configuration
 export const typographyConfig = {
@@ -38,8 +37,24 @@ export const typographyConfig = {
   maxTransitionDelay: 120,
 };
 
+// Layout flex proportions (landscape mode only)
+export const layoutConfig = {
+  titlesContainerFlex: 2, // Flex value for titles section
+  gridProjectsFlex: 2, // Flex value for projects grid section
+};
+
 // Video player configuration
 export const videoPlayerConfig = {
-  // Curtain width as percentage of screen width
-  curtainWidth: 8, // percentage (15 = 15%)
+  // Animation timings (in milliseconds)
+  darkOverlayDuration: 250, // Dark overlay fade duration
+  videoPlayerDuration: 600, // Video container animation duration
+  videoPlayerDelay: 100, // Video container animation delay
+  controlBarDuration: 300, // Control bar animation duration
+  controlBarDelay: 500, // Control bar animation delay (overlayDuration + videoPlayerDelay + videoPlayerDuration)
+};
+
+// Modal configuration
+export const modalConfig = {
+  descriptionStartingPoint: 16, // Description content starts at (100 - 84)% = 16% from top of modal
+  arrowDirectionChangeOffset: 30, // Offset in pixels before reaching top to change arrow direction
 };

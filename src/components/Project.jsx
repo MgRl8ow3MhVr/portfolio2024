@@ -1,6 +1,10 @@
 import React, { useMemo } from "react";
 import CheckBox from "./CheckBox.jsx";
-import { typographyConfig } from "../config.js";
+import {
+  typographyConfig,
+  homeCardsColor,
+  portfolioCardsColor,
+} from "../config.js";
 import "./Project.css";
 
 function Project({
@@ -11,11 +15,12 @@ function Project({
   openModale,
   checked,
   checkColor,
+  currentCardSet,
   isGathering,
   size,
 }) {
   // Destructure project properties
-  const { gif, title, customer, color, icon } = project;
+  const { gif, title = "", customer, color, icon } = project;
   // Calculate layout parameters based on tile size and config ratios
   const isMobile = window.innerWidth <= 850;
   const padding = size * typographyConfig.paddingRatio;
@@ -110,6 +115,7 @@ function Project({
     const top = startTop + lineIndex * lineSpacing;
 
     // Calculate horizontal position (centered)
+    // Add small offset to account for letter width
     const lineWidth = lineLength * letterSpacing;
     const startLeft = size / 2 - lineWidth / 2;
     const left = startLeft + positionInLine * letterSpacing;
@@ -221,15 +227,19 @@ function Project({
           className="icon-container"
           onClick={openModale}
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%',
-            height: '100%',
-            cursor: 'pointer',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100%",
+            cursor: "pointer",
           }}
         >
-          {React.createElement(icon, { size: size * 0.33, color: '#c0c0c0' })}
+          {React.createElement(icon, {
+            size: size * 0.33,
+            color:
+              currentCardSet === "home" ? homeCardsColor : portfolioCardsColor,
+          })}
         </div>
       )}
 

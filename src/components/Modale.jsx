@@ -1,50 +1,63 @@
-import React, { useEffect, forwardRef, useRef } from "react";
+import React, { useEffect, forwardRef, useRef, useState } from "react";
 import "./Modale.css";
-import Chevron from "./Chevron";
 import Description from "./Description";
-import Close from "../assets/svg/close.jsx";
+import CloseButton from "./CloseButton.jsx";
 import VideoButton from "./VideoButton.jsx";
 import { CSSTransition } from "react-transition-group";
+import { modalConfig } from "../config.js";
 
 const Modale = forwardRef(
   (
-    { project, closeModal, setPlayvideo, setCurrentVideoLink, firstTime },
+    { project, closeModal, setPlayvideo, setCurrentVideoLink, calculatedSize },
     ref
   ) => {
-    //Detect when top of Scroll then change chevrons direction
+    const [arrowDirection, setArrowDirection] = useState("up");
+
+    //Detect when top of Scroll then change arrow direction
     useEffect(() => {
       const el = document.querySelector(".description");
       const limitscroll = () => {
-        const limitpx = document.body.clientWidth < 850 ? 250 : 400;
-        if (el.scrollTop > limitpx) {
-          document.querySelector(".chevron").classList.add("chevronDown");
+        // Calculate scroll threshold: projectscontenair height minus description starting point minus offset buffer
+        // projectscontenair is 3 rows * calculatedSize
+        // description starts at (100 - modalConfig.descriptionStartingPoint)% from top
+        const scrollThresholdBeforeClose =
+          3 *
+            calculatedSize *
+            ((100 - modalConfig.descriptionStartingPoint) / 100) -
+          modalConfig.arrowDirectionChangeOffset;
+        console.log(
+          "scrollThresholdBeforeClose",
+          scrollThresholdBeforeClose,
+          el.scrollTop
+        );
+
+        if (el.scrollTop > scrollThresholdBeforeClose) {
+          setArrowDirection("left");
         } else {
-          document.querySelector(".chevron").classList.remove("chevronDown");
+          setArrowDirection("up");
         }
       };
       if (el) {
         el.addEventListener("scroll", limitscroll);
       }
       return () => {
-        removeEventListener("scroll", limitscroll);
+        if (el) {
+          el.removeEventListener("scroll", limitscroll);
+        }
       };
-    }, []);
+    }, [calculatedSize]);
 
-    const handleChevronClick = () => {
+    const handleButtonClick = () => {
       const el = document.querySelector(".description");
-      const chevron = document.querySelector(".chevron");
-      if (el && chevron) {
-        // If chevron is pointing down, scroll to top; if pointing right, scroll to max
-        if (chevron.classList.contains("chevronDown")) {
-          el.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        } else {
+      if (el) {
+        // If arrow is pointing up, scroll to top; if pointing down, scroll to max
+        if (arrowDirection === "up") {
           el.scrollTo({
             top: el.scrollHeight,
             behavior: "smooth",
           });
+        } else {
+          closeModal();
         }
       }
     };
@@ -53,19 +66,20 @@ const Modale = forwardRef(
       <div className="modale" ref={ref}>
         <img src={project.img ? project.img : project.gif} alt="img" />
         <div className="description">
-          <div>
-            <div className="closeModal" onClick={closeModal}>
-              <Close size={35} />
-            </div>
-            <div className="chevron-container">
-              <Chevron
-                className="chevron"
-                onClick={handleChevronClick}
-                color="#b0b0b0"
-              />
-              {firstTime && (
-                <span className="chevron-hint">cliquer pour tout lire</span>
-              )}
+          <div
+            style={{
+              marginTop: `${100 - modalConfig.descriptionStartingPoint}%`,
+            }}
+          >
+            <div className="scroll-button-container">
+              <div style={{ marginTop: "8px" }}>
+                <CloseButton
+                  size={20}
+                  onClick={handleButtonClick}
+                  direction={arrowDirection}
+                  absolute={false}
+                />
+              </div>
             </div>
             <div className="descriptionContainer">
               <Description text={project.description} />
@@ -116,7 +130,8 @@ const ModaleWithTransition = ({
   pos,
   setPlayvideo,
   setCurrentVideoLink,
-  firstTime,
+  calculatedSize,
+  // firstTime,
 }) => {
   const modaleRef = useRef(null);
 
@@ -134,7 +149,8 @@ const ModaleWithTransition = ({
         closeModal={closeModal}
         setPlayvideo={setPlayvideo}
         setCurrentVideoLink={setCurrentVideoLink}
-        firstTime={firstTime}
+        calculatedSize={calculatedSize}
+        // firstTime={firstTime}
       />
     </CSSTransition>
   );

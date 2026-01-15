@@ -1,4 +1,5 @@
 import { portfolioCardsColor } from "../config.js";
+import Portfolio from "../assets/svg/Portfolio.jsx";
 
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj0 = {
@@ -26,8 +27,7 @@ const obj1 = {
   id: 1,
   title: "Contact",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/atcubm3a1wknzlnkgr5y.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/atcubm3a1wknzlnkgr5y.gif",
-  // img: "https://res.cloudinary.com/pierredev/image/upload/v1728052982/portfolio/imgs/bwcgvjevxviknuumayd8.jpg",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768483732/portfolio/imgs/vrs7up1lm4mzevdfngv6.png",
   description: `
   >Contactez moi
   
@@ -106,25 +106,25 @@ const obj5 = {
   img: "https://res.cloudinary.com/pierredev/image/upload/v1767964440/portfolio/clients/oubuvwsjafvfbhxg25nt.png",
   description: `
   >En tant que développeur d'applications web :
-  <space/>
   <link href="https://www.needeat.nc/fr/" title="Needeat"> <link href="https://www.donbosco-actionsociale.org/associations/garelli-95/" title="association Garelli"> <link href="https://www.thegooddrive.fr/" title="The good drive"> <link href="https://www.quanticdream.com" title="Quantic Dream"> <link href="https://www.vertigo-labs.com" title="Vertigo Labs"> <link href="https://alkalee.fr/" title="Alkalee">
+  <space/>
 
   
 
   >En tant que développeur d'outils No Code :
-    <space/>
   <link href="https://www.economie.gouv.fr" title="Ministère des finances"> <link href="https://www.occitanie.gouv.fr" title="Préfecture d'occitanie"> <link href="https://www.numerique.gouv.fr" title="DINUM"> <link href="https://www.adie.org" title="Adie"> <link href="https://www.veolia.com" title="Veolia">
+  <space/>
 
 
   >En tant que de chef projet numérique :
-    <space/>
   <link href="https://aucarre.fr" title="Au Carré">
+  <space/>
 
 
   > En tant que formateur :
-    <space/>
   <link href="https://www.greta.fr" title="Greta"> <link href="https://www.ifocop.fr" title="IFOCOP"> <link href="https://ecoleatla.fr" title="Ecole ATLA">
-
+  <space/>
+  Note : huit de ces projets sont détaillés si vous cliquez sur la neuvième carte.
   `,
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
@@ -169,7 +169,7 @@ const obj7 = {
 /* # # # # # # Eco # # # # # # # # # # # # # # # */
 const obj8 = {
   id: 8,
-  title: "8 cas clients",
+  icon: Portfolio,
   color: portfolioCardsColor,
   description: `
   `,
