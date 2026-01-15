@@ -121,9 +121,8 @@ function App() {
   // Calculate size for CSS variable
   const isPortrait = window.innerHeight > window.innerWidth;
   const calculatedSize = isPortrait
-    ? window.innerHeight * portraitSizeRatio
+    ? window.innerWidth * portraitSizeRatio
     : window.innerHeight * landscapeSizeRatio;
-
   return (
     <div
       className="app"
@@ -136,7 +135,8 @@ function App() {
       <div
         className="titlesContainer"
         style={{
-          flex: isPortrait ? "none" : layoutConfig.titlesContainerFlex,
+          // flex: isPortrait ? "none" : layoutConfig.titlesContainerFlex,
+          flex: layoutConfig.titlesContainerFlex,
         }}
       >
         <Header
@@ -155,7 +155,8 @@ function App() {
       <div
         className="gridProjects"
         style={{
-          flex: isPortrait ? "none" : layoutConfig.gridProjectsFlex,
+          // flex: isPortrait ? "none" : layoutConfig.gridProjectsFlex,
+          flex: layoutConfig.gridProjectsFlex,
         }}
       >
         <div
@@ -175,6 +176,7 @@ function App() {
             setPlayvideo={setPlayvideo}
             setCurrentVideoLink={setCurrentVideoLink}
             calculatedSize={calculatedSize}
+            currentCardSet={currentCardSet}
           />
           {(() => {
             // Use already calculated size and position

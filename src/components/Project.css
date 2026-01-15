@@ -41,12 +41,6 @@
   color: #a0a0a0;
 }
 
-@media (max-width: 850px) {
-  .titlesin {
-    height: 40px;
-  }
-}
-
 /* =====================================================
    PROJECT CARD
    ===================================================== */
@@ -95,4 +89,10 @@
   background-color: white;
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+@media (max-width: 850px) {
+  .titlesin {
+    height: 40px;
+  }
 }

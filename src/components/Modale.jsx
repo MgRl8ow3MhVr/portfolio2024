@@ -8,10 +8,21 @@ import { modalConfig } from "../config.js";
 
 const Modale = forwardRef(
   (
-    { project, closeModal, setPlayvideo, setCurrentVideoLink, calculatedSize },
+    { project, closeModal, setPlayvideo, setCurrentVideoLink, calculatedSize, currentCardSet },
     ref
   ) => {
     const [arrowDirection, setArrowDirection] = useState("up");
+
+    // Auto-scroll description for home cards
+    useEffect(() => {
+      if (currentCardSet === "home") {
+        const timeoutId = setTimeout(() => {
+          handleButtonClick();
+        }, modalConfig.autoScrollDelay);
+
+        return () => clearTimeout(timeoutId);
+      }
+    }, [currentCardSet]);
 
     //Detect when top of Scroll then change arrow direction
     useEffect(() => {
@@ -131,6 +142,7 @@ const ModaleWithTransition = ({
   setPlayvideo,
   setCurrentVideoLink,
   calculatedSize,
+  currentCardSet,
   // firstTime,
 }) => {
   const modaleRef = useRef(null);
@@ -150,6 +162,7 @@ const ModaleWithTransition = ({
         setPlayvideo={setPlayvideo}
         setCurrentVideoLink={setCurrentVideoLink}
         calculatedSize={calculatedSize}
+        currentCardSet={currentCardSet}
         // firstTime={firstTime}
       />
     </CSSTransition>

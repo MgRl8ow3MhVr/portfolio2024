@@ -1,5 +1,3 @@
-export const wordsList = ["zzz", "lana", "portfolio"];
-
 // Card colors
 export const homeCardsColor = "#303030";
 export const portfolioCardsColor = "#5c5c5c";
@@ -9,7 +7,7 @@ export const homeCheckColor = "#6bd172";
 export const portfolioCheckColor = "#7dd683";
 
 // Square size ratios based on screen orientation
-export const portraitSizeRatio = 0.28; // % of screen height for lanscape
+export const portraitSizeRatio = 0.32; // % of screen height for lanscape
 
 // Landscape mode (desktop/tablet): ratio based on screen height (smallest dimension)
 export const landscapeSizeRatio = 0.28; // 22% of screen height for mobiles
@@ -20,13 +18,13 @@ export const typographyConfig = {
   paddingRatio: 0.1,
 
   // Letter spacing as a ratio of tile size (0.08 = 8% of tile size)
-  letterSpacingRatio: 0.06,
+  letterSpacingRatio: 0.055,
 
   // Line spacing as a ratio of tile size (0.12 = 12% of tile size)
   lineSpacingRatio: 0.12,
 
   // Letter font size (also used for vertical centering calculations)
-  letterFontSize: 16, // pixels for desktop
+  letterFontSize: 18, // pixels for desktop
   letterFontSizeMobile: 12, // pixels for mobile
 
   // Customer name font size
@@ -57,4 +55,5 @@ export const videoPlayerConfig = {
 export const modalConfig = {
   descriptionStartingPoint: 16, // Description content starts at (100 - 84)% = 16% from top of modal
   arrowDirectionChangeOffset: 30, // Offset in pixels before reaching top to change arrow direction
+  autoScrollDelay: 1300, // Delay in milliseconds before auto-scrolling description (home cards only)
 };

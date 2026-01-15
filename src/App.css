@@ -50,7 +50,6 @@ body {
 
 .gridProjects {
   position: relative;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -61,6 +60,7 @@ body {
   height: calc((var(--sizeProject) * 3 - 5px));
   animation: appear 0.8s ease-in;
   position: relative;
+  margin: 0 8px 0 8px;
 }
 
 /* =====================================================
@@ -90,3 +90,8 @@ body {
    ===================================================== */
 
 /* CSS variable --sizeProject is now dynamically set in App.jsx */
+@media (max-width: 850px) {
+  .projectscontenair {
+    margin: 0 0px 0 0px;
+  }
+}
