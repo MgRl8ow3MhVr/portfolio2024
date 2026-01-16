@@ -107,9 +107,9 @@ h2 {
   }
 
   .description p {
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 8px;
-    word-spacing: 1px;
+    word-spacing: 0px;
   }
 
   .description ul {
@@ -123,6 +123,6 @@ h2 {
   }
 
   .description h2 {
-    font-size: 18px;
+    font-size: 14px;
   }
 }

@@ -135,7 +135,6 @@ function App() {
   // Check if screen is close to square (aspect ratio near 1:1)
   const aspectRatio = window.innerHeight / window.innerWidth;
   const isCloseToSquare = Math.abs(aspectRatio - 1) < closeToSquareThreshold;
-  console.log("aspectRatio", aspectRatio);
   // Use closeToSquareRatio if screen is nearly square, otherwise use normal ratios
   const sizeRatio = isCloseToSquare
     ? closeToSquareRatio

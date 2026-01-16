@@ -6,7 +6,7 @@
 export { colors } from "./configColors.js";
 
 // Square size ratios based on screen orientation
-export const portraitSizeRatio = 0.31; // % of screen height for lanscape
+export const portraitSizeRatio = 0.32; // % of screen height for lanscape
 
 // Landscape mode (desktop/tablet): ratio based on screen height (smallest dimension)
 export const landscapeSizeRatio = 0.28; // 22% of screen height for mobiles
@@ -21,14 +21,15 @@ export const typographyConfig = {
   paddingRatio: 0.1,
 
   // Letter spacing as a ratio of tile size (0.08 = 8% of tile size)
-  letterSpacingRatio: 0.055,
+  letterSpacingRatio: 0.055, // Desktop/landscape
+  letterSpacingRatioPortrait: 0.07, // Mobile/portrait
 
   // Line spacing as a ratio of tile size (0.12 = 12% of tile size)
   lineSpacingRatio: 0.12,
 
   // Letter font size (also used for vertical centering calculations)
   letterFontSize: 18, // pixels for desktop
-  letterFontSizeMobile: 15, // pixels for mobile
+  letterFontSizeMobile: 13, // pixels for mobile
 
   // Customer name font size
   customerFontSize: 13, // pixels for desktop

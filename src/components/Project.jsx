@@ -27,7 +27,9 @@ function Project({
   // Calculate layout parameters based on tile size and config ratios
   const isMobile = window.innerWidth <= 850;
   const padding = size * typographyConfig.paddingRatio;
-  const letterSpacing = size * typographyConfig.letterSpacingRatio;
+  const letterSpacing = size * (isMobile
+    ? typographyConfig.letterSpacingRatioPortrait
+    : typographyConfig.letterSpacingRatio);
   const lineSpacing = size * typographyConfig.lineSpacingRatio;
   const fontSize = isMobile
     ? typographyConfig.letterFontSizeMobile
@@ -215,12 +217,18 @@ function Project({
     <div
       className="cart"
       onMouseEnter={() => {
-        hoverMe();
+        if (!isMobile) hoverMe();
       }}
       onMouseLeave={() => {
-        hoverOff();
+        if (!isMobile) hoverOff();
       }}
-      style={{ backgroundColor: cardBackgroundColor }}
+      onClick={() => {
+        if (!isGathering) openModale();
+      }}
+      style={{
+        backgroundColor: cardBackgroundColor,
+        cursor: 'pointer'
+      }}
     >
       {checked && <CheckBox checkColor={checkColor} />}
 
@@ -228,14 +236,12 @@ function Project({
       {icon && (
         <div
           className="icon-container"
-          onClick={openModale}
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             width: "100%",
             height: "100%",
-            cursor: "pointer",
             transition: "transform 0.2s ease, opacity 0.2s ease",
             transform: show ? "scale(1.1)" : "scale(1)",
             opacity: show ? 1 : 0.7,
@@ -281,13 +287,7 @@ function Project({
       {/* Display gif only if no icon */}
       {!icon && show && !isGathering && (
         <div className="gifcard">
-          <img
-            src={gif}
-            alt="gif"
-            onClick={() => {
-              openModale();
-            }}
-          />
+          <img src={gif} alt="gif" />
         </div>
       )}
     </div>
