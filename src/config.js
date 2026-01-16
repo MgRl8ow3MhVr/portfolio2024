@@ -1,16 +1,19 @@
-// Card colors
-export const homeCardsColor = "#303030";
-export const portfolioCardsColor = "#5c5c5c";
+// =====================================================
+// LAYOUT & ANIMATION CONFIGURATION
+// =====================================================
 
-// Checkmark colors
-export const homeCheckColor = "#6bd172";
-export const portfolioCheckColor = "#7dd683";
+// Re-export colors from configColors
+export { colors } from "./configColors.js";
 
 // Square size ratios based on screen orientation
 export const portraitSizeRatio = 0.31; // % of screen height for lanscape
 
 // Landscape mode (desktop/tablet): ratio based on screen height (smallest dimension)
 export const landscapeSizeRatio = 0.28; // 22% of screen height for mobiles
+
+// Close to square configuration
+export const closeToSquareThreshold = 0.25; // If aspect ratio difference from 1 is less than this, consider it "close to square"
+export const closeToSquareRatio = 0.25; // Size ratio to use when screen is close to square
 
 // Typography layout configuration
 export const typographyConfig = {
@@ -35,10 +38,17 @@ export const typographyConfig = {
   maxTransitionDelay: 120,
 };
 
-// Layout flex proportions (landscape mode only)
+// Layout flex proportions
 export const layoutConfig = {
+  // Landscape mode (desktop)
   titlesContainerFlex: 2, // Flex value for titles section
   gridProjectsFlex: 2, // Flex value for projects grid section
+
+  // Portrait mode (mobile)
+  titlesContainerFlexPortrait: 1, // Flex value for titles section in portrait
+  gridProjectsFlexPortrait: 5, // Flex value for projects grid section in portrait
+
+  transitionTime: 0.85, // Transition time in seconds for card animations
 };
 
 // Video player configuration

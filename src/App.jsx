@@ -1,14 +1,19 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
-  handleCardSetSwitch as cardSetSwitch,
-  handleDiceClick as diceClick,
+  handleCardSetSwitch,
+  handleDiceClick,
+  generateCardDelays,
+  generateCardAppearDelays,
 } from "./utils/appUtils.js";
+import {
+  initializeCSSColorVariables,
+  updateCardBackgroundColor,
+} from "./utils/cssVariables.js";
 
 import "./App.css";
 import "./animations/anims.css";
 import "./components/Header.css";
 import "./components/Footer.css";
-import "./components/DiceContainer.css";
 import Project from "./components/Project.jsx";
 import cartesHome from "./data/CartesHome.jsx";
 import CartesPortfolio from "./data/CartesPortfolio.jsx";
@@ -18,11 +23,12 @@ import Header from "./components/Header.jsx";
 import VideoPlayer from "./components/VideoPlayer.jsx";
 import DarkOverlay from "./components/DarkOverlay.jsx";
 import {
-  homeCheckColor,
-  portfolioCheckColor,
   portraitSizeRatio,
   landscapeSizeRatio,
+  closeToSquareThreshold,
+  closeToSquareRatio,
   layoutConfig,
+  colors,
 } from "./config.js";
 
 function App() {
@@ -48,21 +54,27 @@ function App() {
   const [isRolling, setIsRolling] = useState(false);
   const [highlightedCard, setHighlightedCard] = useState(null);
 
+  // Initialize CSS color variables from config on mount
+  useEffect(() => {
+    initializeCSSColorVariables();
+  }, []);
+
+  // Update card background color when card set changes
+  useEffect(() => {
+    updateCardBackgroundColor(currentCardSet);
+  }, [currentCardSet]);
+
   // Generate stable random delays for each card transition
-  const cardDelays = useMemo(() => {
-    return activeCartes.map((_, index) => {
-      // Clicked card gets 0 delay, others get random delay
-      if (index === clickedCardIndex) return "0ms";
-      return Math.floor(Math.random() * 120) + 10 + "ms";
-    });
-  }, [activeCartes, clickedCardIndex]);
+  const cardDelays = useMemo(
+    () => generateCardDelays(activeCartes.length, clickedCardIndex),
+    [activeCartes.length, clickedCardIndex]
+  );
 
   // Generate linear appearance delays for initial load
-  const cardAppearDelays = useMemo(() => {
-    return activeCartes.map((_, index) => {
-      return 0.8 + index * 0.08; // Linear delay: 0.8s, 0.88s, 0.96s, etc. (80ms increments)
-    });
-  }, [activeCartes.length]);
+  const cardAppearDelays = useMemo(
+    () => generateCardAppearDelays(activeCartes.length),
+    [activeCartes.length]
+  );
 
   const closeModal = () => {
     if (!openModal) return null;
@@ -87,8 +99,8 @@ function App() {
   };
 
   // Handle card navigation with gather/spread animation
-  const handleCardSetSwitch = (newCartes, newCardSet) => {
-    cardSetSwitch(newCartes, newCardSet, {
+  const onCardSetSwitch = (newCartes, newCardSet) => {
+    handleCardSetSwitch(newCartes, newCardSet, {
       isGathering,
       openModal,
       isInitialLoad,
@@ -102,8 +114,8 @@ function App() {
   };
 
   // Handle dice click - lottery animation
-  const handleDiceClick = () => {
-    diceClick({
+  const onDiceClick = () =>
+    handleDiceClick({
       isRolling,
       isGathering,
       openModal,
@@ -116,27 +128,40 @@ function App() {
       setOpenModal,
       setModaleNum,
     });
-  };
 
   // Calculate size for CSS variable
   const isPortrait = window.innerHeight > window.innerWidth;
+
+  // Check if screen is close to square (aspect ratio near 1:1)
+  const aspectRatio = window.innerHeight / window.innerWidth;
+  const isCloseToSquare = Math.abs(aspectRatio - 1) < closeToSquareThreshold;
+  console.log("aspectRatio", aspectRatio);
+  // Use closeToSquareRatio if screen is nearly square, otherwise use normal ratios
+  const sizeRatio = isCloseToSquare
+    ? closeToSquareRatio
+    : isPortrait
+    ? portraitSizeRatio
+    : landscapeSizeRatio;
+
   const calculatedSize = isPortrait
-    ? window.innerWidth * portraitSizeRatio
-    : window.innerHeight * landscapeSizeRatio;
+    ? window.innerWidth * sizeRatio
+    : window.innerHeight * sizeRatio;
   return (
     <div
       className="app"
       onClick={closeModal}
       style={{
         "--sizeProject": `${calculatedSize}px`,
+        "--transTime": `${layoutConfig.transitionTime}s`,
         flexDirection: isPortrait ? "column" : "row",
       }}
     >
       <div
         className="titlesContainer"
         style={{
-          // flex: isPortrait ? "none" : layoutConfig.titlesContainerFlex,
-          flex: layoutConfig.titlesContainerFlex,
+          flex: isPortrait
+            ? layoutConfig.titlesContainerFlexPortrait
+            : layoutConfig.titlesContainerFlex,
         }}
       >
         <Header
@@ -147,7 +172,7 @@ function App() {
         <Dice
           titles={activeCartes.map((carte) => carte.title)}
           isGathering={isRolling || isGathering}
-          onClick={handleDiceClick}
+          onClick={onDiceClick}
           isInitialLoad={isInitialLoad}
         />
       </div>
@@ -155,8 +180,9 @@ function App() {
       <div
         className="gridProjects"
         style={{
-          // flex: isPortrait ? "none" : layoutConfig.gridProjectsFlex,
-          flex: layoutConfig.gridProjectsFlex,
+          flex: isPortrait
+            ? layoutConfig.gridProjectsFlexPortrait
+            : layoutConfig.gridProjectsFlex,
         }}
       >
         <div
@@ -179,22 +205,17 @@ function App() {
             currentCardSet={currentCardSet}
           />
           {(() => {
-            // Use already calculated size and position
             const centerPos = calculatedSize; // Center is at position 1,1
 
             return activeCartes.map((projet, index) => {
               const row = Math.floor(index / 3);
               const col = index % 3;
 
-              // Get checked state and color based on current card set
+              // Get checked state based on current card set
               const checkedCarts =
                 currentCardSet === "home"
                   ? checkedCartsHome
                   : checkedCartsPortfolio;
-              const checkColor =
-                currentCardSet === "home"
-                  ? homeCheckColor
-                  : portfolioCheckColor;
 
               const isHighlighted = highlightedCard === index;
 
@@ -212,7 +233,7 @@ function App() {
                     transitionDelay: isGathering ? cardDelays[index] : "0ms",
                     zIndex: index === clickedCardIndex ? 10 : 1,
                     boxShadow: isHighlighted
-                      ? "0 0 12.5px 4px rgba(216, 180, 160, 0.8)"
+                      ? `0 0 12.5px 4px ${colors.ui.tan}cc`
                       : "none",
                     transform: isHighlighted ? "scale(1.05)" : "scale(1)",
                     animation: isInitialLoad
@@ -223,7 +244,7 @@ function App() {
                   <Project
                     project={projet}
                     checked={checkedCarts.includes(index)}
-                    checkColor={checkColor}
+                    checkColor={colors.ui.green}
                     currentCardSet={currentCardSet}
                     show={hovercart === index}
                     isGathering={gatherToCenter && index !== clickedCardIndex}
@@ -239,12 +260,12 @@ function App() {
                       // Check if this card navigates to portfolio
                       if (projet.goToPortfolio) {
                         setClickedCardIndex(index);
-                        handleCardSetSwitch(CartesPortfolio, "portfolio");
+                        onCardSetSwitch(CartesPortfolio, "portfolio");
                       }
                       // Check if this card navigates back to home
                       else if (projet.backToHome) {
                         setClickedCardIndex(index);
-                        handleCardSetSwitch(cartesHome, "home");
+                        onCardSetSwitch(cartesHome, "home");
                       } else {
                         setOpenModal(true);
                         setModaleNum([index, index]);

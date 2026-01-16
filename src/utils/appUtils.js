@@ -1,4 +1,26 @@
 /**
+ * Generate stable random delays for each card transition
+ * Clicked card gets 0 delay, others get random delays
+ */
+export const generateCardDelays = (cardsCount, clickedCardIndex) => {
+  return Array.from({ length: cardsCount }, (_, index) => {
+    // Clicked card gets 0 delay, others get random delay
+    if (index === clickedCardIndex) return "0ms";
+    return Math.floor(Math.random() * 120) + 10 + "ms";
+  });
+};
+
+/**
+ * Generate linear appearance delays for initial load animation
+ * Returns delays in seconds: 0.8s, 0.88s, 0.96s, etc. (80ms increments)
+ */
+export const generateCardAppearDelays = (cardsCount) => {
+  return Array.from({ length: cardsCount }, (_, index) => {
+    return 0.8 + index * 0.08; // Linear delay: 0.8s, 0.88s, 0.96s, etc.
+  });
+};
+
+/**
  * Handle switching between card sets (home/portfolio) with animation
  */
 export const handleCardSetSwitch = (

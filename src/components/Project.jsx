@@ -1,10 +1,6 @@
 import React, { useMemo } from "react";
 import CheckBox from "./CheckBox.jsx";
-import {
-  typographyConfig,
-  homeCardsColor,
-  portfolioCardsColor,
-} from "../config.js";
+import { typographyConfig, colors } from "../config.js";
 import "./Project.css";
 
 function Project({
@@ -20,7 +16,14 @@ function Project({
   size,
 }) {
   // Destructure project properties
-  const { gif, title = "", customer, color, icon } = project;
+  const { gif, title = "", customer, icon } = project;
+
+  // Determine card background color based on currentCardSet and icon presence
+  // Home cards: colors.cards.home by default, BUT colors.cards.portfolio if has icon
+  // Portfolio cards: colors.cards.portfolio by default, BUT colors.cards.home if has icon
+  const cardBackgroundColor = icon
+    ? (currentCardSet === "home" ? colors.cards.portfolio : colors.cards.home)
+    : (currentCardSet === "home" ? colors.cards.home : colors.cards.portfolio);
   // Calculate layout parameters based on tile size and config ratios
   const isMobile = window.innerWidth <= 850;
   const padding = size * typographyConfig.paddingRatio;
@@ -217,7 +220,7 @@ function Project({
       onMouseLeave={() => {
         hoverOff();
       }}
-      style={color && { backgroundColor: color }}
+      style={{ backgroundColor: cardBackgroundColor }}
     >
       {checked && <CheckBox checkColor={checkColor} />}
 
@@ -233,12 +236,15 @@ function Project({
             width: "100%",
             height: "100%",
             cursor: "pointer",
+            transition: "transform 0.2s ease, opacity 0.2s ease",
+            transform: show ? "scale(1.1)" : "scale(1)",
+            opacity: show ? 1 : 0.7,
           }}
         >
           {React.createElement(icon, {
             size: size * 0.33,
             color:
-              currentCardSet === "home" ? homeCardsColor : portfolioCardsColor,
+              currentCardSet === "home" ? colors.cards.home : colors.cards.portfolio,
           })}
         </div>
       )}

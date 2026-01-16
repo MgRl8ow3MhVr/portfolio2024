@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import Clock from "../assets/svg/Clock.jsx";
 import "./ControlBar.css";
 
 const ControlBar = forwardRef(
@@ -12,7 +13,10 @@ const ControlBar = forwardRef(
           "--control-delay": `${controlBarDelay}ms`
         }}
       >
-        <div className="duration">{formatTime(duration)}</div>
+        <div className="duration">
+          <Clock size={14} color="var(--text-dark)" />
+          <span>{formatTime(duration)}</span>
+        </div>
         <div className="playcontainer" onClick={togglePlayPause}>
           {!isPlaying ? (
             <div className="triangle-play-button"></div>

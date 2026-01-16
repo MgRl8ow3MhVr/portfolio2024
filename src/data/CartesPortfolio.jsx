@@ -1,11 +1,9 @@
-import { homeCardsColor, portfolioCardsColor } from "../config.js";
 import LeftArrow from "../assets/svg/LeftArrow.jsx";
 
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj0 = {
   id: 10,
   title: "Retour",
-  color: homeCardsColor,
   icon: LeftArrow,
   backToHome: true,
 };
@@ -15,7 +13,6 @@ const obj1 = {
   id: 11,
   title: "Intranet micro-apps",
   customer: "Veolia",
-  color: portfolioCardsColor,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1767991845/portfolio/imgs/djd6gvrkwmlgrlayjzub.png",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1767991845/portfolio/imgs/djd6gvrkwmlgrlayjzub.png",
   description: `
@@ -54,7 +51,6 @@ const obj2 = {
   id: 12,
   title: "Impact écologiques",
   customer: "Vertigo Lab",
-  color: portfolioCardsColor,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768323462/portfolio/imgs/fwkdf9lutrltlgugp3fs.png",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768323462/portfolio/imgs/fwkdf9lutrltlgugp3fs.png",
   description: `
@@ -77,7 +73,6 @@ const obj3 = {
   id: 13,
   title: "E-learning auto-écoles",
   customer: "TheGoodDrive",
-  color: portfolioCardsColor,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063334/portfolio/gifs/k0gdbvq7falkwbs48erj.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/c_scale/v1727795014/portfolio/imgs/fzcxdrsxj3l4nbgi75ge.jpg",
   description: `
@@ -100,7 +95,6 @@ const obj4 = {
   id: 14,
   title: "Diagrammes interactifs",
   customer: "Alkalee",
-  color: portfolioCardsColor,
   description: `
   >Diagramme de flux - 2022
   Alkalee est une entreprise qui développe des simulateurs de circuits électoniques pour les constructeurs automobiles.
@@ -118,7 +112,6 @@ const obj4 = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj5 = {
   id: 15,
-  color: portfolioCardsColor,
   title: "Suivi des mineurs isolés",
   customer: "Garelli 95",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063335/portfolio/gifs/b41rkf50l2q9yjfdbvfn.gif",
@@ -142,7 +135,6 @@ const obj5 = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj6 = {
   id: 16,
-  color: portfolioCardsColor,
   title: "Grist",
   customer: "MIN. FINANCES",
   description: `
@@ -165,7 +157,6 @@ J’ai intégré Grist pour l’arbre de Noël du ministère des Finances, un pr
 
 const obj7 = {
   id: 17,
-  color: portfolioCardsColor,
   title: "Livraison à Noumea",
   customer: "Needeat",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1726063335/portfolio/gifs/q7hmlwl9k1gilnirugey.gif",
@@ -185,7 +176,6 @@ const obj7 = {
 /* # # # # # # Eco # # # # # # # # # # # # # # # */
 const obj8 = {
   id: 18,
-  color: portfolioCardsColor,
   title: "Boutique en ligne",
   customer: "Loom & Field",
   description: `

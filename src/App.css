@@ -7,7 +7,7 @@
   padding: 0;
   font-family: "Nanum Gothic", sans-serif;
   text-decoration: none;
-  color: var(--col2);
+  color: var(--text-primary);
 }
 
 /* * {
@@ -16,18 +16,13 @@
 
 body {
   overflow: scroll;
-  background-color: #fbf2ec;
+  background-color: var(--bg);
   -webkit-tap-highlight-color: transparent;
-  --sizeProject: 170px; /* Default fallback value */
-  --transTime: 0.85s;
-  --col1: rgba(89, 87, 87, 0.872);
-  --col2: rgba(46, 46, 46, 0.872);
-  --bg: #fbf2ec;
 }
 
 /* =====================================================
-   APP CONTAINER
-   ===================================================== */
+APP CONTAINER
+===================================================== */
 
 .app {
   display: flex;
@@ -53,6 +48,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: left;
+  height: 100%;
 }
 
 .projectscontenair {

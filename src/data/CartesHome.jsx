@@ -1,4 +1,3 @@
-import { portfolioCardsColor } from "../config.js";
 import Portfolio from "../assets/svg/Portfolio.jsx";
 
 /* # # # # # # # # # # # # # # # # # # # # # */
@@ -27,7 +26,7 @@ const obj1 = {
   id: 1,
   title: "Contact",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/atcubm3a1wknzlnkgr5y.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1768483732/portfolio/imgs/vrs7up1lm4mzevdfngv6.png",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1768558310/portfolio/imgs/mhahwk8knjx5s3lgszct.png",
   description: `
   >Contactez moi
   
@@ -170,7 +169,6 @@ const obj7 = {
 const obj8 = {
   id: 8,
   icon: Portfolio,
-  color: portfolioCardsColor,
   description: `
   `,
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768385147/portfolio/gifs/kidyguipq8bhajwalukc.gif",

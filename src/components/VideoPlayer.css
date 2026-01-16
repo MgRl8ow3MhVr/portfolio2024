@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #d8b4a0;
+  background-color: var(--warm-tan, #d8b4a0);
   border-radius: 3px;
   margin-top: 20px;
   padding: 10px 30px 10px 30px;
@@ -14,11 +14,11 @@
   font-size: 18px;
   transition: transform 0.2s;
   cursor: pointer;
-  color: black;
+  color: var(--bg-black, black);
 }
 
 .videobutton:hover {
-  background-color: #e4c4b3;
+  background-color: var(--warm-light-tan, #e4c4b3);
 }
 
 .videoContainer {
@@ -41,10 +41,10 @@
   max-height: 80%;
   object-fit: contain;
   z-index: 2;
-  background-color: #fbf2ec;
+  background-color: var(--bg);
   position: relative;
   padding: 5px;
-  /* border: solid 10px #fbf2ec; */
+  /* border: solid 10px var(--bg, #fbf2ec); */
   border-radius: 4px;
 }
 

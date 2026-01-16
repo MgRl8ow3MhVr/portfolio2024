@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 import { videoPlayerConfig } from "../config";
 import ControlBar from "./ControlBar";
@@ -13,6 +13,17 @@ const VideoPlayerWithTransition = ({ isOpen, linkvideo, setPlayvideo }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  // Reset video state when video source changes
+  useEffect(() => {
+    setIsPlaying(false);
+    setProgress(0);
+    setDuration(0);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.pause();
+    }
+  }, [linkvideo]);
 
   // Format time in mm:ss
   const formatTime = (seconds) => {

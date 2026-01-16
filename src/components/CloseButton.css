@@ -3,7 +3,7 @@
   z-index: 3;
   cursor: pointer;
   transition: transform 0.3s ease;
-  background-color: white;
+  background-color: var(--bg-white, white);
   border-radius: 2px;
   padding: 4px;
   display: flex;
@@ -18,5 +18,5 @@
 }
 
 .close-button:hover {
-  background-color: #d8b4a0;
+  background-color: var(--warm-tan, #d8b4a0);
 }
