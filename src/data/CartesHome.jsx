@@ -9,17 +9,19 @@ const obj0 = {
   description: `
   >BIENVENUE SUR CE SITE
 
-  Je m'appelle Pierre Malleret, je suis développeur web. Je sais concevoir et héberger une application complète et personnalisée à vos besoins, de l'interface (web ou mobile) à la base de données en passant par des automations.
+ Je suis développeur web. Je conçois et héberge des applications complètes, accessibles sur ordinateur comme sur mobile, de l’interface visible par l’utilisateur jusqu’à la gestion des données.
 
-  À l'écoute de vos besoins et pédagogue - je suis occasionnellement formateur -, je saurai vous aider à choisir la technologie la plus adaptée à votre projet, et vous accompagner depuis la conception de maquettes, jusqu'à la livraison de votre outil.
+Ce qui me plaît le plus, c’est de développer des applications métiers : inventer des solutions sur mesure, pensées pour un métier précis, en prenant le temps de comprendre le contexte, les usages et les personnes qui les font vivre.
 
-  Découvrez mes savoir-faire et mes plus belles réalisations au fil des autres cartes qu'il vous reste à découvrir. 
-  
-  Et si vous ne savez pas par quelle carte commencer, cliquez sur le dé !
+Ce qui me motive encore davantage, c'est m'investir dans les projets qui ont du sens, qui contribuent positivement à la société, à l’environnement ou à l’intérêt général.
 
-  Bonne visite
+Je vous invite à découvrir mes savoir-faire et mes réalisations à travers les cartes de ce site,et si l’hésitation vous gagne, laissez le dé décider 🎲
+
+Bonne visite
 `,
 };
+
+// Pédagogue et habitué à accompagner des profils non techniques — je suis occasionnellement formateur — je vous aide à faire des choix éclairés, à sélectionner les technologies les plus adaptées à votre projet, et à vous accompagner de la conception des maquettes jusqu’à la livraison de votre outil.
 
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj1 = {
@@ -30,9 +32,9 @@ const obj1 = {
   description: `
   >Contactez moi
   
-  Avez-vous besoin d'une application web pour fluidifier votre métier ? D'un outil de gestion dans votre équipe quand excel ne suffit plus ? Recherchez-vous un formateur passionné ?
+  Application web, outil de gestion ou formation : parlons de votre projet !
 
-  N'hésitez pas à prendre contact sur Linkedin ou m'envoyer un email :
+LinkedIn ou email :
     `,
   button1: "Linkedin",
   link1: "https://www.linkedin.com/in/pierredevpro/",
@@ -43,58 +45,71 @@ const obj1 = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj2 = {
   id: 2,
-  title: "Applications web & mobiles",
+  title: "Solutions codées",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768345193/portfolio/gifs/x2rhheskwwi8t802f3eh.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768345193/portfolio/gifs/x2rhheskwwi8t802f3eh.gif",
   description: `
-  >Applications Web et Mobile
+  >Solutions codées
 
-  Formé en école d'ingénieur, passé par le consulting, l'entrepeunariat, et désormais de fort de 6 ans d'expérience dans le développement web, je conçois des applications mobiles complètes, de la base de données à l'interface utilisateur.
-  <space/>
-  Je travaille seul ou en équipe selon les besoins (design, data, devops). J'utilise principalement la stack React / JavaScript / Nest.js ou Strapi, avec un hébergement souverain sur Scalingo. Ayant géré un commerce en ligne, je comprends les enjeux business. Mon expérience de consultant télécoms m'apporte rigueur, professionnalisme et gestion de projet.
+Savoir coder une application permet de la créer au pixel près, depuis la page blanche. Cela offre une grande précision pour répondre à un besoin spécifique.
 
-  Découvrez mes meilleurs projets dans la carte "cas clients"
+J’ai découvert ce monde en 2005, à mon entrée à l’ENSIMAG, école d’ingénieurs en informatique, où j’ai acquis des bases solides en algorithmique et en informatique générale. Après un parcours professionnel varié, j’y suis replongé en 2019 avec le bootcamp Développeur Web du Reacteur, qui m’a permis de me spécialiser dans la stack JavaScript, utilisée depuis maintenant six ans pour concevoir des applications web robustes et évolutives, avec React côté interface, Nest, Express ou Strapi côté serveur, et des bases de données MongoDB et PostgreSQL.
+
+Aujourd’hui, j’utilise également l’IA pour assister mes développements. Employée à bon escient, elle me permet d’accélérer la production de fonctionnalités tout en produisant un code plus propre, maintenable, scalable et compréhensible par d’autres développeurs, sans jamais perdre la maîtrise des choix techniques.
     `,
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj3 = {
   id: 3,
-  title: "Low code et IA",
+  title: "Solutions No Code",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385152/portfolio/gifs/tffzscu7xtl4otxdnuiw.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1767968196/portfolio/imgs/u30hia1pv0bdpogdccq6.png",
   description: `
-  >Qu'est-ce que le Low Code ?
+  >Qu’est-ce que le Low Code ?
+  On appelle low code ou no code des outils qui permettent de construire des interfaces, des automatisations et des bases de données à partir de briques visuelles, sans écrire de code. Ils permettent de créer rapidement des outils sur mesure, tout en restant très agiles lorsqu’il faut ajuster ou faire évoluer un projet en cours de route.
+  
+  En tant que développeur chef de projet au sein de Au Carré, agence de No Code inclusive, j’utilise plusieurs outils complémentaires et que je combine selon les projets :
 
-  Ce sont des outils numériques en ligne qui permettent de créer des applications et des automatisations via des interfaces visuelles, sans nécessiter de compétence de code.
-  
-  > Grist
-  Grist est un outil d'organisation des données, promu par le gouvernement pour remplacer Excel dans les collectivités. 
-  J'ai particulièrement acquis une expertise sur Grist en travaillant pour différents ministères.pour remplacer.
-  
-  > Code ou Low Code ?
-  
-  Issu d'une école d'ingénieur en informatique, j’ai acquis double compétence : coder un outil spécifique ou intégrer des outils low code. Avec le développement des IAs, la frontière entre code et no code est redéfinie. Selon les besoins et le budget, je saurai choisir la technologie la plus pertinente.
+  <ul>
+  - <link href="https://en.ksaar.com" title="Ksaar"> : créer rapidement des applications métiers internes pour structurer des processus et remplacer des outils bricolés.
+  - <link href="https://lasuite.numerique.gouv.fr/produits/grist" title="Grist"> : transformer des tableaux complexes en outils collaboratifs, fiables et évolutifs, bien au-delà d’Excel.
+  - <link href="https://n8n.io/" title="N8N"> : automatiser des tâches répétitives et faire dialoguer les outils entre eux.
+  - <link href="https://www.metabase.com/" title="Metabase"> : rendre les données lisibles grâce à des tableaux de bord clairs et utiles au pilotage.
+  - <link href="https://notion.so/" title="Notion"> : centraliser l’information, documenter les processus et faciliter le travail d’équipe.
+  - <link href="https://www.xano.com/" title="Xano"> : gérer la logique métier et les données d’une application de façon robuste et évolutive
+  </ul>
+
+  >Code ou Low Code ?
+  Disposer aujourd’hui d’une double compétence code et low code me permet d’adapter l’approche à chaque projet. Selon vos besoins, vos contraintes et votre budget, je peux vous orienter vers la solution la plus simple, la plus efficace et la plus durable.
+
+  >Au Carré
+  Selon l’ampleur du projet, je peux intervenir seul, ou bien répondre à des projets plus structurants en tant que chef de projet au sein de Au Carré, une agence No Code inclusive dont je partage pleinement la mission d'insertion professionelle.
+
     `,
-  button1: "Découvrez Grist",
-  link1: "https://lasuite.numerique.gouv.fr/produits/grist",
+  button1: "Au Carré",
+  link1: "https://www.aucarre.tech",
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj4 = {
   id: 4,
-  title: "Formations",
+  title: "Formations & Animations",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/jki3yfhg9oivfirwla9m.gif",
-  // gif: "https://res.cloudinary.com/pierredev/image/upload/c_crop,h_389/v1728056977/portfolio/imgs/le5yidqslwjzcwic28tc.png",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/jki3yfhg9oivfirwla9m.gif",
   description: `
-  >Formateur web et numérique
-  Diplômé 2008 de l'ENSIMAG, école d'ingénieurs informatique, puis spécialisé dans le Web au Reacteur en 2017, je prends désormais plaisir à transmettre mes acquis et mon expérience à un public en renconversion.
-  J'ai ainsi conçu et animé les formations suivantes, pour le <link href="https://www.greta-iledefrance.fr/" title="Greta">, <link href="https://www.ifocop.fr/" title="Ifocop"> et <link href="https://www.aucarre.tech/" title="Au Carré"> :
-  <ul>
-  - "Débuter avec Javascript"
-  - "Concevoir des sites dynamiques avec React"
-  - "Passer de excel à Grist"
-  - "Les métiers du Web" : un atelier destiné aux entreprises qui travaillent dans l'orientation numérique
+  >Formateur développement web
+  Diplômé de l’ENSIMAG, école d’ingénieurs en informatique, et formé en 2019 au bootcamp Développeur Web du Reacteur, je prends à mon tour plaisir à transmettre mes connaissances et mon expérience à un public en reconversion.
+
+  Au fil des années, j’ai conçu et animé plusieurs formations pour des institutions et organismes tels que <link href="https://www.greta-iledefrance.fr/" title="Greta">, <link href="https://www.ifocop.fr/" title="Ifocop"> et <link href="https://www.aucarre.tech/" title="Au Carré">.
+
+  <ul> 
+  - "Débuter avec Javascript" : initiation progressive à la programmation web. 
+  - "Concevoir des sites dynamiques avec React" : création d’interfaces interactives et réactives. 
+  - "Passer de Excel à Grist" : structurer et automatiser ses données pour gagner en productivité.
+  - "Les métiers du Web" : atelier pour découvrir les rôles et compétences dans le numérique.
   </ul>
+
+  >Animateur de fresques
+  Sensible aux enjeux planétaires et aux impacts du numérique, je suis également animateur de la Fresque du Climat et de la Fresque du Numérique, deux ateliers collaboratifs et ludiques qui permettent de comprendre les enjeux climatiques ou numériques et de réfléchir ensemble à des solutions concrètes.
 `,
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
@@ -131,28 +146,31 @@ const obj6 = {
   id: 6,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768386233/portfolio/gifs/w4rlfx0j70f18f6bl31r.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768386233/portfolio/gifs/w4rlfx0j70f18f6bl31r.gif",
-  title: "Travailler ensemble",
+  title: "Accompagnement et conseil",
   description: `
-   Je travaille sous le statut d'auto-entrepeneur. Qu'une mission se concrétise ou non, je trouve qu'une rencontre est toujours enrichissante.
+  >Accompagnement et conseil
+  J’ai commencé ma carrière comme consultant, avant de devenir développeur. Cela m’a appris à prendre du recul, à comprendre les enjeux de chaque projet et à accompagner les équipes sur toutes les étapes, avec rigueur… mais aussi avec bienveillance.
+  Selon la dimension du projet, je peux vous proposer, en complément du développement, les accompagnements suivants :
+  
+  > Phase amont – besoins :
+  Clarification des besoins, rédaction des cahiers des charges, production de maquettes et animation d’ateliers utilisateurs.
 
-  >1 - Etude du besoin
-   En première phase, j'écouterai votre besoin et identifierai les technologies les plus pertinentes. Si le projet nécessite des compétences externes, je saurai réunir plusieurs freelances via mon réseau de Freelance for Good.
+  >Phase développement :
+  Coordination de plusieurs développeurs si nécessaire, pour garantir cohérence et progression sereine.
 
-   Puis je vous propose un chiffrage détaillé, et nous nous accordons sur un planning de réalisation.
+  >Phase recette :
+  Préparation et animation des testeurs pour valider que l’outil répond aux besoins.
 
-  >2 - Réalisation
-  En phase de réalisation, nous gardons un contact régulier, pour vous faire part de l'avancement grâce à des outils de gestion de projet comme Trello, ou Grist et décider d'ajustement nécessaires.
-
-  >3 - Livraison & Maintenance
-  Une fois votre produit numérique livré, nous convenons d'une période de test. Une fois cette phase passée, l'outil vous appartient, mais nous ne perdons pas le contact ! Je resterai disponible pour d'éventuels travaux d'amélioration ou de maintenance
+  >Phase déploiement et formation :
+  J’élabore un plan de formation et j’ai plaisir à transmettre aux équipes, pour que chacun se sente à l’aise avec les nouveaux outils.
   `,
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj7 = {
   id: 7,
-  title: "Freelance for good",
-  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768258097/portfolio/imgs/g3whyh2vvvj8tbhcej4o.png",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1768258097/portfolio/imgs/g3whyh2vvvj8tbhcej4o.png",
+  title: "Mon autre vie",
+  gif: "https://res.cloudinary.com/pierredev/image/upload/v1768671491/portfolio/gifs/ybbnod03ttpgymhxs7g0.gif",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1727795014/portfolio/imgs/rnvj87gd3agvapbenm6d.jpg",
   description: `
   >Impact social et écologique, au cœur de mes engagements professionels
 

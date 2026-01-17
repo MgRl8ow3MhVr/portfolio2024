@@ -43,3 +43,14 @@
     font-size: 20px;
   }
 }
+@media (max-height: 500px) {
+  .header {
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+
+  .subtitle > span {
+    letter-spacing: 8px;
+    font-size: 14px;
+  }
+}

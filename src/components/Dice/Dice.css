@@ -20,6 +20,7 @@
   gap: 20px;
   font-family: Arial, Helvetica, sans-serif;
   animation: appear 1.7s ease-in;
+  padding: 50px 0 0 0;
 }
 
 .dice-wrapper {
@@ -45,10 +46,8 @@
   transform-style: preserve-3d;
   width: var(--widthDice);
   height: var(--widthDice);
-  margin: 50px 0 0 0;
   transition: transform 2s ease;
   transform: rotateY(26deg) rotateX(26deg) translateZ(0);
-  /* animation: horizontal-spin 50s infinite linear; */
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -118,4 +117,10 @@
 
 .cube.fast-spin {
   animation: horizontal-spin 1s infinite linear !important;
+}
+
+@media (max-height: 500px) {
+  .dice {
+    padding: 10px 0 0 0;
+  }
 }

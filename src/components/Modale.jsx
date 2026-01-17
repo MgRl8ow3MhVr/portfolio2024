@@ -63,10 +63,15 @@ const Modale = forwardRef(
     const handleButtonClick = () => {
       const el = document.querySelector(".description");
       if (el) {
-        // If arrow is pointing up, scroll to top; if pointing down, scroll to max
+        // If arrow is pointing up, scroll by modal height; if pointing left, close
         if (arrowDirection === "up") {
+          const modalHeight = 3 * calculatedSize - 5;
+          // Calculate the initial margin height (84% of modal height)
+          const initialMargin = modalHeight * ((100 - modalConfig.descriptionStartingPoint) / 100);
+          // Target scroll position: initial margin + current scroll position
+          const targetScroll = initialMargin + el.scrollTop;
           el.scrollTo({
-            top: el.scrollHeight,
+            top: targetScroll,
             behavior: "smooth",
           });
         } else {
@@ -83,17 +88,14 @@ const Modale = forwardRef(
             style={{
               marginTop: `${100 - modalConfig.descriptionStartingPoint}%`,
             }}
+            className="descriptionScrollInside"
           >
-            <div className="scroll-button-container">
-              <div style={{ marginTop: "8px" }}>
-                <CloseButton
-                  size={20}
-                  onClick={handleButtonClick}
-                  direction={arrowDirection}
-                  absolute={false}
-                />
-              </div>
-            </div>
+            <CloseButton
+              size={25}
+              onClick={handleButtonClick}
+              direction={arrowDirection}
+              offset={{ right: "15px", top: "15px" }}
+            />
             <div className="descriptionContainer">
               <Description text={project.description} />
             </div>

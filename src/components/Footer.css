@@ -10,3 +10,9 @@
   width: calc(var(--sizeProject) * 3);
   text-align: center;
 }
+
+@media (max-height: 600px) {
+  .footer {
+    display: none;
+  }
+}

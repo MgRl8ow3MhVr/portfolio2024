@@ -1,5 +1,6 @@
 .close-button {
-  position: absolute;
+  position: sticky;
+  align-self: flex-end;
   z-index: 3;
   cursor: pointer;
   transition: transform 0.3s ease;
