@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 import { videoPlayerConfig } from "../config";
 import ControlBar from "./ControlBar";
-import CloseButton from "./CloseButton.jsx";
+import Close from "../assets/svg/close.jsx";
 import "./VideoPlayer.css";
 
 // Component that includes CSSTransition for both video and controls
@@ -106,15 +106,15 @@ const VideoPlayerWithTransition = ({ isOpen, linkvideo, setPlayvideo }) => {
             height="100%"
             controls={false}
           />
-          <CloseButton
-            size={50}
+          <div
+            className="video-close-button"
             onClick={(e) => {
               e.stopPropagation();
               setPlayvideo(false);
             }}
-            direction="up"
-            offset={{ right: "25px", top: "25px" }}
-          />
+          >
+            <Close size={50} />
+          </div>
         </div>
       </CSSTransition>
 

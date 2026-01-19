@@ -1,11 +1,4 @@
-const Close = ({ size = 24, color = "#2e2e2ede", direction = "left" }) => {
-  const paths = {
-    left: "M19 12H5M12 19l-7-7 7-7",
-    right: "M5 12h14M12 5l7 7-7 7",
-    up: "M12 19V5M5 12l7-7 7 7",
-    down: "M12 5v14M19 12l-7 7-7-7"
-  };
-
+const Close = ({ size = 24, color = "#2e2e2ede" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +11,7 @@ const Close = ({ size = 24, color = "#2e2e2ede", direction = "left" }) => {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d={paths[direction]} />
+      <path d="M12 19V5M5 12l7-7 7 7" />
     </svg>
   );
 };

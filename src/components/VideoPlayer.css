@@ -65,6 +65,24 @@
   transition: transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.video-close-button {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 3;
+  cursor: pointer;
+  background-color: var(--bg-white, white);
+  border-radius: 2px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-close-button:hover {
+  background-color: var(--warm-tan, #d8b4a0);
+}
+
 @media (max-width: 850px) {
   .videobutton {
     font-size: 14px;

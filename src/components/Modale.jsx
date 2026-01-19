@@ -1,7 +1,7 @@
 import React, { useEffect, forwardRef, useRef, useState } from "react";
 import "./Modale.css";
 import Description from "./Description";
-import CloseButton from "./CloseButton.jsx";
+import Close from "../assets/svg/close.jsx";
 import VideoButton from "./VideoButton.jsx";
 import { CSSTransition } from "react-transition-group";
 import { modalConfig } from "../config.js";
@@ -90,12 +90,15 @@ const Modale = forwardRef(
             }}
             className="descriptionScrollInside"
           >
-            <CloseButton
-              size={25}
+            <div
+              className="modale-close-button"
               onClick={handleButtonClick}
-              direction={arrowDirection}
-              offset={{ right: "15px", top: "15px" }}
-            />
+              style={{
+                transform: `rotate(${arrowDirection === "left" ? -90 : 0}deg)`,
+              }}
+            >
+              <Close size={25} />
+            </div>
             <div className="descriptionContainer">
               <Description text={project.description} />
             </div>

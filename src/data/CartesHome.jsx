@@ -33,8 +33,6 @@ const obj1 = {
   >Contactez moi
   
   Application web, outil de gestion ou formation : parlons de votre projet !
-
-LinkedIn ou email :
     `,
   button1: "Linkedin",
   link1: "https://www.linkedin.com/in/pierredevpro/",
@@ -92,7 +90,7 @@ const obj3 = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj4 = {
   id: 4,
-  title: "Formations & Animations",
+  title: "Formations",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/jki3yfhg9oivfirwla9m.gif",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385145/portfolio/gifs/jki3yfhg9oivfirwla9m.gif",
   description: `
@@ -102,43 +100,41 @@ const obj4 = {
   Au fil des années, j’ai conçu et animé plusieurs formations pour des institutions et organismes tels que <link href="https://www.greta-iledefrance.fr/" title="Greta">, <link href="https://www.ifocop.fr/" title="Ifocop"> et <link href="https://www.aucarre.tech/" title="Au Carré">.
 
   <ul> 
-  - "Débuter avec Javascript" : initiation progressive à la programmation web. 
-  - "Concevoir des sites dynamiques avec React" : création d’interfaces interactives et réactives. 
-  - "Passer de Excel à Grist" : structurer et automatiser ses données pour gagner en productivité.
-  - "Les métiers du Web" : atelier pour découvrir les rôles et compétences dans le numérique.
+  - "Débuter avec Javascript"
+  - "Concevoir des sites dynamiques avec React" 
+  - "Passer de Excel à Grist"
+  - "Les métiers du Web"
   </ul>
 
   >Animateur de fresques
-  Sensible aux enjeux planétaires et aux impacts du numérique, je suis également animateur de la Fresque du Climat et de la Fresque du Numérique, deux ateliers collaboratifs et ludiques qui permettent de comprendre les enjeux climatiques ou numériques et de réfléchir ensemble à des solutions concrètes.
+  Sensible aux enjeux planétaires et aux impacts du numérique, je suis également animateur de <link href="https://fresqueduclimat.org/" title="La Fresque du Climat"> et de <link href="https://www.fresquedunumerique.org/" title="La Fresque du Numérique">, deux ateliers collaboratifs et ludiques qui permettent de comprendre les enjeux climatiques ou numériques et de réfléchir ensemble à des solutions concrètes.
 `,
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj5 = {
   id: 5,
-  title: "Ils m'ont fait confiance",
+  title: "Clients",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1767964822/portfolio/gifs/l0ykp2poygfeoclkcl9n.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1767964440/portfolio/clients/oubuvwsjafvfbhxg25nt.png",
   description: `
-  >En tant que développeur d'applications web :
+  >Ils m'ont fait confiance :
+
+  Comme développeur d'applications web :
   <link href="https://www.needeat.nc/fr/" title="Needeat"> <link href="https://www.donbosco-actionsociale.org/associations/garelli-95/" title="association Garelli"> <link href="https://www.thegooddrive.fr/" title="The good drive"> <link href="https://www.quanticdream.com" title="Quantic Dream"> <link href="https://www.vertigo-labs.com" title="Vertigo Labs"> <link href="https://alkalee.fr/" title="Alkalee">
   <space/>
 
-  
-
-  >En tant que développeur d'outils No Code :
+  Comme développeur d'outils No Code :
   <link href="https://www.economie.gouv.fr" title="Ministère des finances"> <link href="https://www.occitanie.gouv.fr" title="Préfecture d'occitanie"> <link href="https://www.numerique.gouv.fr" title="DINUM"> <link href="https://www.adie.org" title="Adie"> <link href="https://www.veolia.com" title="Veolia">
   <space/>
 
-
-  >En tant que de chef projet numérique :
+  Comme chef projet numérique :
   <link href="https://aucarre.fr" title="Au Carré">
   <space/>
 
-
-  > En tant que formateur :
+  Comme formateur :
   <link href="https://www.greta.fr" title="Greta"> <link href="https://www.ifocop.fr" title="IFOCOP"> <link href="https://ecoleatla.fr" title="Ecole ATLA">
   <space/>
-  Note : huit de ces projets sont détaillés si vous cliquez sur la neuvième carte.
+  Découvrez huit de ces projets en cliquant sur la dernière carte.
   `,
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
@@ -146,9 +142,9 @@ const obj6 = {
   id: 6,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768386233/portfolio/gifs/w4rlfx0j70f18f6bl31r.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768386233/portfolio/gifs/w4rlfx0j70f18f6bl31r.gif",
-  title: "Accompagnement et conseil",
+  title: "Accompagnement",
   description: `
-  >Accompagnement et conseil
+  >Accompagnement
   J’ai commencé ma carrière comme consultant, avant de devenir développeur. Cela m’a appris à prendre du recul, à comprendre les enjeux de chaque projet et à accompagner les équipes sur toutes les étapes, avec rigueur… mais aussi avec bienveillance.
   Selon la dimension du projet, je peux vous proposer, en complément du développement, les accompagnements suivants :
   

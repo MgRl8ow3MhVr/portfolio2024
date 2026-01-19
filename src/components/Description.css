@@ -41,10 +41,9 @@
   font-family: "Hind Siliguri", sans-serif;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 12px;
-  font-size: 16px;
   color: var(--text-white, white);
   text-align: left;
-  word-spacing: 2px;
+  /* word-spacing: 2px; */
   list-style-position: inside;
   margin-left: 20px;
 }
@@ -52,6 +51,7 @@
 .description li {
   color: var(--text-white, white);
   margin-bottom: 8px;
+  font-size: 15px;
 }
 
 h2 {
@@ -71,7 +71,9 @@ h2 {
   position: relative;
   cursor: pointer;
   border-bottom: 1px solid var(--warm-tan-transparent, rgba(216, 180, 160, 0.3));
-  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    border-bottom-color 0.3s ease;
   padding-bottom: 1px;
 }
 
@@ -82,8 +84,8 @@ h2 {
 }
 
 @media (max-width: 850px) {
-  .description > div {
-    padding: 0 16px;
+  .descriptionContainer {
+    padding: 0 15px;
   }
 
   .description p {
@@ -92,14 +94,9 @@ h2 {
     word-spacing: 0px;
   }
 
-  .description ul {
-    font-size: 12px;
-    word-spacing: 0px;
-  }
-
   .description li {
     margin-bottom: 6px;
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .description h2 {

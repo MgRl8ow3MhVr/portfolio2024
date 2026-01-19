@@ -114,9 +114,11 @@ function Project({
 
     // Calculate vertical position (centered)
     // Account for letter height to properly center the text visually
+    // For single line, subtract a small offset to account for text baseline
     const totalHeight =
       totalLines === 1 ? fontSize : (totalLines - 1) * lineSpacing + fontSize;
-    const startTop = size / 2 - totalHeight / 2;
+    const verticalOffset = totalLines === 1 ? fontSize * 0.15 : 0;
+    const startTop = size / 2 - totalHeight / 2 - verticalOffset;
     const top = startTop + lineIndex * lineSpacing;
 
     // Calculate horizontal position (centered)

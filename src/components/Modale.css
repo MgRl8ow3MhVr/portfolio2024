@@ -53,6 +53,26 @@
   background-color: var(--warm-light-tan, #e4c4b3);
 }
 
+.modale-close-button {
+  position: sticky;
+  top: 15px;
+  align-self: flex-end;
+  margin-right: 15px;
+  z-index: 3;
+  cursor: pointer;
+  background-color: var(--bg-white, white);
+  border-radius: 2px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.modale-close-button:hover {
+  background-color: var(--warm-tan, #d8b4a0);
+}
+
 /* =====================================================
    RESPONSIVE - MOBILE
    ===================================================== */
