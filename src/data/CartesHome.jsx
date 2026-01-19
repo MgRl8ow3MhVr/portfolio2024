@@ -140,7 +140,7 @@ const obj6 = {
   id: 6,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768386233/portfolio/gifs/w4rlfx0j70f18f6bl31r.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768386233/portfolio/gifs/w4rlfx0j70f18f6bl31r.gif",
-  title: "Accompagnement",
+  title: "AccAAAagnementAAAA",
   description: `
   >Accompagnement
   J’ai commencé ma carrière comme consultant, avant de devenir développeur. Cela m’a appris à prendre du recul, à comprendre les enjeux de chaque projet et à accompagner les équipes sur toutes les étapes, avec rigueur… mais aussi avec bienveillance.

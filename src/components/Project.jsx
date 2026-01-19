@@ -22,14 +22,20 @@ function Project({
   // Home cards: colors.cards.home by default, BUT colors.cards.portfolio if has icon
   // Portfolio cards: colors.cards.portfolio by default, BUT colors.cards.home if has icon
   const cardBackgroundColor = icon
-    ? (currentCardSet === "home" ? colors.cards.portfolio : colors.cards.home)
-    : (currentCardSet === "home" ? colors.cards.home : colors.cards.portfolio);
+    ? currentCardSet === "home"
+      ? colors.cards.portfolio
+      : colors.cards.home
+    : currentCardSet === "home"
+      ? colors.cards.home
+      : colors.cards.portfolio;
   // Calculate layout parameters based on tile size and config ratios
   const isMobile = window.innerWidth <= 850;
   const padding = size * typographyConfig.paddingRatio;
-  const letterSpacing = size * (isMobile
-    ? typographyConfig.letterSpacingRatioPortrait
-    : typographyConfig.letterSpacingRatio);
+  const letterSpacing =
+    size *
+    (isMobile
+      ? typographyConfig.letterSpacingRatioPortrait
+      : typographyConfig.letterSpacingRatio);
   const lineSpacing = size * typographyConfig.lineSpacingRatio;
   const fontSize = isMobile
     ? typographyConfig.letterFontSizeMobile
@@ -46,7 +52,7 @@ function Project({
   const transitionDelays = useMemo(() => {
     return lettersList.map(
       () =>
-        Math.floor(Math.random() * typographyConfig.maxTransitionDelay) + "ms"
+        Math.floor(Math.random() * typographyConfig.maxTransitionDelay) + "ms",
     );
   }, [lettersList.length, title]);
 
@@ -137,9 +143,8 @@ function Project({
     const top = startTop + lineIndex * lineSpacing;
 
     // Calculate horizontal position (centered)
-    // Add small offset to account for letter width
     const lineWidth = lineLength * letterSpacing;
-    const startLeft = size / 2 - lineWidth / 2;
+    const startLeft = size / 2 - lineWidth / 2 - letterSpacing / 2;
     const left = startLeft + positionInLine * letterSpacing;
 
     const textTransform = index === 0 ? "uppercase" : "lowercase";
@@ -200,7 +205,7 @@ function Project({
 
     // Calculate horizontal position (centered)
     const lineWidth = customerLength * letterSpacing;
-    const startLeft = size / 2 - lineWidth / 2;
+    const startLeft = size / 2 - lineWidth / 2 - letterSpacing / 2;
     const left = startLeft + index * letterSpacing;
 
     return {
@@ -218,7 +223,7 @@ function Project({
 
     // Calculate horizontal position (centered)
     const lineWidth = customerLength * letterSpacing;
-    const startLeft = size / 2 - lineWidth / 2;
+    const startLeft = size / 2 - lineWidth / 2 - letterSpacing / 2;
     const left = startLeft + index * letterSpacing;
 
     return {
@@ -244,7 +249,7 @@ function Project({
       }}
       style={{
         backgroundColor: cardBackgroundColor,
-        cursor: 'pointer'
+        cursor: "pointer",
       }}
     >
       {checked && <CheckBox checkColor={checkColor} />}
@@ -267,7 +272,9 @@ function Project({
           {React.createElement(icon, {
             size: size * 0.33,
             color:
-              currentCardSet === "home" ? colors.cards.home : colors.cards.portfolio,
+              currentCardSet === "home"
+                ? colors.cards.home
+                : colors.cards.portfolio,
           })}
         </div>
       )}
