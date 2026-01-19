@@ -54,6 +54,12 @@ function Project({
   // Returns an array of {text, startIndex} objects
   const splitIntoLines = (text) => {
     const words = text.split(" ");
+
+    // Single word: always treat as one line (even if longer than maxLettersPerLine)
+    if (words.length === 1) {
+      return [{ text: text, startIndex: 0 }];
+    }
+
     if (text.length <= maxLettersPerLine) {
       return [{ text: text, startIndex: 0 }]; // Single line
     }
@@ -73,6 +79,15 @@ function Project({
         // Calculate where this line ends in the original string
         line1EndIndex = text.indexOf(word, line1EndIndex) + word.length;
       } else {
+        // If line1 is still empty, the first word is too long - keep it on line1
+        if (line1 === "") {
+          line1 = word;
+          line1EndIndex = word.length;
+          if (i === words.length - 1) {
+            return [{ text: line1, startIndex: 0 }];
+          }
+          continue;
+        }
         // Start second line with remaining words
         const line2 = words.slice(i).join(" ");
         // Line 2 starts after line1 ends (skip any spaces)

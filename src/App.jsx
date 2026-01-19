@@ -220,7 +220,7 @@ function App() {
 
               return (
                 <div
-                  key={projet.title}
+                  key={projet.id}
                   className="project"
                   style={{
                     top: gatherToCenter

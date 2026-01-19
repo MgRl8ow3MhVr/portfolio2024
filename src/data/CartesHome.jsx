@@ -81,11 +81,9 @@ const obj3 = {
   Disposer aujourd’hui d’une double compétence code et low code me permet d’adapter l’approche à chaque projet. Selon vos besoins, vos contraintes et votre budget, je peux vous orienter vers la solution la plus simple, la plus efficace et la plus durable.
 
   >Au Carré
-  Selon l’ampleur du projet, je peux intervenir seul, ou bien répondre à des projets plus structurants en tant que chef de projet au sein de Au Carré, une agence No Code inclusive dont je partage pleinement la mission d'insertion professionelle.
+  Selon l’ampleur du projet, je peux intervenir seul, ou bien répondre à des projets plus structurants en tant que chef de projet au sein de <link href="https://www.aucarre.tech/" title="Au Carré">, une agence No Code inclusive dont je partage pleinement la mission d'insertion professionelle.
 
     `,
-  button1: "Au Carré",
-  link1: "https://www.aucarre.tech",
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj4 = {
@@ -164,13 +162,13 @@ const obj6 = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const obj7 = {
   id: 7,
-  title: "Mon autre vie",
+  title: "Mes autres vies",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768671491/portfolio/gifs/ybbnod03ttpgymhxs7g0.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1727795014/portfolio/imgs/rnvj87gd3agvapbenm6d.jpg",
   description: `
-  >Impact social et écologique, au cœur de mes engagements professionels
+  >Voyageur à vélo au long cours
 
-  Sensibilisé à l’urgence climatique et aux enjeux sociaux, (je suis formateur de la Fresque du Climat et de la Fresque du Numérique depuis 2024), Ces engagements expliquent pourquoi je priorise les projets à impact social, environnemental ou d’intérêt général. En 2024, j’ai suivi la formation Social Declik, au sein d’une communauté de freelances engagés.
+  
 
   >La relation humaine et la transmission
   Au-delà des technologies, la relation humaine est centrale dans mon parcours : relation client, travail d’équipe et formation. J’apprécie particulièrement accompagner mes clients dans la prise en main des applications, en mobilisant mon sens de la pédagogie pour faciliter l’appropriation des outils et favoriser des collaborations durables.`,
