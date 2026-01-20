@@ -12,13 +12,14 @@ const quiSuisJe = {
 
  Je suis développeur web. Je conçois et héberge des applications complètes, accessibles sur ordinateur comme sur mobile, de l’interface visible par l’utilisateur jusqu’à la gestion des données.
 
-Ce qui me plaît le plus, c’est de développer des applications métiers : inventer des solutions sur mesure, pensées pour un métier précis, en prenant le temps de comprendre le contexte, les usages et les personnes qui les font vivre.
+  Ce qui me plaît, c’est de développer des applications métiers : inventer des solutions sur mesure, pensées pour un métier précis, en prenant le temps de comprendre le contexte, les usages et les personnes qui les font vivre.
 
-Ce qui me motive encore davantage, c'est m'investir dans les projets qui ont du sens, qui contribuent positivement à la société, à l’environnement ou à l’intérêt général.
+  Ce qui me motive encore davantage, c'est m'investir dans les projets qui ont du sens, qui contribuent positivement à la société, à l’environnement ou à l’intérêt général.
 
-Je vous invite à découvrir mes savoir-faire et mes réalisations à travers les cartes de ce site,et si l’hésitation vous gagne, laissez le dé décider 🎲
+  Je vous invite à découvrir mes savoir-faire et mes réalisations à travers les cartes de ce site,et si l’hésitation vous gagne, laissez le dé décider 🎲
+  <space/>
 
-Bonne visite
+  Bonne visite
 `,
 };
 
@@ -149,25 +150,29 @@ const accompagnement = {
   id: 6,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768386233/portfolio/gifs/w4rlfx0j70f18f6bl31r.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768386233/portfolio/gifs/w4rlfx0j70f18f6bl31r.gif",
-  title: "Accompagnement",
+  title: "Gestion de projet",
   description: `
-  >Accompagnement
-    <space/>
+  >Accompagnement projet
+  <space/>
 
-  J’ai commencé ma carrière comme consultant, avant de devenir développeur. Cela m’a appris d'acquérir de la méthode projet, à comprendre les enjeux d'un projet d'envergure et à accompagner des équipes sur toutes les étapes.
+  J’ai commencé ma carrière comme consultant IT, avant de devenir développeur. Cela m’a appris d'acquérir de la méthode projet, à comprendre les enjeux d'un projet d'envergure et à accompagner des équipes sur toutes les étapes.
 
   Selon la dimension du projet, je peux vous proposer, en complément du développement, les accompagnements suivants :
+  <space/>
   
-  > Phase amont – besoins :
+  **1 - Cadrage du projet :**
   Clarification des besoins, rédaction des cahiers des charges, production de maquettes et animation d’ateliers utilisateurs.
+  <space/>
 
-  >Phase développement :
+  **2 - Phase de développement :**
   Coordination de plusieurs développeurs si nécessaire, présentation d'un suivi hebdomadaire d'avancement
+  <space/>
 
-  >Phase recette :
+  **3 - Tests utilisateurs :**
   Préparation et animation des testeurs pour valider que l’outil répond aux besoins.
+  <space/>
 
-  >Phase déploiement et formation :
+  **4 - Déploiement et formation :**
   J’élabore un plan de formation et j’ai plaisir à transmettre aux équipes, pour que chacun se sente à l’aise avec les nouveaux outils.
   `,
 };
@@ -185,7 +190,7 @@ const mesAutresVies = {
   <space/>
 
   >Musique à l'image
-  Mes films de voyage sont accompagnés de la musique que je compose. Pianiste depuis l'enfance, puis guitariste, puis passionné de musique électroniques, j'aime réunir toute mon expérience dans des compositions qui accompagneront de belles images de voyage inspirantes et contemplatives.
+  Mes films de voyage sont accompagnés de la musique que je compose. Pianiste depuis l'enfance, puis guitariste, puis créateur de musiques électroniques, j'aime réunir toute mon expérience dans des compositions qui accompagneront de belles images de voyage inspirantes et contemplatives.
   <space/>
 
   `,
