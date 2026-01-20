@@ -1,6 +1,30 @@
 import React from 'react'
 import './Description.css'
 
+//parses bold text delimited by ** **
+const parseBold = (text, keyPrefix = 'bold') => {
+  const boldRegex = /\*\*([^*]+)\*\*/g
+  const parts = []
+  let lastIndex = 0
+  let match
+
+  while ((match = boldRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index))
+    }
+    parts.push(
+      <strong key={`${keyPrefix}-${match.index}`}>{match[1]}</strong>
+    )
+    lastIndex = match.index + match[0].length
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex))
+  }
+
+  return parts.length > 0 ? parts : text
+}
+
 //parses inline links from text
 const parseLinks = text => {
   const linkRegex = /<link href="([^"]+)" title="([^"]+)">/g
@@ -40,6 +64,20 @@ const parseLinks = text => {
   return parts.length > 0 ? parts : text
 }
 
+//parses both links and bold in text
+const parseInline = (text, keyPrefix = 'inline') => {
+  const linkParts = parseLinks(text)
+  if (!Array.isArray(linkParts)) {
+    return parseBold(linkParts, keyPrefix)
+  }
+  return linkParts.map((part, idx) => {
+    if (typeof part === 'string') {
+      return parseBold(part, `${keyPrefix}-${idx}`)
+    }
+    return part
+  })
+}
+
 //processes list blocks with <ul> tags and "-" items
 const parseList = (lines, startIndex, keyPrefix) => {
   const listItems = []
@@ -57,7 +95,7 @@ const parseList = (lines, startIndex, keyPrefix) => {
     element: (
       <ul key={`${keyPrefix}-ul`}>
         {listItems.map((item, idx) => (
-          <li key={`${keyPrefix}-li-${idx}`}>{parseLinks(item)}</li>
+          <li key={`${keyPrefix}-li-${idx}`}>{parseInline(item, `${keyPrefix}-li-${idx}`)}</li>
         ))}
       </ul>
     ),
@@ -85,7 +123,7 @@ const paragraphs = text => {
       result.push(<h2 key={i}>{item.trim().replace('>', '')}</h2>)
       i++
     } else if (item.trim() !== '') {
-      result.push(<p key={i}>{parseLinks(item)}</p>)
+      result.push(<p key={i}>{parseInline(item, `p-${i}`)}</p>)
       i++
     } else {
       i++
