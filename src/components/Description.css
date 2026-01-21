@@ -94,6 +94,26 @@ h2 {
   transform: none !important;
 }
 
+/* Exception: clickable link to portfolio (used in "Ils m'ont fait confiance" card) */
+.portfolio-link {
+  display: inline;
+  color: var(--warm-tan, #d8b4a0);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid var(--warm-tan-transparent, rgba(216, 180, 160, 0.3));
+  transition:
+    color 0.3s ease,
+    border-bottom-color 0.3s ease;
+  padding-bottom: 1px;
+}
+
+.portfolio-link:hover {
+  color: var(--warm-medium-tan, #c9a591);
+  border-bottom-color: var(--warm-medium-tan, #c9a591);
+}
+
 @media (max-width: 850px) {
   .descriptionContainer {
     padding: 0 15px;

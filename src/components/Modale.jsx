@@ -15,6 +15,7 @@ const Modale = forwardRef(
       setCurrentVideoLink,
       calculatedSize,
       currentCardSet,
+      onPortfolioClick,
     },
     ref
   ) => {
@@ -100,7 +101,7 @@ const Modale = forwardRef(
               <Close size={25} />
             </div>
             <div className="descriptionContainer">
-              <Description text={project.description} />
+              <Description text={project.description} onPortfolioClick={onPortfolioClick} />
             </div>
             <div className="buttons">
               {project.link1 && (
@@ -150,6 +151,7 @@ const ModaleWithTransition = ({
   setCurrentVideoLink,
   calculatedSize,
   currentCardSet,
+  onPortfolioClick,
 }) => {
   const modaleRef = useRef(null);
 
@@ -169,6 +171,7 @@ const ModaleWithTransition = ({
         setCurrentVideoLink={setCurrentVideoLink}
         calculatedSize={calculatedSize}
         currentCardSet={currentCardSet}
+        onPortfolioClick={onPortfolioClick}
       />
     </CSSTransition>
   );

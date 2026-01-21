@@ -1,6 +1,42 @@
 import React from 'react'
 import './Description.css'
 
+/* ================================================
+   EXCEPTION: Portfolio link handler
+   This parses <portfolio-link>text</portfolio-link> tags
+   Used only in "Ils m'ont fait confiance" card
+   To remove: delete this function and its usage in parseInline
+   ================================================ */
+const parsePortfolioLink = (text, keyPrefix, onPortfolioClick) => {
+  if (!onPortfolioClick) return text
+  const regex = /<portfolio-link>([^<]+)<\/portfolio-link>/g
+  const parts = []
+  let lastIndex = 0
+  let match
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index))
+    }
+    parts.push(
+      <span
+        key={`${keyPrefix}-portfolio-${match.index}`}
+        className="portfolio-link"
+        onClick={onPortfolioClick}
+      >
+        {match[1]}
+      </span>
+    )
+    lastIndex = match.index + match[0].length
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex))
+  }
+
+  return parts.length > 0 ? parts : text
+}
+
 //parses bold text delimited by ** **
 const parseBold = (text, keyPrefix = 'bold') => {
   const boldRegex = /\*\*([^*]+)\*\*/g
@@ -64,15 +100,31 @@ const parseLinks = text => {
   return parts.length > 0 ? parts : text
 }
 
-//parses both links and bold in text
-const parseInline = (text, keyPrefix = 'inline') => {
-  const linkParts = parseLinks(text)
-  if (!Array.isArray(linkParts)) {
-    return parseBold(linkParts, keyPrefix)
+//parses both links, bold, and portfolio-link in text
+const parseInline = (text, keyPrefix = 'inline', onPortfolioClick) => {
+  // First parse portfolio links (exception)
+  const portfolioParts = parsePortfolioLink(text, keyPrefix, onPortfolioClick)
+
+  const processString = (str, prefix) => {
+    const linkParts = parseLinks(str)
+    if (!Array.isArray(linkParts)) {
+      return parseBold(linkParts, prefix)
+    }
+    return linkParts.map((part, idx) => {
+      if (typeof part === 'string') {
+        return parseBold(part, `${prefix}-${idx}`)
+      }
+      return part
+    })
   }
-  return linkParts.map((part, idx) => {
+
+  if (!Array.isArray(portfolioParts)) {
+    return processString(portfolioParts, keyPrefix)
+  }
+
+  return portfolioParts.map((part, idx) => {
     if (typeof part === 'string') {
-      return parseBold(part, `${keyPrefix}-${idx}`)
+      return processString(part, `${keyPrefix}-${idx}`)
     }
     return part
   })
@@ -104,7 +156,7 @@ const parseList = (lines, startIndex, keyPrefix) => {
 }
 
 //transforms /n into paragraphs
-const paragraphs = text => {
+const paragraphs = (text, onPortfolioClick) => {
   const lines = text.split('\n')
   const result = []
   let i = 0
@@ -120,10 +172,10 @@ const paragraphs = text => {
       result.push(<br key={i} />)
       i++
     } else if (item.trim()[0] === '>') {
-      result.push(<h2 key={i}>{item.trim().replace('>', '')}</h2>)
+      result.push(<h2 key={i}>{parseInline(item.trim().replace('>', ''), `h2-${i}`, onPortfolioClick)}</h2>)
       i++
     } else if (item.trim() !== '') {
-      result.push(<p key={i}>{parseInline(item, `p-${i}`)}</p>)
+      result.push(<p key={i}>{parseInline(item, `p-${i}`, onPortfolioClick)}</p>)
       i++
     } else {
       i++
@@ -133,5 +185,5 @@ const paragraphs = text => {
   return result
 }
 
-const Description = ({ text }) => <>{paragraphs(text)}</>
+const Description = ({ text, onPortfolioClick }) => <>{paragraphs(text, onPortfolioClick)}</>
 export default Description

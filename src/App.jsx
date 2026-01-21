@@ -67,13 +67,13 @@ function App() {
   // Generate stable random delays for each card transition
   const cardDelays = useMemo(
     () => generateCardDelays(activeCartes.length, clickedCardIndex),
-    [activeCartes.length, clickedCardIndex]
+    [activeCartes.length, clickedCardIndex],
   );
 
   // Generate linear appearance delays for initial load
   const cardAppearDelays = useMemo(
     () => generateCardAppearDelays(activeCartes.length),
-    [activeCartes.length]
+    [activeCartes.length],
   );
 
   const closeModal = () => {
@@ -139,8 +139,8 @@ function App() {
   const sizeRatio = isCloseToSquare
     ? closeToSquareRatio
     : isPortrait
-    ? portraitSizeRatio
-    : landscapeSizeRatio;
+      ? portraitSizeRatio
+      : landscapeSizeRatio;
 
   const calculatedSize = isPortrait
     ? window.innerWidth * sizeRatio
@@ -202,6 +202,12 @@ function App() {
             setCurrentVideoLink={setCurrentVideoLink}
             calculatedSize={calculatedSize}
             currentCardSet={currentCardSet}
+            onPortfolioClick={() => {
+              closeModal();
+              setTimeout(() => {
+                onCardSetSwitch(CartesPortfolio, "portfolio");
+              }, 750);
+            }}
           />
           {(() => {
             const centerPos = calculatedSize; // Center is at position 1,1
