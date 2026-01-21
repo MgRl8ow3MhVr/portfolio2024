@@ -29,20 +29,6 @@
   gap: 5px;
 }
 
-.close-video {
-  position: absolute;
-  right: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s;
-}
-
-.close-video:hover {
-  transform: scale(1.2);
-}
-
 .triangle-play-button {
   width: 0;
   height: 0;
@@ -65,10 +51,6 @@
 
 .triangle-play-button:hover {
   transform: scale(1.1);
-}
-
-.video-player input[type="range"] {
-  cursor: pointer;
 }
 
 .pause-button {

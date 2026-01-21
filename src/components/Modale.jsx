@@ -1,4 +1,4 @@
-import React, { useEffect, forwardRef, useRef, useState } from "react";
+import { useEffect, forwardRef, useRef, useState } from "react";
 import "./Modale.css";
 import Description from "./Description";
 import Close from "../assets/svg/close.jsx";
@@ -150,7 +150,6 @@ const ModaleWithTransition = ({
   setCurrentVideoLink,
   calculatedSize,
   currentCardSet,
-  // firstTime,
 }) => {
   const modaleRef = useRef(null);
 
@@ -170,7 +169,6 @@ const ModaleWithTransition = ({
         setCurrentVideoLink={setCurrentVideoLink}
         calculatedSize={calculatedSize}
         currentCardSet={currentCardSet}
-        // firstTime={firstTime}
       />
     </CSSTransition>
   );

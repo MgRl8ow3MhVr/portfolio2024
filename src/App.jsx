@@ -254,7 +254,6 @@ function App() {
                     hoverOff={() => {
                       setHoverCart(null);
                     }}
-                    index={index}
                     openModale={() => {
                       // Check if this card navigates to portfolio
                       if (projet.goToPortfolio) {

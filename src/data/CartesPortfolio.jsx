@@ -27,26 +27,6 @@ const intranetMicroApps = {
 };
 
 /* # # # # # # # # # # # # # # # # # # # # # */
-// const obj2 = {
-//   id: 12,
-//   title: "Calcul d'impact écologique",
-//   customer: "Adie",
-//   color: portfolioCardsColor,
-//   gif: "https://res.cloudinary.com/pierredev/image/upload/v1767975356/portfolio/imgs/rnrpg0q16nprbqy7sbkl.png",
-//   img: "https://res.cloudinary.com/pierredev/image/upload/v1767975356/portfolio/imgs/rnrpg0q16nprbqy7sbkl.png",
-//   description: `
-//         >Calcul d'impact écologique des entreprises - 2024
-//       L'ADIE est la première banque de micro-crédit de France. Ils ont imaginé pour leurs clients et leurs prospects un simulateur d'impact écologique d'une activité.
-//       L'utilisateur répond d'abord à plusieurs questions interactives, puis selon un score calculé, l'application lui propose plusieurs conseils.
-//       En intégrant l'outil Low Code Ksaar, j'ai créé pour eux ce simulateur d'impact.
-// `,
-//   button1: "Adie",
-//   link1:
-//     "https://monentreprisedurable21.applicatif.net/v2/customer/af3504c1-641c-47a1-9561-f2668d054a9b/firstPage/027a5a36-0aa9-470f-b698-9af52f786af4",
-//   buttonvideo: "démo vidéo",
-//   linkvideo:
-//     "https://res.cloudinary.com/pierredev/video/upload/v1767456759/portfolio/videos/ypltyyz6kcgbaejjr2jt.mov",
-// };
 const impactEcologiques = {
   id: 12,
   title: "Impact écologiques",
@@ -126,8 +106,6 @@ const diagrammesInteractifs = {
     "https://res.cloudinary.com/pierredev/video/upload/v1727980341/portfolio/videos/upzfa0fy5qozxxju0dpr.mov",
   link1: "https://alkalee.fr/",
   button1: "Alkalee",
-
-  //
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
 const suiviMineursIsoles = {
@@ -157,7 +135,7 @@ const suiviMineursIsoles = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const grist = {
   id: 16,
-  title: "Grist",
+  title: "Arbre de Noël",
   customer: "MIN. FINANCES",
   description: `
   >Passer d'Excel à Grist - 2025
@@ -165,24 +143,20 @@ const grist = {
   Grist est un tableur moderne qui combine la simplicité d’Excel avec la puissance d’une base de données. Il permet de structurer les données, d’automatiser des règles, de gérer finement les droits d’accès et de collaborer en temps réel, là où Excel montre rapidement ses limites.
   <space/>
 
-
-  Outil low code et open source promu par la Direction interministérielle du numérique (DINUM), Grist s’inscrit dans une démarche de commun numérique souverain destinée aux ministères et aux collectivités. Dans ce cadre, j’ai accompagné plusieurs institutions dans la transition d’Excel vers Grist, notamment l’académie de Mulhouse, la préfecture d’Occitanie et le ministère des Finances.
+  Outil low code et open source promu par la Direction interministérielle du numérique (DINUM), Grist s’inscrit dans une démarche de commun numérique souverain destinée aux ministères et aux collectivités. En tant que **développeur** et **chef de projet** dans l'agence de No Code inclusive <link href="https://aucarre.tech" title="Au Carré">, j’ai accompagné plusieurs institutions dans leur transition d’Excel vers Grist.
   <space/>
 
-  >Ministère des finances
+  >Arbre de Noël
 
-  Parmi les projets réalisés, j’ai intégré Grist pour la gestion de l’arbre de Noël du ministère des Finances. Le sujet peut sembler léger, mais il implique **30 000 dossiers par an** pour les demandes de cadeaux des agents pour leurs enfants, ainsi que la gestion d’un catalogue de cadeaux par département et par direction. Cela a nécessité une gestion des droits en lecture très fine, pour garantir autonomie et sécurité dans chaque département.
+  Parmi les projets réalisés, j’ai intégré Grist au **ministère des finances** pour la gestion de leur arbre de Noël. Le sujet peut sembler léger, mais il implique **30 000 dossiers par an** pour les demandes de cadeaux des agents pour leurs enfants, ainsi que la gestion d’un catalogue de cadeaux par département et par direction. Cela a nécessité une gestion des droits en lecture très fine, pour garantir autonomie et sécurité dans chaque département.
   <space/>
 
 
-  J’ai également développé pour la préfecture d’Occitanie un outil de suivi du budget des places en crèche des agents publics, ainsi que pour la DINUM plusieurs templates Grist, dont un annuaire avancé aujourd’hui accessible à l’ensemble des agents publics.
+  J’ai également développé pour la **préfecture d’Occitanie** un outil de suivi du budget des **places en crèche** des agents publics, ainsi que pour la **DINUM** plusieurs templates Grist, dont un annuaire avancé aujourd’hui accessible à l’ensemble des agents publics.
 
   `,
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768330170/portfolio/imgs/yrpmvnoto7x6tuw2hpvu.png",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768330170/portfolio/imgs/yrpmvnoto7x6tuw2hpvu.png",
-  // buttonvideo: "Démo vidéo ADN",
-  // linkvideo:
-  //   "https://res.cloudinary.com/pierredev/video/upload/v1767996750/portfolio/videos/l8ojg4figjdeas23fanj.mov",
   buttonvideo: "Démo vidéo",
   linkvideo:
     "https://res.cloudinary.com/pierredev/video/upload/v1767996752/portfolio/videos/jlff22egwvsuu9fmkcrt.mov",

@@ -31,7 +31,6 @@
   /* font-size: controlled by JavaScript via config.js typographyConfig.letterFontSize */
   font-weight: 300;
   width: 12px;
-  /* border: 1px blue solid; */
 }
 .customerLetter {
   font-family: "Roboto Mono", monospace;

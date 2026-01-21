@@ -119,7 +119,7 @@ const formations = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const clients = {
   id: 5,
-  title: "Clients",
+  title: "Ils m'ont fait confiance",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1767964822/portfolio/gifs/l0ykp2poygfeoclkcl9n.gif",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1767964440/portfolio/clients/oubuvwsjafvfbhxg25nt.png",
   description: `
@@ -127,22 +127,22 @@ const clients = {
     <space/>
 
 
-  Comme développeur d'applications web :
+  En tant que **développeur d'applications web** :
   <link href="https://www.needeat.nc/fr/" title="Needeat"> <link href="https://www.donbosco-actionsociale.org/associations/garelli-95/" title="association Garelli"> <link href="https://www.thegooddrive.fr/" title="The good drive"> <link href="https://www.quanticdream.com" title="Quantic Dream"> <link href="https://www.vertigo-labs.com" title="Vertigo Labs"> <link href="https://alkalee.fr/" title="Alkalee">
   <space/>
 
-  Comme développeur d'outils No Code :
+  En tant que **développeur d'outils No Code** :
   <link href="https://www.economie.gouv.fr" title="Ministère des finances"> <link href="https://www.occitanie.gouv.fr" title="Préfecture d'occitanie"> <link href="https://www.numerique.gouv.fr" title="DINUM"> <link href="https://www.adie.org" title="Adie"> <link href="https://www.veolia.com" title="Veolia">
   <space/>
 
-  Comme chef projet numérique :
+  En tant que chef **projet numérique** :
   <link href="https://aucarre.fr" title="Au Carré">
   <space/>
 
-  Comme formateur :
+  En tant que **formateur** :
   <link href="https://www.greta.fr" title="Greta"> <link href="https://www.ifocop.fr" title="IFOCOP"> <link href="https://ecoleatla.fr" title="Ecole ATLA">
   <space/>
-  Découvrez huit de ces projets en cliquant sur la dernière carte.
+  >Découvrez huit de ces projets en cliqnat sur la neuvième carte.
   `,
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
