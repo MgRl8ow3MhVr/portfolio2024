@@ -142,7 +142,7 @@ const clients = {
   En tant que **formateur** :
   <link href="https://www.greta.fr" title="Greta"> <link href="https://www.ifocop.fr" title="IFOCOP"> <link href="https://ecoleatla.fr" title="Ecole ATLA">
   <space/>
-  >Découvrez huit de ces projets en cliqnat sur la neuvième carte.
+  >Découvrez huit de ces projets en cliquant sur la neuvième carte.
   `,
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
