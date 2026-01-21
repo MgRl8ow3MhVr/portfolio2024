@@ -22,7 +22,7 @@ export const typographyConfig = {
 
   // Letter spacing as a ratio of tile size (0.08 = 8% of tile size)
   letterSpacingRatio: 0.055, // Desktop/landscape
-  letterSpacingRatioPortrait: 0.07, // Mobile/portrait
+  letterSpacingRatioPortrait: 0.062, // Mobile/portrait
 
   // Line spacing as a ratio of tile size (0.12 = 12% of tile size)
   lineSpacingRatio: 0.12,
