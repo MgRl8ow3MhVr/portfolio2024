@@ -143,7 +143,7 @@ const grist = {
   Grist est un tableur moderne qui combine la simplicité d’Excel avec la puissance d’une base de données. Il permet de structurer les données, d’automatiser des règles, de gérer finement les droits d’accès et de collaborer en temps réel, là où Excel montre rapidement ses limites.
   <space/>
 
-  Outil low code et open source promu par la Direction interministérielle du numérique (DINUM), Grist s’inscrit dans une démarche de commun numérique souverain destinée aux ministères et aux collectivités. En tant que **développeur** et **chef de projet** dans l'agence de No Code inclusive <link href="https://aucarre.tech" title="Au Carré">, j’ai accompagné plusieurs institutions dans leur transition d’Excel vers Grist.
+  Outil low code et open source promu par la Direction interministérielle du numérique (DINUM), Grist s’inscrit dans une démarche de commun numérique souverain destinée aux ministères et aux collectivités. En tant que **développeur** et **chef de projet** dans l'agence de No Code inclusive <link href="https://www.aucarre.tech" title="Au Carré">, j’ai accompagné plusieurs institutions dans leur transition d’Excel vers Grist.
   <space/>
 
   >Arbre de Noël
