@@ -128,7 +128,7 @@ const clients = {
 
 
   En tant que **développeur d'applications web** :
-  <link href="https://www.needeat.nc/fr/" title="Needeat"> <link href="https://www.donbosco-actionsociale.org/associations/garelli-95/" title="association Garelli"> <link href="https://www.thegooddrive.fr/" title="The good drive"> <link href="https://www.quanticdream.com" title="Quantic Dream"> <link href="https://www.vertigo-labs.com" title="Vertigo Labs"> <link href="https://alkalee.fr/" title="Alkalee">
+  <link href="https://www.needeat.nc/fr/" title="Needeat"> <link href="https://www.donbosco-actionsociale.org/associations/garelli-95/" title="association Garelli"> <link href="https://www.thegooddrive.fr/" title="The good drive"> <link href="https://www.quanticdream.com" title="Quantic Dream"> <link href="https://vertigolab.eu/en/home/" title="Vertigo Labs"> <link href="https://alkalee.fr/" title="Alkalee">
   <space/>
 
   En tant que **développeur d'outils No Code** :

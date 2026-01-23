@@ -40,7 +40,7 @@ const impactEcologiques = {
 
     Ils ont conçu une méthode permettant de mesurer les retombées socio-économiques d’une entreprise sur son territoire, à partir de ses dépenses et de ses résultats. Ces indicateurs servent ensuite de base à des missions de conseil en durabilité, notamment pour encourager des stratégies d’approvisionnement plus locales.
 
-    En équipe avec un **data analyst**, nous avons conçu pour eux une interface qui automatise ces calculs et les rend utilisables au quotidien par les consultants. L’outil leur fait gagner du temps, fiabilise les résultats et leur permet de se concentrer sur l’analyse et la formulation de recommandations.
+    En équipe avec un **Data Ingenieer**, nous avons conçu pour eux une interface qui automatise ces calculs et les rend utilisables au quotidien par les consultants. L’outil leur fait gagner du temps, fiabilise les résultats et leur permet de se concentrer sur l’analyse et la formulation de recommandations.
 
     La vidéo ci-dessous ne montre "que" l'interface. Les calculs se trouvent dans la partie immergée de l'iceberg, le back-end, qui applique la méthode de calcul qu'ils ont mise au point.
 `,
