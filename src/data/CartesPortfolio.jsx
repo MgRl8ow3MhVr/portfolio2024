@@ -29,7 +29,7 @@ const intranetMicroApps = {
 /* # # # # # # # # # # # # # # # # # # # # # */
 const impactEcologiques = {
   id: 12,
-  title: "Impact écologiques",
+  title: "Impact écologique",
   customer: "Vertigo Lab",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768323462/portfolio/imgs/fwkdf9lutrltlgugp3fs.png",
   img: "https://res.cloudinary.com/pierredev/image/upload/v1768323462/portfolio/imgs/fwkdf9lutrltlgugp3fs.png",
