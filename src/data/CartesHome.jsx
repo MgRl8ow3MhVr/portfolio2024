@@ -57,6 +57,10 @@ const solutionsCodees = {
   Savoir coder une application permet de la créer au pixel près, depuis la page blanche. Cela offre une grande précision pour répondre à un besoin spécifique.
 
   J’ai découvert ce monde en 2005, à mon entrée à l’ENSIMAG, école d’ingénieurs en informatique, où j’ai acquis des bases solides en algorithmique et en informatique générale. Après un parcours professionnel varié, j’y suis replongé en 2019 avec le bootcamp Développeur Web du Reacteur, qui m’a permis de me spécialiser dans la stack JavaScript, utilisée depuis maintenant six ans pour concevoir des applications web robustes et évolutives, avec React côté interface, Nest, Express ou Strapi côté serveur, et des bases de données MongoDB et PostgreSQL.
+  
+  <space/>
+  >Et l'IA ?
+  <space/>
 
   Aujourd’hui, j’utilise également l’IA pour assister mes développements. Employée à bon escient, elle me permet d’accélérer la production de fonctionnalités tout en produisant un code plus propre, maintenable, scalable et compréhensible par d’autres développeurs, sans jamais perdre la maîtrise des choix techniques.
     `,
