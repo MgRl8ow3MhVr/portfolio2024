@@ -5,7 +5,7 @@ const quiSuisJe = {
   id: 0,
   title: "Qui suis-je ?",
   gif: "https://res.cloudinary.com/pierredev/image/upload/v1768385148/portfolio/gifs/mpvxb1t4jb4lteb1fvom.gif",
-  img: "https://res.cloudinary.com/pierredev/image/upload/v1727795018/portfolio/imgs/bnykj67eazhs6ejtclmt.jpg",
+  img: "https://res.cloudinary.com/pierredev/image/upload/v1769771418/portfolio/imgs/v08a7idnzyjzkbd3kmq2.png",
   description: `
   >BIENVENUE SUR CE SITE
   <space/>
