@@ -54,15 +54,15 @@ const solutionsCodees = {
   >Solutions codées
   <space/>
 
-  Savoir coder une application permet de la créer au pixel près, depuis la page blanche. Cela offre une grande précision pour répondre à un besoin spécifique.
+  Savoir coder une application permet de la créer au pixel près, depuis la page blanche. Cela offre une grande précision pour répondre à un **besoin spécifique**, ainsi que la liberté de l'installer sur des **serveurs souverains**.
 
-  J’ai découvert ce monde en 2005, à mon entrée à l’ENSIMAG, école d’ingénieurs en informatique, où j’ai acquis des bases solides en algorithmique et en informatique générale. Après un parcours professionnel varié, j’y suis replongé en 2019 avec le bootcamp Développeur Web du Reacteur, qui m’a permis de me spécialiser dans la stack JavaScript, utilisée depuis maintenant six ans pour concevoir des applications web robustes et évolutives, avec React côté interface, Nest, Express ou Strapi côté serveur, et des bases de données MongoDB et PostgreSQL.
+  J’ai découvert ce monde en 2005, à mon entrée à l’ENSIMAG, **école d’ingénieurs en informatique**, où j’ai acquis des bases solides en algorithmique et en informatique générale. Après un parcours professionnel varié, j’y suis replongé en 2019 avec le bootcamp Développeur Web du Reacteur, qui m’a permis de me spécialiser dans la **stack JavaScript**, utilisée depuis maintenant six ans pour concevoir des applications web robustes et évolutives, avec React côté **interface**, Nest, Express ou Strapi **côté serveur**, et des **bases de données** MongoDB et PostgreSQL.
   
   <space/>
   >Et l'IA ?
   <space/>
 
-  Aujourd’hui, j’utilise également l’IA pour assister mes développements. Employée à bon escient, elle me permet d’accélérer la production de fonctionnalités tout en produisant un code plus propre, maintenable, scalable et compréhensible par d’autres développeurs, sans jamais perdre la maîtrise des choix techniques.
+  Aujourd’hui, j’utilise également l’IA pour **assister mes développements**. Employée à bon escient, elle me permet d’accélérer la production de fonctionnalités tout en produisant un code plus propre, maintenable, scalable et compréhensible par d’autres développeurs, sans jamais perdre la maîtrise des choix techniques.
     `,
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
@@ -108,16 +108,17 @@ const formations = {
   Au fil des années, j’ai conçu et animé plusieurs formations pour des institutions et organismes tels que <link href="https://www.greta-iledefrance.fr/" title="Greta">, <link href="https://www.ifocop.fr/" title="Ifocop"> et <link href="https://www.aucarre.tech/" title="Au Carré">.
 
   <ul> 
-  - "Débuter avec Javascript"
-  - "Concevoir des sites dynamiques avec React" 
-  - "Passer de Excel à Grist"
-  - "Les métiers du Web"
+  - "Débuter avec **Javascript**"
+  - "Concevoir des sites dynamiques avec **React**" 
+  - "Passer de Excel à **Grist**"
+  - "Les métiers du **Web**"
+  - En cours de conception en 2026 : les bases de l'**IA**
   </ul>
 
   <space/>
   >Animateur de fresques
 
-  Sensible aux enjeux planétaires et aux impacts écologiques du numérique, je suis également animateur de <link href="https://fresqueduclimat.org/" title="La Fresque du Climat"> et de <link href="https://www.fresquedunumerique.org/" title="La Fresque du Numérique">, deux ateliers collaboratifs et ludiques qui permettent de comprendre les enjeux climatiques ou numériques et de réfléchir ensemble à des solutions concrètes.
+  Sensible aux enjeux planétaires et aux impacts écologiques du numérique, je suis également **animateur** de <link href="https://fresqueduclimat.org/" title="La Fresque du Climat"> et de <link href="https://www.fresquedunumerique.org/" title="La Fresque du Numérique">, deux ateliers collaboratifs et ludiques qui permettent de comprendre les enjeux climatiques ou numériques et de réfléchir ensemble à des solutions concrètes.
 `,
 };
 /* # # # # # # # # # # # # # # # # # # # # # */
