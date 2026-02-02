@@ -51,6 +51,7 @@
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  pointer-events: none;
 }
 
 .dice-wrapper .cube-container .cube:hover {

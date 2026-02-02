@@ -8,7 +8,7 @@ const Dice = ({ titles = [], isGathering = false, onClick, isInitialLoad }) => {
         animation: isInitialLoad ? "appear 0.3s ease-in 0.3s both" : "none",
       }}
     >
-      <div onClick={onClick} style={{ cursor: "pointer" }}>
+      <div onClick={onClick} style={{ cursor: "pointer", minWidth: "var(--widthDice)", minHeight: "var(--widthDice)" }}>
         <div className="dice-wrapper">
           <div className="cube-container">
             <div className={`cube ${isGathering ? "fast-spin" : ""}`} id="cube">
